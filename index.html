@@ -113,8 +113,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .stitle em{font-style:italic;color:var(--p)}
 .stitle-lt{color:var(--l)}
 .stitle-lt em{color:var(--a)}
-.crule{width:2.5rem;height:1px;background:var(--p);margin:1.75rem 0}
-
 /* ── WHY CHOOSE US ──────────────────────────────────────── */
 #why{background:var(--d);position:relative;overflow:hidden}
 #why::before{content:'';position:absolute;top:-20%;left:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(180,122,69,.055) 0%,transparent 65%);pointer-events:none}
@@ -133,23 +131,29 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .wc-title{font-family:'Cormorant Garamond',serif;font-size:1.375rem;font-weight:300;color:var(--l);margin-bottom:.625rem;line-height:1.2}
 .wc-body{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(250,248,245,.4);line-height:1.85}
 
-/* ── ABOUT ──────────────────────────────────────────────── */
-#about{background:var(--l);position:relative;overflow:hidden}
-.about-wm{position:absolute;right:-3%;top:-5%;font-family:'Cormorant Garamond',serif;font-size:clamp(7rem,16vw,14rem);font-weight:300;color:rgba(180,122,69,.04);letter-spacing:-.04em;pointer-events:none;user-select:none;line-height:1;white-space:nowrap;z-index:0}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,6rem);align-items:center;position:relative;z-index:1}
-.about-pull{font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2vw,1.875rem);font-weight:300;font-style:italic;color:var(--d);line-height:1.5;margin-bottom:1.5rem;padding-left:1.375rem;border-left:2px solid var(--p)}
-.about-body{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(18,18,18,.57);line-height:1.9;margin-bottom:1.125rem}
-.about-pillars{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.5rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(18,18,18,.08)}
-.ap{display:flex;align-items:center;gap:.5rem;font-family:'Jost',sans-serif;font-size:.68rem;font-weight:400;color:rgba(18,18,18,.58)}
-.ap::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--p);flex-shrink:0}
-/* Bezel image frame */
-.bezel{border-radius:1.375rem;background:rgba(180,122,69,.07);border:1px solid rgba(180,122,69,.14);padding:.4rem;position:relative}
-.bezel-inner{border-radius:calc(1.375rem - .1rem);overflow:hidden;box-shadow:inset 0 1px 1px rgba(255,255,255,.45)}
-.bezel-inner img{width:100%;display:block;transition:transform 1s var(--ease-lux);will-change:transform}
-.bezel:hover .bezel-inner img{transform:scale(1.04)}
-.about-float{position:absolute;bottom:-1rem;left:-1rem;background:var(--d);border-radius:1rem;padding:1.25rem 1.625rem;box-shadow:0 16px 48px rgba(18,18,18,.22)}
-.af-n{font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:300;color:var(--a);line-height:1}
-.af-l{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:400;letter-spacing:.18em;color:rgba(250,248,245,.38);text-transform:uppercase;margin-top:.2rem}
+/* ── ABOUT — EDITORIAL LUXURY SPLIT ────────────────────── */
+#about{background:var(--l);position:relative;overflow:hidden;padding:0}
+.about-wm{position:absolute;right:-2%;top:15%;font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,18vw,16rem);font-weight:300;color:rgba(180,122,69,.028);letter-spacing:-.04em;pointer-events:none;user-select:none;line-height:1;white-space:nowrap;z-index:0}
+.about-frame{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;position:relative;z-index:1}
+.about-vis{position:relative;overflow:hidden;background:#1a1410}
+.about-vis-img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;will-change:transform}
+.about-vis-over{position:absolute;bottom:3.5rem;right:-3rem;width:50%;aspect-ratio:4/5;overflow:hidden;border-radius:.5rem;box-shadow:0 28px 70px rgba(0,0,0,.32),0 0 0 3px rgba(250,248,245,.94),0 0 0 5px rgba(180,122,69,.1);will-change:transform;z-index:5}
+.about-vis-over img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 1.4s var(--ease-lux)}
+.about-vis-over:hover img{transform:scale(1.06)}
+.about-vis-card{position:absolute;bottom:3.5rem;left:2.5rem;background:rgba(5,4,3,.87);border:1px solid rgba(255,255,255,.06);border-radius:.875rem;padding:1.375rem 1.875rem;z-index:10}
+.avc-n{font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:300;color:var(--a);line-height:1;display:block}
+.avc-star{font-size:1rem;color:var(--p);font-style:normal;vertical-align:top;margin-top:.35rem;display:inline-block;margin-left:.125rem}
+.avc-l{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.2em;color:rgba(250,248,245,.28);text-transform:uppercase;margin-top:.3rem;display:block}
+.about-col{padding:clamp(4.5rem,8vw,7.5rem) clamp(3rem,6vw,5.5rem);display:flex;flex-direction:column;justify-content:center}
+.about-h{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:300;line-height:.96;letter-spacing:-.025em;color:var(--d);margin-bottom:2.25rem;margin-top:1rem}
+.about-h em{font-style:italic;color:var(--p)}
+.about-bq{font-family:'Cormorant Garamond',serif;font-size:clamp(.95rem,1.4vw,1.25rem);font-weight:300;font-style:italic;color:rgba(18,18,18,.44);line-height:1.65;margin-bottom:2rem;padding-left:1.5rem;border-left:1.5px solid var(--p)}
+.about-prose{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.95}
+.about-metrics{display:flex;align-items:center;border-top:1px solid rgba(18,18,18,.07);padding-top:2.25rem;margin-top:2.5rem}
+.am{flex:1;text-align:center}
+.am-n{font-family:'Cormorant Garamond',serif;font-size:2.125rem;font-weight:300;color:var(--d);line-height:1}
+.am-l{font-family:'Jost',sans-serif;font-size:.5rem;font-weight:400;letter-spacing:.2em;color:rgba(18,18,18,.28);text-transform:uppercase;margin-top:.3rem}
+.am-sep{width:1px;height:2.5rem;background:rgba(18,18,18,.07);flex-shrink:0}
 
 /* ── APARTMENT ──────────────────────────────────────────── */
 #accommodation{background:var(--d);position:relative;overflow:hidden}
@@ -160,9 +164,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .apt-img-main img,.apt-img-sm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease-lux)}
 .apt-img-main:hover img,.apt-img-sm:hover img{transform:scale(1.05)}
 .apt-img-sm{border-radius:.875rem;overflow:hidden;cursor:pointer}
-.apt-features{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;margin:1.75rem 0}
-.af2{display:flex;align-items:center;gap:.625rem;font-family:'Jost',sans-serif;font-size:.68rem;font-weight:300;color:rgba(250,248,245,.52)}
-.af2-dot{width:5px;height:5px;border-radius:50%;background:var(--p);flex-shrink:0}
+.apt-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.75rem 0 2rem}
+.apt-tag{font-family:'Jost',sans-serif;font-size:.57rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,245,.42);border:1px solid rgba(255,255,255,.09);border-radius:9999px;padding:.35rem .9rem;transition:border-color .35s var(--ease-lux),color .35s}
+.apt-tag:hover{border-color:rgba(180,122,69,.32);color:rgba(250,248,245,.72)}
 .apt-price-box{background:rgba(180,122,69,.08);border:1px solid rgba(180,122,69,.2);border-radius:1rem;padding:1.625rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .apt-from{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.2em;color:rgba(250,248,245,.38);text-transform:uppercase;margin-bottom:.25rem}
 .apt-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--a);line-height:1}
@@ -183,7 +187,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .mi:hover img{transform:scale(1.08)}
 .mi-ov{position:absolute;inset:0;background:rgba(10,10,10,0);transition:background .45s}
 .mi:hover .mi-ov{background:rgba(10,10,10,.18)}
-.mi-zoom{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);width:2.875rem;height:2.875rem;border-radius:50%;background:rgba(250,248,245,.12);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--l);font-size:1.1rem;transition:transform .35s var(--ease-spring)}
+.mi-zoom{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);width:2.875rem;height:2.875rem;border-radius:50%;background:rgba(250,248,245,.15);display:flex;align-items:center;justify-content:center;color:var(--l);transition:transform .35s var(--ease-spring)}
 .mi:hover .mi-zoom{transform:translate(-50%,-50%) scale(1)}
 .mi-caption{position:absolute;bottom:0;left:0;right:0;padding:.875rem 1rem;background:linear-gradient(to top,rgba(10,10,10,.75) 0%,transparent 100%);font-family:'Jost',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.12em;color:rgba(250,248,245,.65);text-transform:uppercase;transform:translateY(8px);opacity:0;transition:transform .4s var(--ease-lux),opacity .4s}
 .mi:hover .mi-caption{transform:translateY(0);opacity:1}
@@ -212,19 +216,17 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 
 /* ── EXPERIENCES ────────────────────────────────────────── */
 #experiences{background:var(--l)}
-.exp-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.exp-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem}
 .exp-sub-txt{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(18,18,18,.5);max-width:300px;line-height:1.9}
-.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem}
-.ec{border-radius:1.125rem;overflow:hidden;background:#fff;border:1px solid rgba(18,18,18,.06);transition:transform .5s var(--ease-lux),box-shadow .5s var(--ease-lux)}
-.ec:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(18,18,18,.1)}
-.ec-img-wrap{height:220px;overflow:hidden;position:relative}
-.ec-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s var(--ease-lux);filter:saturate(1.05)}
-.ec:hover .ec-img{transform:scale(1.07)}
-.ec-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,4,.88) 0%,rgba(10,8,4,.25) 60%,transparent 100%)}
-.ec-body{padding:1.375rem}
-.ec-dist{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:500;letter-spacing:.22em;color:var(--p);text-transform:uppercase;margin-bottom:.375rem}
-.ec-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--d);line-height:1.2;margin-bottom:.5rem}
-.ec-blurb{font-family:'Jost',sans-serif;font-size:.7rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.75}
+.exp-grid{display:flex;flex-direction:column}
+.ec{display:grid;grid-template-columns:3.5rem 1fr auto;gap:0 2.5rem;padding:1.875rem 0;border-top:1px solid rgba(18,18,18,.08);align-items:start;transition:background .35s var(--ease-lux)}
+.ec:last-child{border-bottom:1px solid rgba(18,18,18,.08)}
+.ec:hover{background:rgba(180,122,69,.03)}
+.ec-num{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.2em;color:var(--p);padding-top:.35rem;flex-shrink:0}
+.ec-name{font-family:'Cormorant Garamond',serif;font-size:1.625rem;font-weight:400;color:var(--d);line-height:1.15;margin-bottom:.5rem;transition:color .35s var(--ease-lux)}
+.ec:hover .ec-name{color:var(--p)}
+.ec-blurb{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(18,18,18,.45);line-height:1.8}
+.ec-dist{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.18em;color:rgba(18,18,18,.3);text-transform:uppercase;padding-top:.35rem;text-align:right;white-space:nowrap;flex-shrink:0}
 
 /* ── TESTIMONIALS ───────────────────────────────────────── */
 #testimonials{background:var(--d);padding:clamp(5rem,10vh,7.5rem) 0;position:relative;overflow:hidden}
@@ -251,13 +253,16 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .td{width:6px;height:6px;border-radius:9999px;background:rgba(255,255,255,.16);cursor:pointer;transition:background .35s,width .35s var(--ease-lux)}
 .td.active{background:var(--a);width:24px}
 
-/* ── BOOKING STRIP ──────────────────────────────────────── */
-#bstrip{background:var(--p);padding:2.25rem clamp(1.5rem,6vw,6rem)}
-.bstrip-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.bstrip-txt{font-family:'Cormorant Garamond',serif;font-size:clamp(1.375rem,2.5vw,2.1rem);font-weight:300;font-style:italic;color:var(--l)}
-.bstrip-sub{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;color:rgba(250,248,245,.62);letter-spacing:.08em;margin-top:.15rem}
-.btn-strip{display:inline-flex;align-items:center;gap:.625rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--p);background:var(--l);padding:.875rem 1.875rem;border-radius:9999px;transition:background .35s,transform .25s var(--ease-spring)}
-.btn-strip:hover{background:var(--s);transform:scale(1.03)}
+/* ── BOOKING STRIP — EDITORIAL DARK ────────────────────── */
+#bstrip{background:var(--d);padding:5rem clamp(1.5rem,6vw,6rem);position:relative;overflow:hidden}
+#bstrip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 60%,rgba(180,122,69,.13) 0%,transparent 60%);pointer-events:none}
+.bstrip-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2.5rem;position:relative;z-index:1}
+.bstrip-txt{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.75rem);font-weight:300;font-style:italic;color:var(--l);line-height:1.1}
+.bstrip-sub{font-family:'Jost',sans-serif;font-size:.65rem;font-weight:300;color:rgba(250,248,245,.28);letter-spacing:.14em;margin-top:.75rem}
+.btn-strip{display:inline-flex;align-items:center;gap:.875rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:rgba(250,248,245,.7);border:1px solid rgba(250,248,245,.14);padding:.9rem 1.25rem .9rem 1.875rem;border-radius:9999px;transition:border-color .4s var(--ease-lux),color .4s,background .4s,transform .25s var(--ease-spring)}
+.btn-strip:hover{border-color:rgba(180,122,69,.45);color:var(--l);background:rgba(180,122,69,.09);transform:scale(1.03)}
+.btn-strip-ico{width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(250,248,245,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .35s var(--ease-spring),background .35s}
+.btn-strip:hover .btn-strip-ico{transform:translate(2px,-1px) scale(1.1);background:rgba(180,122,69,.18)}
 
 /* ── LOCATION ───────────────────────────────────────────── */
 #location{background:var(--d)}
@@ -363,10 +368,13 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 /* RESPONSIVE */
 @media(max-width:1100px){
   .why-grid{grid-template-columns:repeat(2,1fr)}
-  .exp-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:900px){
-  .about-grid,.loc-grid,.apt-grid,.bk-grid{grid-template-columns:1fr;gap:2.75rem}
+  .about-frame{grid-template-columns:1fr;min-height:auto}
+  .about-vis{height:65vw;min-height:320px}
+  .about-vis-over{display:none}
+  .about-col{padding:3.5rem clamp(1.5rem,5vw,2.5rem)}
+  .loc-grid,.apt-grid,.bk-grid{grid-template-columns:1fr;gap:2.75rem}
   .hero-content{grid-template-columns:1fr}
   .review-badge{display:none}
   .ft-grid{grid-template-columns:1fr 1fr;gap:2.25rem}
@@ -386,7 +394,9 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   .mi:nth-child(8){grid-row:span 2}
 }
 @media(max-width:680px){
-  .why-grid,.exp-grid,.ft-grid{grid-template-columns:1fr}
+  .why-grid,.ft-grid{grid-template-columns:1fr}
+  .ec{grid-template-columns:2.5rem 1fr;gap:0 1.25rem}
+  .ec-dist{display:none}
   .mas-grid{grid-template-columns:1fr;grid-auto-rows:220px}
   .mi{grid-row:span 1!important}
   .apt-imgs{grid-template-rows:240px 160px 160px}
@@ -464,7 +474,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       </h1>
       <p class="hero-sub" id="hero-sub">A luxury 2-bedroom self-catering apartment designed for comfort, relaxation, and memorable stays in the heart of Mpumalanga.</p>
       <div class="hero-ctas" id="hero-ctas">
-        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon">↗</span></a>
+        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
         <a href="#accommodation" class="btn-outline">View Apartment</a>
       </div>
     </div>
@@ -573,36 +583,54 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 </section>
 
 <!-- ══════════════ ABOUT ══════════════════════════════════════ -->
-<section id="about" class="sp">
-  <div class="about-wm">Expresso</div>
-  <div class="about-grid">
-    <div>
-      <div class="etag">Our Story</div>
-      <h2 class="stitle" id="about-title">Your Home<br>Away From <em>Home</em></h2>
-      <div class="crule"></div>
-      <p class="about-pull">"Every detail has been chosen to make you feel genuinely at home — not just accommodated."</p>
-      <p class="about-body">Expresso Accommodation is a warm, character-rich 2-bedroom apartment nestled in Nelspruit, Mpumalanga's vibrant capital. Whether you're here for business, adventure, or rest — this apartment was made for you.</p>
-      <p class="about-body">A fully equipped kitchen lets you cook your own meals. The welcoming lounge invites you to unwind. Two generous bedrooms promise deep, restorative sleep. And a team of caring hosts is always close by.</p>
-      <div class="about-pillars">
-        <div class="ap">Genuine Comfort</div>
-        <div class="ap">Warm Hospitality</div>
-        <div class="ap">Deep Relaxation</div>
-        <div class="ap">Quality Service</div>
-        <div class="ap">Convenient Location</div>
-        <div class="ap">Full Self-Catering</div>
+<section id="about">
+  <div class="about-wm" aria-hidden="true">Expresso</div>
+  <div class="about-frame">
+
+    <!-- Image column — Z-axis depth stack -->
+    <div class="about-vis" id="about-vis">
+      <img class="about-vis-img" id="about-par" src="brand_assets/Outside%201.jpeg" alt="Expresso Accommodation exterior" loading="lazy">
+      <!-- Offset second image — creates physical Z-axis depth -->
+      <div class="about-vis-over" id="about-over">
+        <img src="brand_assets/Picture%203.jpeg" alt="Expresso lounge interior" loading="lazy">
+      </div>
+      <!-- Floating glassmorphism stat card -->
+      <div class="about-vis-card" id="about-card">
+        <span class="avc-n">5.0<span class="avc-star">★</span></span>
+        <span class="avc-l">Airbnb Rating</span>
       </div>
     </div>
-    <div id="about-img-col" style="position:relative">
-      <div class="bezel">
-        <div class="bezel-inner">
-          <img src="brand_assets/Picture%203.jpeg" alt="Expresso lounge" style="height:540px;object-fit:cover;object-position:center" id="about-par" loading="lazy">
+
+    <!-- Editorial text column -->
+    <div class="about-col">
+      <div class="etag">Our Story</div>
+      <h2 class="about-h">Your Home<br>Away From<br><em>Home</em></h2>
+      <p class="about-bq">"Every detail has been chosen to make you feel genuinely at home — not just accommodated."</p>
+      <p class="about-prose">A warm, character-rich 2-bedroom apartment nestled in Nelspruit, Mpumalanga's vibrant capital. Whether here for business, adventure, or rest — this apartment was made for you. A fully equipped kitchen, welcoming lounge, and two generous bedrooms promising deep, restorative sleep.</p>
+      <!-- Animated metrics strip -->
+      <div class="about-metrics">
+        <div class="am">
+          <div class="am-n" data-counter="5.0" data-decimal="1">5.0</div>
+          <div class="am-l">Airbnb Rating</div>
+        </div>
+        <div class="am-sep"></div>
+        <div class="am">
+          <div class="am-n" data-counter="100" data-suffix="%">100%</div>
+          <div class="am-l">Positive Reviews</div>
+        </div>
+        <div class="am-sep"></div>
+        <div class="am">
+          <div class="am-n">2</div>
+          <div class="am-l">Bedrooms</div>
+        </div>
+        <div class="am-sep"></div>
+        <div class="am">
+          <div class="am-n" data-prefix="R" data-counter="900">R900</div>
+          <div class="am-l">Per Night</div>
         </div>
       </div>
-      <div class="about-float">
-        <div class="af-n">R900</div>
-        <div class="af-l">Per Night</div>
-      </div>
     </div>
+
   </div>
 </section>
 
@@ -623,19 +651,18 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div id="apt-detail">
       <div class="etag etag-dk">The Apartment</div>
       <h2 class="stitle stitle-lt">A Luxury 2-Bedroom<br><em>Self-Catering Retreat</em></h2>
-      <div class="crule" style="background:var(--a)"></div>
       <p style="font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(250,248,245,.48);line-height:1.9">A spacious, beautifully furnished apartment offering everything for a memorable stay in Nelspruit. Perfect for couples, families, or business travellers seeking quality and comfort.</p>
-      <div class="apt-features">
-        <div class="af2"><div class="af2-dot"></div>2 Bedrooms</div>
-        <div class="af2"><div class="af2-dot"></div>Full Kitchen</div>
-        <div class="af2"><div class="af2-dot"></div>Lounge &amp; Dining</div>
-        <div class="af2"><div class="af2-dot"></div>Air Conditioning</div>
-        <div class="af2"><div class="af2-dot"></div>DSTV &amp; Smart TV</div>
-        <div class="af2"><div class="af2-dot"></div>Fast Wi-Fi</div>
-        <div class="af2"><div class="af2-dot"></div>Bathroom</div>
-        <div class="af2"><div class="af2-dot"></div>Secure Parking</div>
-        <div class="af2"><div class="af2-dot"></div>Premium Linen</div>
-        <div class="af2"><div class="af2-dot"></div>Daily Housekeeping</div>
+      <div class="apt-tags">
+        <span class="apt-tag">2 Bedrooms</span>
+        <span class="apt-tag">Full Kitchen</span>
+        <span class="apt-tag">Lounge &amp; Dining</span>
+        <span class="apt-tag">Air Conditioning</span>
+        <span class="apt-tag">DSTV &amp; Smart TV</span>
+        <span class="apt-tag">Fast Wi-Fi</span>
+        <span class="apt-tag">Bathroom</span>
+        <span class="apt-tag">Secure Parking</span>
+        <span class="apt-tag">Premium Linen</span>
+        <span class="apt-tag">Daily Housekeeping</span>
       </div>
       <div class="apt-price-box">
         <div>
@@ -648,7 +675,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
           <div class="apt-occ-l">Guests</div>
         </div>
       </div>
-      <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon">↗</span></a>
+      <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -665,42 +692,42 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   <div class="mas-grid">
     <div class="mi" onclick="openLb(0)">
       <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Living Room</div>
     </div>
     <div class="mi" onclick="openLb(1)">
       <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Master Bedroom</div>
     </div>
     <div class="mi" onclick="openLb(2)">
       <img src="brand_assets/Outside%202.jpeg" alt="Exterior" style="object-position:center 60%">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Property Exterior</div>
     </div>
     <div class="mi" onclick="openLb(3)">
       <img src="brand_assets/Room%201.jpeg" alt="Second bedroom" style="object-position:center 20%">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Second Bedroom</div>
     </div>
     <div class="mi" onclick="openLb(4)">
       <img src="brand_assets/Picture%205.jpeg" alt="Kitchen">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Kitchen</div>
     </div>
     <div class="mi" onclick="openLb(5)">
       <img src="brand_assets/Picture%204.jpeg" alt="Lounge area">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Lounge Area</div>
     </div>
     <div class="mi" onclick="openLb(6)">
       <img src="brand_assets/Picture%203.jpeg" alt="Sitting room">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Sitting Room</div>
     </div>
     <div class="mi" onclick="openLb(7)">
       <img src="brand_assets/Outside%201.jpeg" alt="Secure entrance">
-      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Secure Entrance</div>
     </div>
   </div>
@@ -730,75 +757,57 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   <div class="exp-grid">
 
     <div class="ec">
-      <div class="ec-img-wrap">
-        <img class="ec-img" src="brand_assets/Outside%202.jpeg" alt="Kruger National Park" style="filter:saturate(1.2) brightness(.7)">
-        <div class="ec-ov"></div>
-      </div>
-      <div class="ec-body">
-        <div class="ec-dist">87 km · ±1 hr drive</div>
+      <div class="ec-num">01</div>
+      <div>
         <div class="ec-name">Kruger National Park</div>
         <p class="ec-blurb">Africa's greatest game reserve. Encounter the Big Five in their natural habitat — just one hour from your door.</p>
       </div>
+      <div class="ec-dist">87 km · ±1 hr drive</div>
     </div>
 
     <div class="ec">
-      <div class="ec-img-wrap">
-        <img class="ec-img" src="brand_assets/Outside%201.jpeg" alt="Lowveld Botanical Garden" style="filter:saturate(1.3) brightness(.65);object-position:center 40%">
-        <div class="ec-ov"></div>
-      </div>
-      <div class="ec-body">
-        <div class="ec-dist">3 km · ±5 min drive</div>
+      <div class="ec-num">02</div>
+      <div>
         <div class="ec-name">Lowveld Botanical Garden</div>
         <p class="ec-blurb">One of SA's most beautiful botanical gardens — set at the confluence of two rivers, perfect for a tranquil morning walk.</p>
       </div>
+      <div class="ec-dist">3 km · ±5 min drive</div>
     </div>
 
     <div class="ec">
-      <div class="ec-img-wrap">
-        <img class="ec-img" src="brand_assets/Picture%203.jpeg" alt="Sudwala Caves" style="filter:saturate(.7) brightness(.5);object-position:center 20%">
-        <div class="ec-ov"></div>
-      </div>
-      <div class="ec-body">
-        <div class="ec-dist">38 km · ±30 min drive</div>
+      <div class="ec-num">03</div>
+      <div>
         <div class="ec-name">Sudwala Caves</div>
         <p class="ec-blurb">Among the oldest caves on Earth — a dramatic underground world of ancient stalactites and dolomite formations.</p>
       </div>
+      <div class="ec-dist">38 km · ±30 min drive</div>
     </div>
 
     <div class="ec">
-      <div class="ec-img-wrap">
-        <img class="ec-img" src="brand_assets/Picture%206.jpeg" alt="Riverside &amp; Ilanga Mall" style="filter:saturate(1.1) brightness(.55)">
-        <div class="ec-ov"></div>
-      </div>
-      <div class="ec-body">
-        <div class="ec-dist">2 km · ±5 min drive</div>
+      <div class="ec-num">04</div>
+      <div>
         <div class="ec-name">Riverside &amp; Ilanga Mall</div>
         <p class="ec-blurb">World-class shopping, restaurants, a cinema, and entertainment — two major malls just minutes from the apartment.</p>
       </div>
+      <div class="ec-dist">2 km · ±5 min drive</div>
     </div>
 
     <div class="ec">
-      <div class="ec-img-wrap">
-        <img class="ec-img" src="brand_assets/Picture%204.jpeg" alt="Mbombela Stadium" style="filter:saturate(.9) brightness(.5)">
-        <div class="ec-ov"></div>
-      </div>
-      <div class="ec-body">
-        <div class="ec-dist">4 km · ±8 min drive</div>
+      <div class="ec-num">05</div>
+      <div>
         <div class="ec-name">Mbombela Stadium</div>
         <p class="ec-blurb">Nelspruit's iconic giraffe-inspired FIFA World Cup venue — host to major football matches and large-scale events.</p>
       </div>
+      <div class="ec-dist">4 km · ±8 min drive</div>
     </div>
 
     <div class="ec">
-      <div class="ec-img-wrap">
-        <img class="ec-img" src="brand_assets/Picture%205.jpeg" alt="Mpumalanga Scenic Routes" style="filter:saturate(1.2) brightness(.55)">
-        <div class="ec-ov"></div>
-      </div>
-      <div class="ec-body">
-        <div class="ec-dist">60 km · ±45 min drive</div>
+      <div class="ec-num">06</div>
+      <div>
         <div class="ec-name">Mpumalanga Scenic Routes</div>
         <p class="ec-blurb">God's Window, Blyde River Canyon, Bourke's Luck Potholes — day trips through some of the world's most spectacular scenery.</p>
       </div>
+      <div class="ec-dist">60 km · ±45 min drive</div>
     </div>
 
   </div>
@@ -867,7 +876,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
             <label class="fl-label" for="bk-special">Special Requests (optional)</label>
           </div>
           <button type="submit" class="bk-submit">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Send Booking Request on WhatsApp
           </button>
         </form>
@@ -950,6 +959,8 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div class="td active" onclick="goSlide(0)"></div>
     <div class="td" onclick="goSlide(1)"></div>
     <div class="td" onclick="goSlide(2)"></div>
+    <div class="td" onclick="goSlide(3)"></div>
+    <div class="td" onclick="goSlide(4)"></div>
   </div>
 </section>
 
@@ -957,10 +968,12 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <div id="bstrip">
   <div class="bstrip-inner">
     <div>
-      <div class="bstrip-txt">Ready to book your stay?</div>
-      <div class="bstrip-sub">Message us on WhatsApp — fast responses, easy booking.</div>
+      <div class="bstrip-txt">Ready for your next<br>African adventure?</div>
     </div>
-    <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-strip">Chat on WhatsApp →</a>
+    <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-strip">
+      Chat on WhatsApp
+      <span class="btn-strip-ico"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+    </a>
   </div>
 </div>
 
@@ -972,28 +985,28 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <h2 class="loc-title">Gateway to<br><em>Africa's</em><br>Greatest Wild</h2>
       <p class="loc-body">Situated in Nelspruit, Mpumalanga — minutes from the CBD and 87 km from Kruger's Numbi Gate. Panorama Route, Blyde River Canyon, and Sudwala Caves all within easy reach.</p>
       <div class="ci">
-        <div class="ci-ico">📞</div>
+        <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
         <div>
           <div class="ci-lbl">WhatsApp / Phone</div>
           <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="ci-val">072 360 6294</a>
         </div>
       </div>
       <div class="ci">
-        <div class="ci-ico">✉</div>
+        <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div>
           <div class="ci-lbl">Email</div>
           <a href="mailto:expreso@airbnb.co.za" class="ci-val">expreso@airbnb.co.za</a>
         </div>
       </div>
       <div class="ci">
-        <div class="ci-ico">📍</div>
+        <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div>
           <div class="ci-lbl">Location</div>
           <span class="ci-val">Nelspruit, Mpumalanga, South Africa</span>
         </div>
       </div>
       <div style="margin-top:2.25rem">
-        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon">↗</span></a>
+        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
       </div>
     </div>
     <div>
@@ -1019,7 +1032,10 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
             <textarea id="lcf-msg" placeholder=" " required></textarea>
             <label class="lcf-label" for="lcf-msg">Your Message</label>
           </div>
-          <button type="submit" class="lcf-submit">Send via WhatsApp →</button>
+          <button type="submit" class="lcf-submit" style="display:flex;align-items:center;justify-content:center;gap:.5rem">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
         </form>
       </div>
     </div>
@@ -1049,7 +1065,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
             <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
         </div>
-        <a class="ft-book-btn" href="https://wa.me/27723606294" target="_blank" rel="noopener">Book Now →</a>
+        <a class="ft-book-btn" href="https://wa.me/27723606294" target="_blank" rel="noopener">Book Now <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div>
         <div class="ft-col-title">Navigate</div>
@@ -1087,7 +1103,6 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     </div>
     <div class="ft-btm">
       <div class="ft-copy">© 2026 Expresso Accommodation · Nelspruit, Mpumalanga · All rights reserved</div>
-      <div class="ft-copy">Crafted with care for South African hospitality</div>
     </div>
   </div>
 </footer>
@@ -1163,6 +1178,32 @@ function startHero(){
     scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1}});
   initScrollAnims();
   initActiveNav();
+  initCounters();
+}
+
+/* ── ANIMATED COUNTERS ──────────────────────────────────── */
+function initCounters(){
+  document.querySelectorAll('[data-counter]').forEach(el=>{
+    const target=parseFloat(el.dataset.counter);
+    const dec=parseInt(el.dataset.decimal||'0');
+    const prefix=el.dataset.prefix||'';
+    const suffix=el.dataset.suffix||'';
+    let started=false;
+    const obs=new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting&&!started){
+        started=true; obs.disconnect();
+        gsap.fromTo({v:0},{v:target},{
+          duration:2.2,ease:'power2.out',
+          onUpdate:function(){
+            const v=this.targets()[0].v;
+            el.textContent=prefix+(dec?v.toFixed(dec):Math.round(v))+suffix;
+          },
+          onComplete:()=>{el.textContent=prefix+(dec?target.toFixed(dec):String(target))+suffix;}
+        });
+      }
+    },{threshold:.65});
+    obs.observe(el);
+  });
 }
 
 /* ── NAV GLASSMORPHIC ───────────────────────────────────── */
@@ -1194,23 +1235,28 @@ function initScrollAnims(){
     });
   }
 
-  /* About parallax */
-  gsap.to('#about-par',{yPercent:-12,ease:'none',
+  /* About — multi-speed parallax creates physical Z-axis depth */
+  gsap.to('#about-par',{yPercent:-15,ease:'none',
+    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1.2}});
+  gsap.to('.about-wm',{yPercent:-25,ease:'none',
     scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
-  gsap.to('.about-wm',{yPercent:-22,ease:'none',
-    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
+  gsap.to('#about-over',{yPercent:10,ease:'none',
+    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:.8}});
 
   /* Why Choose Us — staggered card reveals */
   rv('.why-intro > *',{stagger:.1,trigger:'#why'});
   gsap.from('.wc',{y:55,opacity:0,stagger:.12,duration:1.05,ease:'power3.out',
     scrollTrigger:{trigger:'.why-grid',start:'top 84%',once:true}});
 
-  /* About */
-  rv(['#about .etag','#about-title','.crule','.about-pull','.about-body','.about-pillars'],
-    {stagger:.08,trigger:'#about'});
-  rv('#about-img-col',{y:70,dur:1.1,trigger:'#about-img-col'});
-  gsap.from('.about-float',{x:-30,opacity:0,duration:1.0,delay:.4,ease:'power3.out',
-    scrollTrigger:{trigger:'#about-img-col',start:'top 85%',once:true}});
+  /* About — reveal animations */
+  gsap.from('#about-vis',{opacity:0,duration:1.2,ease:'power3.out',
+    scrollTrigger:{trigger:'#about',start:'top 88%',once:true}});
+  rv(['#about .etag','.about-h','.about-bq','.about-prose','.about-metrics'],
+    {stagger:.1,trigger:'.about-col'});
+  gsap.from('#about-over',{x:50,opacity:0,duration:1.1,delay:.5,ease:'power3.out',
+    scrollTrigger:{trigger:'#about',start:'top 85%',once:true}});
+  gsap.from('#about-card',{y:28,opacity:0,duration:.95,delay:.65,ease:'power3.out',
+    scrollTrigger:{trigger:'#about',start:'top 85%',once:true}});
 
   /* Apartment */
   rv('#apt-detail > *',{stagger:.1,trigger:'#accommodation'});
@@ -1225,8 +1271,8 @@ function initScrollAnims(){
 
   /* Experiences */
   rv('.exp-header > *',{stagger:.1,trigger:'#experiences'});
-  gsap.from('.ec',{y:45,opacity:0,stagger:.1,duration:1.0,ease:'power3.out',
-    scrollTrigger:{trigger:'.exp-grid',start:'top 85%',once:true}});
+  gsap.from('.ec',{opacity:0,x:-20,stagger:.08,duration:.9,ease:'power3.out',
+    scrollTrigger:{trigger:'.exp-grid',start:'top 88%',once:true}});
 
   /* Testimonials */
   gsap.from('.test-hdr > *',{y:30,opacity:0,stagger:.12,duration:.9,ease:'power3.out',
@@ -1314,16 +1360,33 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight')shiftLb(1);
 });
 
+/* Touch swipe — gallery lightbox */
+(function(){
+  let lx=0;
+  lb.addEventListener('touchstart',e=>{lx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-lx;
+    if(Math.abs(dx)>36)shiftLb(dx<0?1:-1);
+  },{passive:true});
+})();
+
 /* ── TESTIMONIAL CAROUSEL ───────────────────────────────── */
 let tIdx=0;
 const tTrack=document.getElementById('test-track');
 const tDots=document.querySelectorAll('.td');
 
+function getMaxSlide(){
+  const cards=tTrack.querySelectorAll('.tc');
+  const wrap=tTrack.closest('.test-track-wrap');
+  if(!cards.length||!wrap)return 0;
+  const visible=Math.max(1,Math.floor(wrap.offsetWidth/(cards[0].offsetWidth+20)));
+  return Math.max(0,cards.length-visible);
+}
+
 function goSlide(n){
-  tIdx=Math.max(0,Math.min(n,2));
+  tIdx=Math.max(0,Math.min(n,getMaxSlide()));
   const card=tTrack.querySelector('.tc');
-  const gapPx=20; // 1.25rem gap ≈ 20px
-  const cardW=card.offsetWidth+gapPx;
+  const cardW=card.offsetWidth+20;
   gsap.to(tTrack,{x:-tIdx*cardW,duration:.8,ease:'power3.inOut'});
   tDots.forEach((d,i)=>d.classList.toggle('active',i===tIdx));
 }
@@ -1331,9 +1394,20 @@ function goSlide(n){
 document.getElementById('t-prev').addEventListener('click',()=>goSlide(tIdx-1));
 document.getElementById('t-next').addEventListener('click',()=>goSlide(tIdx+1));
 
-let tAuto=setInterval(()=>goSlide((tIdx+1)%3),5000);
+let tAuto=setInterval(()=>{const m=getMaxSlide();goSlide(tIdx>=m?0:tIdx+1);},5000);
 tTrack.addEventListener('mouseenter',()=>clearInterval(tAuto));
-tTrack.addEventListener('mouseleave',()=>{tAuto=setInterval(()=>goSlide((tIdx+1)%3),5000);});
+tTrack.addEventListener('mouseleave',()=>{clearInterval(tAuto);tAuto=setInterval(()=>{const m=getMaxSlide();goSlide(tIdx>=m?0:tIdx+1);},5000);});
+
+/* Touch swipe — testimonials */
+(function(){
+  let tx=0;
+  tTrack.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;clearInterval(tAuto);},{passive:true});
+  tTrack.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>36)goSlide(dx<0?tIdx+1:tIdx-1);
+    tAuto=setInterval(()=>{const m=getMaxSlide();goSlide(tIdx>=m?0:tIdx+1);},5000);
+  },{passive:true});
+})();
 
 /* ── BOOKING FORM ───────────────────────────────────────── */
 (function(){
