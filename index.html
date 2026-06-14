@@ -20,8 +20,8 @@
   --ease-out:cubic-bezier(0.22,1,0.36,1);
 }
 html{overflow-x:hidden;scroll-behavior:auto}
-body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x:hidden;cursor:none}
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:9990}
+body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x:hidden}
+@media(pointer:fine){body{cursor:none}}
 
 /* CURSOR */
 #cur{width:8px;height:8px;background:var(--p);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
@@ -77,7 +77,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .ht-copper{color:var(--a);font-style:italic}
 .hero-sub{font-family:'Jost',sans-serif;font-size:.88rem;font-weight:300;color:rgba(250,248,245,.6);line-height:1.85;max-width:420px;margin-bottom:2.75rem}
 .hero-ctas{display:flex;align-items:center;gap:1.125rem;flex-wrap:wrap}
-.review-badge{flex-shrink:0;background:rgba(250,248,245,.06);border:1px solid rgba(250,248,245,.12);backdrop-filter:blur(12px);border-radius:1.25rem;padding:1.75rem 2rem;text-align:center;min-width:180px}
+.review-badge{flex-shrink:0;background:rgba(10,10,10,.55);border:1px solid rgba(250,248,245,.1);border-radius:1.25rem;padding:1.75rem 2rem;text-align:center;min-width:180px}
 .rb-stars{color:var(--a);font-size:1.1rem;letter-spacing:.1em;margin-bottom:.75rem}
 .rb-score{font-family:'Cormorant Garamond',serif;font-size:3.25rem;font-weight:300;color:var(--l);line-height:1;margin-bottom:.35rem}
 .rb-label{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.22em;color:rgba(250,248,245,.5);text-transform:uppercase;line-height:1.5}
@@ -237,8 +237,7 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .t-btn:hover{border-color:var(--a);color:var(--a);background:rgba(180,122,69,.1)}
 .test-track-wrap{overflow:hidden;padding:0 clamp(1.5rem,6vw,6rem);position:relative;z-index:1}
 .test-track{display:flex;gap:1.25rem;will-change:transform}
-/* Glassmorphism cards */
-.tc{flex-shrink:0;width:calc(33.333% - .875rem);background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:1.375rem;padding:2.25rem;transition:border-color .4s,box-shadow .4s}
+.tc{flex-shrink:0;width:calc(33.333% - .875rem);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:1.375rem;padding:2.25rem;transition:border-color .4s,box-shadow .4s}
 .tc:hover{border-color:rgba(180,122,69,.22);box-shadow:0 16px 48px rgba(0,0,0,.3),0 0 0 1px rgba(180,122,69,.06)}
 .tc-stars{display:flex;gap:.2rem;margin-bottom:1.375rem}
 .star{color:var(--a);font-size:.8rem}
@@ -397,12 +396,28 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   .why-grid,.ft-grid{grid-template-columns:1fr}
   .ec{grid-template-columns:2.5rem 1fr;gap:0 1.25rem}
   .ec-dist{display:none}
+  .exp-header{flex-direction:column;align-items:flex-start;gap:1rem}
+  .exp-sub-txt{max-width:100%}
   .mas-grid{grid-template-columns:1fr;grid-auto-rows:220px}
   .mi{grid-row:span 1!important}
   .apt-imgs{grid-template-rows:240px 160px 160px}
   .apt-img-main{grid-column:auto}
   .fl-row{grid-template-columns:1fr}
-  .bk-form-wrap{padding:1.75rem}
+  .bk-form-wrap{padding:1.5rem}
+  .bstrip-inner{flex-direction:column;align-items:flex-start;gap:2rem}
+  .test-hdr{flex-direction:column;align-items:flex-start;gap:1rem}
+  .loc-grid{gap:2rem}
+  .ft-btm{flex-direction:column;gap:.75rem;text-align:center}
+  .hero-ctas{flex-wrap:wrap;gap:.75rem}
+}
+@media(max-width:480px){
+  .sp{padding:clamp(3.5rem,8vh,5rem) clamp(1.25rem,5vw,1.75rem)}
+  .tc{width:calc(88vw)}
+  .bk-form-wrap{padding:1.25rem}
+  .apt-imgs{grid-template-rows:200px 130px 130px}
+  .about-col{padding:2.5rem 1.25rem}
+  .mas-grid{grid-auto-rows:180px}
+  .mob-link{font-size:clamp(1.75rem,8vw,3rem)}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -521,7 +536,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="etag etag-dk">Why Choose Us</div>
       <h2 class="stitle stitle-lt">Everything you need,<br><em>nothing you don't</em></h2>
     </div>
-    <p class="why-intro-right">A stay at Expresso means quality, comfort, and genuine care — from the moment you arrive to the moment you leave.</p>
+    <p class="why-intro-right">A stay at Expresso means quality, comfort, and genuine care from the moment you arrive to the moment you leave.</p>
   </div>
   <div class="why-grid">
 
@@ -531,7 +546,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="wc-title">Prime Nelspruit Location</div>
-      <p class="wc-body">Minutes from the CBD, hospitals, shopping centres, and major routes — the perfect base for business or exploring Mpumalanga.</p>
+      <p class="wc-body">Minutes from the CBD, hospitals, shopping centres, and major routes. The perfect base for business or exploring Mpumalanga.</p>
     </div>
 
     <div class="wc">
@@ -540,7 +555,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
       </div>
       <div class="wc-title">Fast Wi-Fi</div>
-      <p class="wc-body">High-speed internet throughout — work remotely, stream your favourites, or stay connected with loved ones back home.</p>
+      <p class="wc-body">High-speed internet throughout. Work remotely, stream your favourites, or stay connected with loved ones back home.</p>
     </div>
 
     <div class="wc">
@@ -549,7 +564,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1v-4"/></svg>
       </div>
       <div class="wc-title">Secure Parking</div>
-      <p class="wc-body">Gated, on-site parking with a security boom gate. Peace of mind included — your vehicle is safe while you explore.</p>
+      <p class="wc-body">Gated, on-site parking with a security boom gate. Your vehicle is safe while you explore.</p>
     </div>
 
     <div class="wc">
@@ -567,7 +582,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </div>
       <div class="wc-title">Professional Service</div>
-      <p class="wc-body">Warm, responsive hosts reachable on WhatsApp — ready to assist with recommendations, Kruger bookings, and any queries.</p>
+      <p class="wc-body">Warm, responsive hosts reachable on WhatsApp. Ready to assist with recommendations, Kruger bookings, and any queries.</p>
     </div>
 
     <div class="wc">
@@ -576,7 +591,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       </div>
       <div class="wc-title">Affordable Luxury</div>
-      <p class="wc-body">A full luxury 2-bedroom apartment at R900 per night — premium comfort and quality at a price that makes sense.</p>
+      <p class="wc-body">A full luxury 2-bedroom apartment at R900 per night. Premium comfort and quality at a price that makes sense.</p>
     </div>
 
   </div>
@@ -605,8 +620,8 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div class="about-col">
       <div class="etag">Our Story</div>
       <h2 class="about-h">Your Home<br>Away From<br><em>Home</em></h2>
-      <p class="about-bq">"Every detail has been chosen to make you feel genuinely at home — not just accommodated."</p>
-      <p class="about-prose">A warm, character-rich 2-bedroom apartment nestled in Nelspruit, Mpumalanga's vibrant capital. Whether here for business, adventure, or rest — this apartment was made for you. A fully equipped kitchen, welcoming lounge, and two generous bedrooms promising deep, restorative sleep.</p>
+      <p class="about-bq">"Every detail has been chosen to make you feel genuinely at home, not just accommodated."</p>
+      <p class="about-prose">A warm, character-rich 2-bedroom apartment nestled in Nelspruit, Mpumalanga's vibrant capital. Whether here for business, adventure, or rest, this apartment was made for you. A fully equipped kitchen, welcoming lounge, and two generous bedrooms promising deep, restorative sleep.</p>
       <!-- Animated metrics strip -->
       <div class="about-metrics">
         <div class="am">
@@ -760,7 +775,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="ec-num">01</div>
       <div>
         <div class="ec-name">Kruger National Park</div>
-        <p class="ec-blurb">Africa's greatest game reserve. Encounter the Big Five in their natural habitat — just one hour from your door.</p>
+        <p class="ec-blurb">Africa's greatest game reserve. Encounter the Big Five in their natural habitat, just one hour from your door.</p>
       </div>
       <div class="ec-dist">87 km · ±1 hr drive</div>
     </div>
@@ -769,7 +784,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="ec-num">02</div>
       <div>
         <div class="ec-name">Lowveld Botanical Garden</div>
-        <p class="ec-blurb">One of SA's most beautiful botanical gardens — set at the confluence of two rivers, perfect for a tranquil morning walk.</p>
+        <p class="ec-blurb">One of SA's most beautiful botanical gardens, set at the confluence of two rivers. Perfect for a tranquil morning walk.</p>
       </div>
       <div class="ec-dist">3 km · ±5 min drive</div>
     </div>
@@ -778,7 +793,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="ec-num">03</div>
       <div>
         <div class="ec-name">Sudwala Caves</div>
-        <p class="ec-blurb">Among the oldest caves on Earth — a dramatic underground world of ancient stalactites and dolomite formations.</p>
+        <p class="ec-blurb">Among the oldest caves on Earth. A dramatic underground world of ancient stalactites and dolomite formations.</p>
       </div>
       <div class="ec-dist">38 km · ±30 min drive</div>
     </div>
@@ -787,7 +802,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="ec-num">04</div>
       <div>
         <div class="ec-name">Riverside &amp; Ilanga Mall</div>
-        <p class="ec-blurb">World-class shopping, restaurants, a cinema, and entertainment — two major malls just minutes from the apartment.</p>
+        <p class="ec-blurb">World-class shopping, restaurants, a cinema, and entertainment. Two major malls just minutes from the apartment.</p>
       </div>
       <div class="ec-dist">2 km · ±5 min drive</div>
     </div>
@@ -796,7 +811,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="ec-num">05</div>
       <div>
         <div class="ec-name">Mbombela Stadium</div>
-        <p class="ec-blurb">Nelspruit's iconic giraffe-inspired FIFA World Cup venue — host to major football matches and large-scale events.</p>
+        <p class="ec-blurb">Nelspruit's iconic giraffe-inspired FIFA World Cup venue, host to major football matches and large-scale events.</p>
       </div>
       <div class="ec-dist">4 km · ±8 min drive</div>
     </div>
@@ -805,7 +820,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="ec-num">06</div>
       <div>
         <div class="ec-name">Mpumalanga Scenic Routes</div>
-        <p class="ec-blurb">God's Window, Blyde River Canyon, Bourke's Luck Potholes — day trips through some of the world's most spectacular scenery.</p>
+        <p class="ec-blurb">God's Window, Blyde River Canyon, Bourke's Luck Potholes. Day trips through some of the world's most spectacular scenery.</p>
       </div>
       <div class="ec-dist">60 km · ±45 min drive</div>
     </div>
@@ -819,7 +834,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div>
       <div class="etag">Reserve Your Stay</div>
       <h2 class="bk-info-title">Book your stay,<br><em>instantly on WhatsApp</em></h2>
-      <p class="bk-info-body">Fill in your details and we'll send your request directly to our WhatsApp. We respond fast — most bookings confirmed within the hour.</p>
+      <p class="bk-info-body">Fill in your details and we'll send your request directly to our WhatsApp. We respond fast. Most bookings confirmed within the hour.</p>
       <div class="bk-perks">
         <div class="bk-perk"><div class="bk-perk-dot">✓</div>Instant WhatsApp confirmation</div>
         <div class="bk-perk"><div class="bk-perk-dot">✓</div>No booking fees, no hidden charges</div>
@@ -910,46 +925,55 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 
       <div class="tc">
         <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="tc-text">"Expresso was the highlight of our Mpumalanga trip. The apartment was stunning — bold, warm, and immaculately clean. The hosts were incredibly welcoming. We will absolutely be back."</p>
+        <p class="tc-text">"The location was perfect and the place was clean. WiFi works perfectly and the rusks are a very nice touch."</p>
         <div class="tc-auth">
-          <div class="tc-av"><img src="https://placehold.co/80x80/B47A45/FAF8F5?text=SM" alt="Sarah M."></div>
-          <div><div class="tc-name">Sarah M.</div><div class="tc-from">Johannesburg, South Africa</div></div>
+          <div class="tc-av" style="background:#B47A45;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;color:#FAF8F5">S</div>
+          <div><div class="tc-name">Sibanyoni</div><div class="tc-from">South Africa · Couple · Jan 2026</div></div>
         </div>
       </div>
 
       <div class="tc">
         <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="tc-text">"A genuinely special place. The kitchen had everything we needed and the location was perfect for Kruger. The character of this apartment is unlike anything we've stayed in before."</p>
+        <p class="tc-text">"The place is central to malls, shopping centres, Lowveld Botanical Gardens and White River. The coffee, tea, milk, sugar and rusks were such a thoughtful touch. A home away from home."</p>
         <div class="tc-auth">
-          <div class="tc-av"><img src="https://placehold.co/80x80/D8A876/121212?text=MT" alt="Mark T."></div>
-          <div><div class="tc-name">Mark &amp; Lisa T.</div><div class="tc-from">Cape Town, South Africa</div></div>
+          <div class="tc-av" style="background:#D8A876;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;color:#121212">N</div>
+          <div><div class="tc-name">Nonhlanhla</div><div class="tc-from">South Africa · Solo traveller · Dec 2025</div></div>
         </div>
       </div>
 
       <div class="tc">
         <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="tc-text">"The warmth of this apartment perfectly matched the warmth of South Africa. Two beautiful bedrooms, a fully equipped kitchen, and hosts who genuinely cared. Exceeded every expectation."</p>
+        <p class="tc-text">"I liked everything about the place. It was clean and the staff was friendly. Liked the smell inside the house. I'll definitely come back."</p>
         <div class="tc-auth">
-          <div class="tc-av"><img src="https://placehold.co/80x80/2a1a0a/D8A876?text=JO" alt="James O."></div>
-          <div><div class="tc-name">James O.</div><div class="tc-from">London, United Kingdom</div></div>
+          <div class="tc-av" style="background:#3a1a0a;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;color:#D8A876">M</div>
+          <div><div class="tc-name">Maziya</div><div class="tc-from">South Africa · Couple · Jan 2026</div></div>
         </div>
       </div>
 
       <div class="tc">
         <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="tc-text">"Stayed a full week with the family and could not have been happier. Spacious, spotlessly clean, and the R900/night price is unbeatable for what you get. Nelspruit has a hidden gem."</p>
+        <p class="tc-text">"Friendly staff and cleanliness of the apartment. Staff were always ready to help with anything we needed and to answer our questions."</p>
         <div class="tc-auth">
-          <div class="tc-av"><img src="https://placehold.co/80x80/B47A45/FAF8F5?text=NK" alt="Nomsa K."></div>
-          <div><div class="tc-name">Nomsa K.</div><div class="tc-from">Pretoria, South Africa</div></div>
+          <div class="tc-av" style="background:#2a2010;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;color:#D8A876">M</div>
+          <div><div class="tc-name">Mdluli</div><div class="tc-from">South Africa · Solo traveller · Jan 2026</div></div>
         </div>
       </div>
 
       <div class="tc">
         <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <p class="tc-text">"Perfect base for our Kruger adventure. The apartment is comfortable and great value. The hosts responded instantly on WhatsApp and couldn't be more helpful. 10/10 — will be back."</p>
+        <p class="tc-text">"Everything was perfect. The place was clean and comfortable."</p>
         <div class="tc-auth">
-          <div class="tc-av"><img src="https://placehold.co/80x80/4a3020/D8A876?text=PV" alt="Pieter V."></div>
-          <div><div class="tc-name">Pieter V.</div><div class="tc-from">Durban, South Africa</div></div>
+          <div class="tc-av" style="background:#4a2a10;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;color:#FAF8F5">T</div>
+          <div><div class="tc-name">Tinyiko</div><div class="tc-from">South Africa · Group · Dec 2025</div></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-text">"Well located and safe."</p>
+        <div class="tc-auth">
+          <div class="tc-av" style="background:#1a2a1a;display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;color:#D8A876">H</div>
+          <div><div class="tc-name">Huildeo</div><div class="tc-from">Mozambique · Couple · Nov 2025</div></div>
         </div>
       </div>
 
@@ -961,6 +985,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div class="td" onclick="goSlide(2)"></div>
     <div class="td" onclick="goSlide(3)"></div>
     <div class="td" onclick="goSlide(4)"></div>
+    <div class="td" onclick="goSlide(5)"></div>
   </div>
 </section>
 
@@ -983,7 +1008,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div>
       <div class="etag etag-dk">Find Us</div>
       <h2 class="loc-title">Gateway to<br><em>Africa's</em><br>Greatest Wild</h2>
-      <p class="loc-body">Situated in Nelspruit, Mpumalanga — minutes from the CBD and 87 km from Kruger's Numbi Gate. Panorama Route, Blyde River Canyon, and Sudwala Caves all within easy reach.</p>
+      <p class="loc-body">Situated in Nelspruit, Mpumalanga, minutes from the CBD and 87 km from Kruger's Numbi Gate. Panorama Route, Blyde River Canyon, and Sudwala Caves all within easy reach.</p>
       <div class="ci">
         <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
         <div>
@@ -1174,8 +1199,10 @@ function startHero(){
   gsap.from('#hero-sub',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:.9});
   gsap.from('#hero-ctas',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:1.0});
   gsap.from('#review-badge',{x:30,opacity:0,duration:1.0,ease:'power3.out',delay:1.15});
-  gsap.to('#hero-img',{yPercent:20,ease:'none',
-    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1}});
+  if(!window.matchMedia('(hover:none)').matches){
+    gsap.to('#hero-img',{yPercent:20,ease:'none',
+      scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1}});
+  }
   initScrollAnims();
   initActiveNav();
   initCounters();
@@ -1235,13 +1262,16 @@ function initScrollAnims(){
     });
   }
 
-  /* About — multi-speed parallax creates physical Z-axis depth */
-  gsap.to('#about-par',{yPercent:-15,ease:'none',
-    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1.2}});
-  gsap.to('.about-wm',{yPercent:-25,ease:'none',
-    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
-  gsap.to('#about-over',{yPercent:10,ease:'none',
-    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:.8}});
+  /* About — parallax depth (desktop only to keep mobile smooth) */
+  const isTouch=window.matchMedia('(hover:none)').matches;
+  if(!isTouch){
+    gsap.to('#about-par',{yPercent:-15,ease:'none',
+      scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1.2}});
+    gsap.to('.about-wm',{yPercent:-25,ease:'none',
+      scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.to('#about-over',{yPercent:10,ease:'none',
+      scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:.8}});
+  }
 
   /* Why Choose Us — staggered card reveals */
   rv('.why-intro > *',{stagger:.1,trigger:'#why'});
