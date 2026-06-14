@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expreso Accommodation — Nelspruit, Mpumalanga</title>
+<title>Expresso Accommodation — Nelspruit, Mpumalanga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#B47A45',secondary:'#E6D4C2',dark:'#121212',light:'#FAF8F5',accent:'#D8A876'},fontFamily:{display:['Cormorant Garamond','serif'],body:['Jost','sans-serif']}}}}</script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -20,14 +19,12 @@
   --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
   --ease-out:cubic-bezier(0.22,1,0.36,1);
 }
-html{scroll-behavior:auto;overflow-x:hidden}
-body{background:#FAF8F5;color:#121212;font-family:'Jost',sans-serif;overflow-x:hidden;cursor:none}
-
-/* GRAIN OVERLAY */
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.025;pointer-events:none;z-index:9990}
+html{overflow-x:hidden;scroll-behavior:auto}
+body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x:hidden;cursor:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:9990}
 
 /* CURSOR */
-#cur{width:8px;height:8px;background:var(--p);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:opacity .3s}
+#cur{width:8px;height:8px;background:var(--p);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
 #cur-r{width:36px;height:36px;border:1px solid rgba(180,122,69,.35);border-radius:50%;position:fixed;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:width .3s var(--ease-lux),height .3s var(--ease-lux),border-color .3s}
 
 /* PRELOADER */
@@ -35,59 +32,27 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 .pl-logo{font-family:'Cormorant Garamond',serif;font-size:clamp(2.25rem,5vw,3.75rem);font-weight:300;color:var(--l);letter-spacing:.22em;text-transform:uppercase;line-height:1}
 .pl-sub{font-family:'Jost',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.4em;color:var(--p);text-transform:uppercase;margin-top:.75rem}
 .pl-bar-wrap{width:100px;height:1px;background:rgba(255,255,255,.08);margin-top:2.5rem;overflow:hidden}
-.pl-bar{height:100%;width:0%;background:var(--p);transition:width .08s linear}
+.pl-bar{height:100%;width:0%;background:var(--p)}
 
-/* ── NAV ──────────────────────────────────────────────────── */
-#nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  padding:1.5rem clamp(1.5rem,5vw,5rem);
-  display:flex;align-items:center;justify-content:space-between;
-  transition:background .5s var(--ease-lux),backdrop-filter .5s,border-color .5s,padding .4s var(--ease-lux);
-  border-bottom:1px solid transparent;
-}
-#nav.scrolled{
-  background:rgba(12,12,12,.88);
-  backdrop-filter:blur(28px);
-  -webkit-backdrop-filter:blur(28px);
-  border-bottom-color:rgba(255,255,255,.06);
-  padding-top:1rem;
-  padding-bottom:1rem;
-}
-.nav-logo{
-  font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;
-  color:var(--l);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
-  flex-shrink:0;
-}
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem clamp(1.5rem,5vw,5rem);display:flex;align-items:center;justify-content:space-between;transition:background .5s var(--ease-lux),backdrop-filter .5s,border-color .5s,padding .4s var(--ease-lux);border-bottom:1px solid transparent}
+#nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom-color:rgba(255,255,255,.06);padding-top:1rem;padding-bottom:1rem}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--l);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;flex-shrink:0}
 .nav-links{display:flex;align-items:center;gap:2.25rem;flex:1;justify-content:center}
-.nav-link{
-  font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;
-  color:rgba(250,248,245,.5);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
-  position:relative;padding-bottom:3px;
-  transition:color .35s var(--ease-lux);
-}
-.nav-link::after{
-  content:'';position:absolute;bottom:0;left:0;width:0;height:1px;
-  background:var(--a);transition:width .4s var(--ease-lux);
-}
+.nav-link{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;color:rgba(250,248,245,.5);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;position:relative;padding-bottom:3px;transition:color .35s var(--ease-lux)}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--a);transition:width .4s var(--ease-lux)}
 .nav-link:hover{color:rgba(250,248,245,.85)}
-.nav-link:hover::after{width:100%}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
 .nav-link.active{color:var(--a)}
-.nav-link.active::after{width:100%}
-.nav-book{
-  font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;
-  color:var(--d);background:var(--p);letter-spacing:.15em;text-transform:uppercase;
-  text-decoration:none;padding:.5rem 1.375rem;border-radius:9999px;flex-shrink:0;
-  transition:background .35s var(--ease-lux),transform .25s var(--ease-spring);
-}
+.nav-book{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;color:var(--d);background:var(--p);letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:.5rem 1.375rem;border-radius:9999px;flex-shrink:0;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring)}
 .nav-book:hover{background:var(--a);transform:scale(1.04)}
-.nav-book:active{transform:scale(.97)}
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.5rem}
-.ham span{display:block;width:22px;height:1.5px;background:rgba(250,248,245,.8);transform-origin:center;transition:transform .35s var(--ease-out),opacity .25s}
+.ham span{display:block;width:22px;height:1.5px;background:rgba(250,248,245,.8);transform-origin:center}
 
 /* MOBILE MENU */
-#mob-menu{position:fixed;inset:0;background:rgba(12,12,12,.97);backdrop-filter:blur(20px);z-index:490;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;pointer-events:none;transition:opacity .4s var(--ease-lux)}
+#mob-menu{position:fixed;inset:0;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);z-index:490;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;opacity:0;pointer-events:none;transition:opacity .4s var(--ease-lux)}
 #mob-menu.open{opacity:1;pointer-events:all}
-.mob-link{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,8vw,3.5rem);font-weight:300;color:rgba(250,248,245,.8);letter-spacing:.04em;text-decoration:none;transform:translateY(30px);opacity:0;transition:color .3s,transform .5s var(--ease-out),opacity .5s var(--ease-out)}
+.mob-link{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,8vw,3.5rem);font-weight:300;color:rgba(250,248,245,.8);text-decoration:none;transform:translateY(30px);opacity:0;transition:color .3s,transform .5s var(--ease-out),opacity .5s var(--ease-out)}
 #mob-menu.open .mob-link{transform:translateY(0);opacity:1}
 #mob-menu.open .mob-link:nth-child(1){transition-delay:.04s}
 #mob-menu.open .mob-link:nth-child(2){transition-delay:.09s}
@@ -97,272 +62,339 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 #mob-menu.open .mob-link:nth-child(6){transition-delay:.29s}
 .mob-link:hover{color:var(--a)}
 
-/* ── HERO ─────────────────────────────────────────────────── */
+/* HERO */
 #hero{position:relative;min-height:100dvh;display:flex;align-items:center;overflow:hidden;background:var(--d)}
 .hero-img-wrap{position:absolute;inset:0;overflow:hidden}
 .hero-img{width:100%;height:120%;object-fit:cover;object-position:center 40%;transform-origin:center;will-change:transform}
-.hero-ov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(12,12,12,.88) 35%,rgba(12,12,12,.42) 70%,rgba(12,12,12,.22) 100%)}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,10,10,.9) 35%,rgba(10,10,10,.45) 70%,rgba(10,10,10,.2) 100%)}
 .hero-ov2{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 30%,rgba(180,122,69,.09) 0%,transparent 55%)}
 .hero-content{position:relative;z-index:10;padding:0 clamp(1.5rem,6vw,6rem);width:100%;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4rem}
-.hero-left{}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.875rem;font-family:'Jost',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.35em;color:var(--a);text-transform:uppercase;margin-bottom:2rem}
 .hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--p)}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7.5vw,8rem);font-weight:300;line-height:.96;letter-spacing:-.025em;color:var(--l);margin-bottom:2rem}
 .hero-title .ln{display:block;overflow:hidden}
 .hero-title .lni{display:block}
-.ht-plain{color:var(--l)}
-.ht-italic-copper{color:var(--a);font-style:italic}
+.ht-copper{color:var(--a);font-style:italic}
 .hero-sub{font-family:'Jost',sans-serif;font-size:.88rem;font-weight:300;color:rgba(250,248,245,.6);line-height:1.85;max-width:420px;margin-bottom:2.75rem}
 .hero-ctas{display:flex;align-items:center;gap:1.125rem;flex-wrap:wrap}
-/* Review badge */
-.review-badge{
-  flex-shrink:0;align-self:center;
-  background:rgba(250,248,245,.06);
-  border:1px solid rgba(250,248,245,.12);
-  backdrop-filter:blur(12px);
-  border-radius:1.25rem;
-  padding:1.75rem 2rem;
-  text-align:center;
-  min-width:180px;
-}
+.review-badge{flex-shrink:0;background:rgba(250,248,245,.06);border:1px solid rgba(250,248,245,.12);backdrop-filter:blur(12px);border-radius:1.25rem;padding:1.75rem 2rem;text-align:center;min-width:180px}
 .rb-stars{color:var(--a);font-size:1.1rem;letter-spacing:.1em;margin-bottom:.75rem}
 .rb-score{font-family:'Cormorant Garamond',serif;font-size:3.25rem;font-weight:300;color:var(--l);line-height:1;margin-bottom:.35rem}
-.rb-label{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:400;letter-spacing:.22em;color:rgba(250,248,245,.5);text-transform:uppercase;line-height:1.5}
+.rb-label{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.22em;color:rgba(250,248,245,.5);text-transform:uppercase;line-height:1.5}
 .rb-sep{width:2rem;height:1px;background:rgba(180,122,69,.4);margin:1rem auto}
 .rb-source{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:300;letter-spacing:.12em;color:rgba(250,248,245,.35);text-transform:uppercase}
-/* Scroll indicator */
 .scroll-hint{position:absolute;left:50%;bottom:2rem;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:.4rem}
 .scroll-hint span{font-family:'Jost',sans-serif;font-size:.5rem;letter-spacing:.3em;color:rgba(250,248,245,.3);text-transform:uppercase}
 .scroll-line{width:1px;height:2.5rem;background:rgba(250,248,245,.1);position:relative;overflow:hidden}
 .scroll-line::after{content:'';position:absolute;top:-100%;left:0;right:0;height:100%;background:var(--p);animation:sdrop 2s cubic-bezier(.76,0,.24,1) infinite}
 @keyframes sdrop{0%{top:-100%}100%{top:100%}}
 
-/* ── BUTTONS ──────────────────────────────────────────────── */
+/* BUTTONS */
 .btn-p{display:inline-flex;align-items:center;gap:.7rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--d);background:var(--p);padding:.875rem 1.625rem .875rem 1.875rem;border-radius:9999px;transition:background .4s var(--ease-lux),transform .25s var(--ease-spring)}
 .btn-p:hover{background:var(--a);transform:scale(1.03)}
 .btn-p:active{transform:scale(.97)}
 .btn-icon{width:1.625rem;height:1.625rem;border-radius:9999px;background:rgba(18,18,18,.18);display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:transform .35s var(--ease-spring)}
 .btn-p:hover .btn-icon{transform:translate(2px,-1px) scale(1.1)}
-.btn-outline{display:inline-flex;align-items:center;gap:.625rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:rgba(250,248,245,.75);border:1px solid rgba(250,248,245,.25);padding:.875rem 1.75rem;border-radius:9999px;transition:border-color .35s var(--ease-lux),color .35s var(--ease-lux),background .35s var(--ease-lux)}
+.btn-outline{display:inline-flex;align-items:center;gap:.625rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:rgba(250,248,245,.75);border:1px solid rgba(250,248,245,.25);padding:.875rem 1.75rem;border-radius:9999px;transition:border-color .35s,color .35s,background .35s}
 .btn-outline:hover{border-color:rgba(216,168,118,.6);color:var(--a);background:rgba(216,168,118,.06)}
-.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:rgba(250,248,245,.65);transition:color .35s var(--ease-lux)}
-.btn-ghost:hover{color:var(--a)}
 
 /* MARQUEE */
 #marquee{background:var(--d);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);padding:.875rem 0;overflow:hidden}
-.marquee-track{display:flex;white-space:nowrap;animation:marquee 30s linear infinite}
-.marquee-track:hover{animation-play-state:paused}
-.marquee-item{font-family:'Jost',sans-serif;font-size:.57rem;font-weight:400;letter-spacing:.3em;color:rgba(250,248,245,.32);text-transform:uppercase;padding:0 2.5rem}
-.marquee-dot{color:var(--p)}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-track{display:flex;white-space:nowrap;animation:mq 32s linear infinite}
+.mi-text{font-family:'Jost',sans-serif;font-size:.57rem;font-weight:400;letter-spacing:.3em;color:rgba(250,248,245,.3);text-transform:uppercase;padding:0 2.5rem}
+.mq-dot{color:var(--p)}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* SECTION PADDING */
+/* UTILITIES */
 .sp{padding:clamp(5rem,10vh,7.5rem) clamp(1.5rem,6vw,6rem)}
-
-/* EYEBROW TAG */
 .etag{display:inline-flex;align-items:center;gap:.625rem;background:rgba(180,122,69,.07);border:1px solid rgba(180,122,69,.22);border-radius:9999px;padding:.3rem .9rem;font-family:'Jost',sans-serif;font-size:.55rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--p);margin-bottom:1.5rem}
-.etag-dark{background:rgba(180,122,69,.12);border-color:rgba(180,122,69,.3);color:var(--a)}
-
-/* SECTION TITLES */
+.etag-dk{background:rgba(180,122,69,.14);border-color:rgba(180,122,69,.3);color:var(--a)}
 .stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(2.25rem,4.5vw,4.5rem);font-weight:300;line-height:1.06;letter-spacing:-.02em;color:var(--d)}
 .stitle em{font-style:italic;color:var(--p)}
 .stitle-lt{color:var(--l)}
 .stitle-lt em{color:var(--a)}
 .crule{width:2.5rem;height:1px;background:var(--p);margin:1.75rem 0}
-.watermark{position:absolute;font-family:'Cormorant Garamond',serif;font-size:clamp(7rem,16vw,14rem);font-weight:300;color:rgba(180,122,69,.04);letter-spacing:-.04em;pointer-events:none;user-select:none;line-height:1;white-space:nowrap;z-index:0}
 
-/* ── ABOUT ────────────────────────────────────────────────── */
-#about{background:var(--l)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,6rem);align-items:center}
-.about-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.5vw,2.1rem);font-weight:300;font-style:italic;color:var(--d);line-height:1.45;margin-bottom:1.5rem}
-.about-body{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(18,18,18,.6);line-height:1.9;margin-bottom:1.25rem}
-.stat-row{display:flex;gap:2.5rem;margin-top:2.75rem;padding-top:2rem;border-top:1px solid rgba(18,18,18,.08)}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:300;color:var(--p);line-height:1}
-.stat-l{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:400;letter-spacing:.18em;color:rgba(18,18,18,.45);text-transform:uppercase;margin-top:.2rem}
-.bezel{border-radius:1.375rem;background:rgba(180,122,69,.07);border:1px solid rgba(180,122,69,.14);padding:.4rem}
+/* ── WHY CHOOSE US ──────────────────────────────────────── */
+#why{background:var(--d);position:relative;overflow:hidden}
+#why::before{content:'';position:absolute;top:-20%;left:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(180,122,69,.055) 0%,transparent 65%);pointer-events:none}
+#why::after{content:'';position:absolute;bottom:-20%;right:-5%;width:45%;height:60%;background:radial-gradient(ellipse,rgba(180,122,69,.04) 0%,transparent 65%);pointer-events:none}
+.why-intro{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:3.5rem;position:relative;z-index:1}
+.why-intro-right{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(250,248,245,.38);max-width:280px;line-height:1.9}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;position:relative;z-index:1}
+.wc{border-radius:1.25rem;border:1px solid rgba(255,255,255,.06);background:#181818;padding:2.25rem 1.875rem;position:relative;overflow:hidden;transition:transform .5s var(--ease-lux),border-color .4s,box-shadow .5s var(--ease-lux)}
+.wc::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 0%,rgba(180,122,69,.07) 0%,transparent 60%);opacity:0;transition:opacity .5s}
+.wc:hover::before{opacity:1}
+.wc:hover{transform:translateY(-10px);border-color:rgba(180,122,69,.3);box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(180,122,69,.12)}
+.wc-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(180,122,69,.08);line-height:1;position:absolute;top:1.25rem;right:1.5rem;letter-spacing:-.04em;pointer-events:none}
+.wc-ico{width:3rem;height:3rem;border-radius:.875rem;background:rgba(180,122,69,.1);border:1px solid rgba(180,122,69,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:background .4s,border-color .4s}
+.wc-ico svg{width:1.375rem;height:1.375rem;color:var(--a);stroke:currentColor;fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.wc:hover .wc-ico{background:rgba(180,122,69,.18);border-color:rgba(180,122,69,.35)}
+.wc-title{font-family:'Cormorant Garamond',serif;font-size:1.375rem;font-weight:300;color:var(--l);margin-bottom:.625rem;line-height:1.2}
+.wc-body{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(250,248,245,.4);line-height:1.85}
+
+/* ── ABOUT ──────────────────────────────────────────────── */
+#about{background:var(--l);position:relative;overflow:hidden}
+.about-wm{position:absolute;right:-3%;top:-5%;font-family:'Cormorant Garamond',serif;font-size:clamp(7rem,16vw,14rem);font-weight:300;color:rgba(180,122,69,.04);letter-spacing:-.04em;pointer-events:none;user-select:none;line-height:1;white-space:nowrap;z-index:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,6rem);align-items:center;position:relative;z-index:1}
+.about-pull{font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2vw,1.875rem);font-weight:300;font-style:italic;color:var(--d);line-height:1.5;margin-bottom:1.5rem;padding-left:1.375rem;border-left:2px solid var(--p)}
+.about-body{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(18,18,18,.57);line-height:1.9;margin-bottom:1.125rem}
+.about-pillars{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.5rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(18,18,18,.08)}
+.ap{display:flex;align-items:center;gap:.5rem;font-family:'Jost',sans-serif;font-size:.68rem;font-weight:400;color:rgba(18,18,18,.58)}
+.ap::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--p);flex-shrink:0}
+/* Bezel image frame */
+.bezel{border-radius:1.375rem;background:rgba(180,122,69,.07);border:1px solid rgba(180,122,69,.14);padding:.4rem;position:relative}
 .bezel-inner{border-radius:calc(1.375rem - .1rem);overflow:hidden;box-shadow:inset 0 1px 1px rgba(255,255,255,.45)}
-.bezel-inner img{width:100%;display:block;transition:transform 1s var(--ease-lux)}
+.bezel-inner img{width:100%;display:block;transition:transform 1s var(--ease-lux);will-change:transform}
 .bezel:hover .bezel-inner img{transform:scale(1.04)}
+.about-float{position:absolute;bottom:-1rem;left:-1rem;background:var(--d);border-radius:1rem;padding:1.25rem 1.625rem;box-shadow:0 16px 48px rgba(18,18,18,.22)}
+.af-n{font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:300;color:var(--a);line-height:1}
+.af-l{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:400;letter-spacing:.18em;color:rgba(250,248,245,.38);text-transform:uppercase;margin-top:.2rem}
 
-/* ── ACCOMMODATION CARDS ──────────────────────────────────── */
+/* ── APARTMENT ──────────────────────────────────────────── */
 #accommodation{background:var(--d);position:relative;overflow:hidden}
 #accommodation::before{content:'';position:absolute;top:-20%;right:-8%;width:50%;height:80%;background:radial-gradient(ellipse,rgba(180,122,69,.055) 0%,transparent 65%);pointer-events:none}
-.acc-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:4rem;flex-wrap:wrap;gap:2rem;position:relative;z-index:1}
-.acc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative;z-index:1}
+.apt-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,6vw,5rem);align-items:start;position:relative;z-index:1}
+.apt-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:300px 200px;gap:.75rem}
+.apt-img-main{grid-column:1/-1;border-radius:1.125rem;overflow:hidden;cursor:pointer}
+.apt-img-main img,.apt-img-sm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease-lux)}
+.apt-img-main:hover img,.apt-img-sm:hover img{transform:scale(1.05)}
+.apt-img-sm{border-radius:.875rem;overflow:hidden;cursor:pointer}
+.apt-features{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;margin:1.75rem 0}
+.af2{display:flex;align-items:center;gap:.625rem;font-family:'Jost',sans-serif;font-size:.68rem;font-weight:300;color:rgba(250,248,245,.52)}
+.af2-dot{width:5px;height:5px;border-radius:50%;background:var(--p);flex-shrink:0}
+.apt-price-box{background:rgba(180,122,69,.08);border:1px solid rgba(180,122,69,.2);border-radius:1rem;padding:1.625rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.apt-from{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.2em;color:rgba(250,248,245,.38);text-transform:uppercase;margin-bottom:.25rem}
+.apt-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--a);line-height:1}
+.apt-per{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.28);letter-spacing:.08em}
+.apt-occ-n{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--l);text-align:right}
+.apt-occ-l{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:300;letter-spacing:.15em;color:rgba(250,248,245,.32);text-transform:uppercase;text-align:right;margin-top:.15rem}
 
-/* Card Shell (double-bezel) */
-.ac{
-  background:#181818;border-radius:1.375rem;overflow:hidden;
-  border:1px solid rgba(255,255,255,.06);
-  display:flex;flex-direction:column;
-  transition:transform .5s var(--ease-lux),box-shadow .5s var(--ease-lux),border-color .4s;
-}
-.ac:hover{
-  transform:translateY(-10px);
-  box-shadow:0 32px 80px rgba(0,0,0,.5),0 0 0 1px rgba(180,122,69,.15),0 8px 32px rgba(180,122,69,.08);
-  border-color:rgba(180,122,69,.2);
-}
-/* Card image */
-.ac-img-wrap{
-  position:relative;height:260px;overflow:hidden;flex-shrink:0;
-}
-.ac-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease-lux)}
-.ac:hover .ac-img{transform:scale(1.07)}
-.ac-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,18,18,.7) 0%,transparent 50%)}
-.ac-badge{
-  position:absolute;top:1.125rem;left:1.125rem;
-  background:rgba(180,122,69,.9);backdrop-filter:blur(8px);
-  border-radius:9999px;padding:.3rem .875rem;
-  font-family:'Jost',sans-serif;font-size:.5rem;font-weight:500;
-  letter-spacing:.2em;color:var(--d);text-transform:uppercase;
-}
-/* Card body */
-.ac-body{flex:1;padding:1.75rem;display:flex;flex-direction:column}
-.ac-type{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.25em;color:rgba(216,168,118,.65);text-transform:uppercase;margin-bottom:.5rem}
-.ac-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2vw,1.625rem);font-weight:300;color:var(--l);line-height:1.15;margin-bottom:1rem}
-.ac-desc{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(250,248,245,.42);line-height:1.8;margin-bottom:1.5rem}
-/* Amenities mini grid */
-.ac-amenities{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;margin-bottom:1.5rem}
-.ac-am{display:flex;align-items:center;gap:.4rem;font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;color:rgba(250,248,245,.5)}
-.ac-am-dot{width:4px;height:4px;border-radius:50%;background:var(--p);flex-shrink:0}
-/* Occupancy */
-.ac-occ{display:flex;align-items:center;gap:1.25rem;padding:.875rem 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:1.5rem}
-.ac-occ-item{display:flex;align-items:center;gap:.4rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.45)}
-.ac-occ-icon{font-size:.75rem}
-/* Price + CTA */
-.ac-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
-.ac-price-from{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:300;letter-spacing:.12em;color:rgba(250,248,245,.3);text-transform:uppercase;margin-bottom:.2rem}
-.ac-price{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--a);line-height:1}
-.ac-price-note{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:300;color:rgba(250,248,245,.25);letter-spacing:.08em}
-.ac-btn{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-family:'Jost',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
-  text-decoration:none;color:var(--p);border:1px solid rgba(180,122,69,.3);
-  padding:.625rem 1.25rem;border-radius:9999px;
-  transition:background .35s var(--ease-lux),color .35s,border-color .35s,transform .25s var(--ease-spring);
-}
-.ac-btn:hover{background:var(--p);color:var(--d);border-color:var(--p);transform:scale(1.03)}
-.ac-btn:active{transform:scale(.97)}
-
-/* ── AMENITIES ────────────────────────────────────────────── */
-#amenities{background:var(--l)}
-.am-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.125rem;margin-top:3.5rem}
-.am-card{background:rgba(255,255,255,.72);border:1px solid rgba(180,122,69,.1);border-radius:.875rem;padding:1.75rem 1.375rem;transition:transform .4s var(--ease-lux),border-color .4s,box-shadow .4s var(--ease-lux)}
-.am-card:hover{transform:translateY(-5px);border-color:rgba(180,122,69,.28);box-shadow:0 16px 48px rgba(180,122,69,.1),0 2px 8px rgba(18,18,18,.05)}
-.am-ico{width:2.25rem;height:2.25rem;color:var(--p);margin-bottom:1.125rem;flex-shrink:0}
-.am-name{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:500;color:var(--d);letter-spacing:.04em;margin-bottom:.35rem}
-.am-desc{font-family:'Jost',sans-serif;font-size:.68rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.65}
-
-/* ── GALLERY ──────────────────────────────────────────────── */
+/* ── GALLERY ────────────────────────────────────────────── */
 #gallery{background:var(--d);padding:clamp(5rem,10vh,7.5rem) 0}
-.gal-hdr{padding:0 clamp(1.5rem,6vw,6rem);margin-bottom:3rem}
-.gal-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:260px 260px;gap:.875rem;padding:0 clamp(1.5rem,6vw,6rem)}
-.gi{border-radius:.875rem;overflow:hidden}
-.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease-lux)}
-.gi:hover img{transform:scale(1.07)}
-.gi:nth-child(1){grid-column:1/5;grid-row:1/3}
-.gi:nth-child(2){grid-column:5/9;grid-row:1/2}
-.gi:nth-child(3){grid-column:9/13;grid-row:1/2}
-.gi:nth-child(4){grid-column:5/8;grid-row:2/3}
-.gi:nth-child(5){grid-column:8/13;grid-row:2/3}
+.gal-hdr{padding:0 clamp(1.5rem,6vw,6rem);margin-bottom:3rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.gal-hint{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.18em;color:rgba(250,248,245,.28);text-transform:uppercase;display:flex;align-items:center;gap:.625rem}
+.gal-hint::before{content:'';width:1.5rem;height:1px;background:rgba(250,248,245,.18)}
 
-/* ── EXPERIENCES ──────────────────────────────────────────── */
-#experiences{background:var(--l);position:relative;overflow:hidden}
-.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.exp-card{border-radius:1.125rem;overflow:hidden;position:relative;background:#1c1410;cursor:pointer}
-.exp-img-wrap{height:320px;overflow:hidden;position:relative}
-.exp-img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease-lux)}
-.exp-card:hover .exp-img{transform:scale(1.08)}
-.exp-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,6,2,.92) 0%,rgba(12,6,2,.25) 60%,rgba(12,6,2,.1) 100%)}
-.exp-content{position:absolute;bottom:0;left:0;right:0;padding:1.75rem}
-.exp-dist{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.22em;color:var(--a);text-transform:uppercase;margin-bottom:.5rem}
-.exp-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--l);line-height:1.15;margin-bottom:.5rem}
-.exp-desc{font-family:'Jost',sans-serif;font-size:.68rem;font-weight:300;color:rgba(250,248,245,.55);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .5s var(--ease-lux),opacity .4s}
-.exp-card:hover .exp-desc{max-height:4rem;opacity:1}
-.exp-desc{opacity:0}
-.exp-arrow{position:absolute;top:1.125rem;right:1.125rem;width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(250,248,245,.2);display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.5);font-size:.75rem;transition:border-color .35s,color .35s,transform .35s var(--ease-spring)}
-.exp-card:hover .exp-arrow{border-color:var(--a);color:var(--a);transform:rotate(-45deg)}
+/* Masonry */
+.mas-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:180px;gap:1rem;padding:0 clamp(1.5rem,6vw,6rem)}
+.mi{border-radius:1rem;overflow:hidden;position:relative;cursor:pointer}
+.mi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s var(--ease-lux)}
+.mi:hover img{transform:scale(1.08)}
+.mi-ov{position:absolute;inset:0;background:rgba(10,10,10,0);transition:background .45s}
+.mi:hover .mi-ov{background:rgba(10,10,10,.18)}
+.mi-zoom{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);width:2.875rem;height:2.875rem;border-radius:50%;background:rgba(250,248,245,.12);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--l);font-size:1.1rem;transition:transform .35s var(--ease-spring)}
+.mi:hover .mi-zoom{transform:translate(-50%,-50%) scale(1)}
+.mi-caption{position:absolute;bottom:0;left:0;right:0;padding:.875rem 1rem;background:linear-gradient(to top,rgba(10,10,10,.75) 0%,transparent 100%);font-family:'Jost',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.12em;color:rgba(250,248,245,.65);text-transform:uppercase;transform:translateY(8px);opacity:0;transition:transform .4s var(--ease-lux),opacity .4s}
+.mi:hover .mi-caption{transform:translateY(0);opacity:1}
+/* Row spans */
+.mi:nth-child(1){grid-row:span 3}
+.mi:nth-child(2){grid-row:span 2}
+.mi:nth-child(3){grid-row:span 2}
+.mi:nth-child(4){grid-row:span 1}
+.mi:nth-child(5){grid-row:span 1}
+.mi:nth-child(6){grid-row:span 2}
+.mi:nth-child(7){grid-row:span 2}
+.mi:nth-child(8){grid-row:span 1}
 
-/* ── TESTIMONIALS ─────────────────────────────────────────── */
-#testimonials{background:#FDFBF8}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
-.tc{background:#fff;border:1px solid rgba(180,122,69,.09);border-radius:1.125rem;padding:2.25rem;transition:transform .4s var(--ease-lux),box-shadow .4s var(--ease-lux)}
-.tc:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(18,18,18,.08),0 4px 12px rgba(18,18,18,.04)}
+/* LIGHTBOX */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:8000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s var(--ease-lux)}
+#lightbox.open{opacity:1;pointer-events:all}
+#lb-img{max-width:88vw;max-height:80vh;object-fit:contain;border-radius:.875rem;display:block}
+.lb-caption-text{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.2em;color:rgba(250,248,245,.38);text-transform:uppercase;text-align:center;margin-top:1rem}
+.lb-close-btn{position:fixed;top:1.75rem;right:1.75rem;width:2.75rem;height:2.75rem;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.65);font-size:1.125rem;cursor:pointer;transition:background .3s,color .3s}
+.lb-close-btn:hover{background:rgba(255,255,255,.14);color:var(--l)}
+.lb-nav-btn{position:fixed;top:50%;transform:translateY(-50%);width:2.75rem;height:2.75rem;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.65);font-size:1.5rem;cursor:pointer;transition:background .3s,border-color .3s,color .3s}
+.lb-nav-btn:hover{background:rgba(180,122,69,.18);border-color:rgba(180,122,69,.4);color:var(--a)}
+#lb-prev{left:1.75rem}
+#lb-next{right:1.75rem}
+.lb-counter{position:fixed;bottom:1.75rem;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.28em;color:rgba(250,248,245,.28)}
+
+/* ── EXPERIENCES ────────────────────────────────────────── */
+#experiences{background:var(--l)}
+.exp-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.exp-sub-txt{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(18,18,18,.5);max-width:300px;line-height:1.9}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem}
+.ec{border-radius:1.125rem;overflow:hidden;background:#fff;border:1px solid rgba(18,18,18,.06);transition:transform .5s var(--ease-lux),box-shadow .5s var(--ease-lux)}
+.ec:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(18,18,18,.1)}
+.ec-img-wrap{height:220px;overflow:hidden;position:relative}
+.ec-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s var(--ease-lux);filter:saturate(1.05)}
+.ec:hover .ec-img{transform:scale(1.07)}
+.ec-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,4,.88) 0%,rgba(10,8,4,.25) 60%,transparent 100%)}
+.ec-body{padding:1.375rem}
+.ec-dist{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:500;letter-spacing:.22em;color:var(--p);text-transform:uppercase;margin-bottom:.375rem}
+.ec-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--d);line-height:1.2;margin-bottom:.5rem}
+.ec-blurb{font-family:'Jost',sans-serif;font-size:.7rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.75}
+
+/* ── TESTIMONIALS ───────────────────────────────────────── */
+#testimonials{background:var(--d);padding:clamp(5rem,10vh,7.5rem) 0;position:relative;overflow:hidden}
+#testimonials::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%,rgba(180,122,69,.065) 0%,transparent 55%);pointer-events:none}
+.test-hdr{padding:0 clamp(1.5rem,6vw,6rem);margin-bottom:3rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;position:relative;z-index:1}
+.test-ctrl{display:flex;align-items:center;gap:.75rem}
+.t-btn{width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(250,248,245,.5);font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s,color .3s,background .3s}
+.t-btn:hover{border-color:var(--a);color:var(--a);background:rgba(180,122,69,.1)}
+.test-track-wrap{overflow:hidden;padding:0 clamp(1.5rem,6vw,6rem);position:relative;z-index:1}
+.test-track{display:flex;gap:1.25rem;will-change:transform}
+/* Glassmorphism cards */
+.tc{flex-shrink:0;width:calc(33.333% - .875rem);background:rgba(255,255,255,.05);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:1.375rem;padding:2.25rem;transition:border-color .4s,box-shadow .4s}
+.tc:hover{border-color:rgba(180,122,69,.22);box-shadow:0 16px 48px rgba(0,0,0,.3),0 0 0 1px rgba(180,122,69,.06)}
 .tc-stars{display:flex;gap:.2rem;margin-bottom:1.375rem}
 .star{color:var(--a);font-size:.8rem}
-.tc-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;font-style:italic;color:var(--d);line-height:1.65;margin-bottom:1.75rem}
+.tc-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;font-style:italic;color:rgba(250,248,245,.82);line-height:1.65;margin-bottom:1.75rem}
 .tc-auth{display:flex;align-items:center;gap:.875rem}
-.tc-av{width:2.25rem;height:2.25rem;border-radius:50%;overflow:hidden;border:1.5px solid rgba(180,122,69,.2);flex-shrink:0}
+.tc-av{width:2.5rem;height:2.5rem;border-radius:50%;overflow:hidden;border:1.5px solid rgba(180,122,69,.3);flex-shrink:0}
 .tc-av img{width:100%;height:100%;object-fit:cover}
-.tc-name{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;color:var(--d)}
-.tc-from{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;color:rgba(18,18,18,.42);margin-top:.1rem}
+.tc-name{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;color:rgba(250,248,245,.78)}
+.tc-from{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;color:rgba(250,248,245,.32);margin-top:.1rem}
+/* Dots */
+.test-dots{display:flex;gap:.625rem;justify-content:center;margin-top:2.5rem;position:relative;z-index:1}
+.td{width:6px;height:6px;border-radius:9999px;background:rgba(255,255,255,.16);cursor:pointer;transition:background .35s,width .35s var(--ease-lux)}
+.td.active{background:var(--a);width:24px}
 
-/* ── BOOKING STRIP ────────────────────────────────────────── */
-#bstrip{background:var(--p);padding:2rem clamp(1.5rem,6vw,6rem)}
+/* ── BOOKING STRIP ──────────────────────────────────────── */
+#bstrip{background:var(--p);padding:2.25rem clamp(1.5rem,6vw,6rem)}
 .bstrip-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
 .bstrip-txt{font-family:'Cormorant Garamond',serif;font-size:clamp(1.375rem,2.5vw,2.1rem);font-weight:300;font-style:italic;color:var(--l)}
-.bstrip-sub{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;color:rgba(250,248,245,.65);letter-spacing:.08em;margin-top:.15rem}
-.btn-strip{display:inline-flex;align-items:center;gap:.7rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--p);background:var(--l);padding:.875rem 1.875rem;border-radius:9999px;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring)}
+.bstrip-sub{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;color:rgba(250,248,245,.62);letter-spacing:.08em;margin-top:.15rem}
+.btn-strip{display:inline-flex;align-items:center;gap:.625rem;font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--p);background:var(--l);padding:.875rem 1.875rem;border-radius:9999px;transition:background .35s,transform .25s var(--ease-spring)}
 .btn-strip:hover{background:var(--s);transform:scale(1.03)}
-.btn-strip:active{transform:scale(.97)}
 
-/* ── LOCATION/CONTACT ─────────────────────────────────────── */
+/* ── LOCATION ───────────────────────────────────────────── */
 #location{background:var(--d)}
 .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,6rem);align-items:center}
 .loc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,4rem);font-weight:300;color:var(--l);line-height:1.08;letter-spacing:-.02em;margin-bottom:1.375rem}
-.loc-body{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(250,248,245,.5);line-height:1.9;margin-bottom:2.25rem}
+.loc-title em{font-style:italic;color:var(--p)}
+.loc-body{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(250,248,245,.45);line-height:1.9;margin-bottom:2.25rem}
 .ci{display:flex;align-items:center;gap:.875rem;margin-bottom:.875rem}
 .ci-ico{width:2.125rem;height:2.125rem;border-radius:50%;background:rgba(180,122,69,.14);border:1px solid rgba(180,122,69,.24);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--a);font-size:.75rem}
-.ci-lbl{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:400;letter-spacing:.15em;color:rgba(250,248,245,.35);text-transform:uppercase;margin-bottom:.12rem}
-.ci-val{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;color:rgba(250,248,245,.8);text-decoration:none;transition:color .3s}
+.ci-lbl{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.15em;color:rgba(250,248,245,.28);text-transform:uppercase;margin-bottom:.12rem}
+.ci-val{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;color:rgba(250,248,245,.72);text-decoration:none;transition:color .3s}
 .ci-val:hover{color:var(--a)}
-.map-bezel{border-radius:1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:.4rem}
-.map-inner{border-radius:calc(1.375rem - .1rem);overflow:hidden;height:400px;position:relative;background:#1c1c1c}
-.map-inner img{width:100%;height:100%;object-fit:cover;opacity:.45;display:block}
+.map-frame{border-radius:1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:.4rem}
+.map-inner{border-radius:calc(1.375rem - .15rem);overflow:hidden;height:400px;position:relative;background:#1a1a1a}
+.map-inner img{width:100%;height:100%;object-fit:cover;opacity:.4;display:block}
+.map-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(18,18,18,.78),rgba(180,122,69,.12))}
 .map-pin-wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
 .map-pin{width:2.75rem;height:2.75rem;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--p);border:2.5px solid var(--l);box-shadow:0 6px 24px rgba(180,122,69,.55)}
-.map-txt{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.18em;color:rgba(250,248,245,.75);text-transform:uppercase}
+.map-lbl{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.18em;color:rgba(250,248,245,.7);text-transform:uppercase}
 
-/* ── FOOTER ───────────────────────────────────────────────── */
+/* ── FOOTER ─────────────────────────────────────────────── */
 footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4rem clamp(1.5rem,6vw,6rem) 2.25rem}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem}
 .ft-brand{font-family:'Cormorant Garamond',serif;font-size:1.375rem;font-weight:300;color:var(--l);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem}
 .ft-brand-sub{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:300;letter-spacing:.32em;color:var(--p);text-transform:uppercase;margin-bottom:1.375rem}
-.ft-desc{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.3);line-height:1.85;max-width:260px}
-.ft-col-title{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:500;letter-spacing:.22em;color:rgba(250,248,245,.35);text-transform:uppercase;margin-bottom:1.375rem}
+.ft-desc{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.28);line-height:1.85;max-width:260px}
+.ft-col-title{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:500;letter-spacing:.22em;color:rgba(250,248,245,.28);text-transform:uppercase;margin-bottom:1.375rem}
 .ft-links{list-style:none;display:flex;flex-direction:column;gap:.75rem}
-.ft-links a{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.45);text-decoration:none;transition:color .3s var(--ease-lux)}
+.ft-links a{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.38);text-decoration:none;transition:color .3s}
 .ft-links a:hover{color:var(--a)}
 .ft-btm{padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.ft-copy{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.2);letter-spacing:.04em}
+.ft-copy{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.18);letter-spacing:.04em}
 
-/* ── REDUCED MOTION ───────────────────────────────────────── */
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ── BOOKING ────────────────────────────────────────────── */
+#booking{background:var(--l);position:relative;overflow:hidden}
+#booking::before{content:'';position:absolute;top:-15%;right:-5%;width:40%;height:70%;background:radial-gradient(ellipse,rgba(180,122,69,.06) 0%,transparent 65%);pointer-events:none}
+.bk-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(3rem,7vw,6rem);align-items:start;position:relative;z-index:1}
+.bk-info-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,3.5rem);font-weight:300;line-height:1.1;letter-spacing:-.02em;color:var(--d);margin-bottom:1.25rem}
+.bk-info-title em{font-style:italic;color:var(--p)}
+.bk-info-body{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.9;margin-bottom:2rem}
+.bk-perks{display:flex;flex-direction:column;gap:.875rem}
+.bk-perk{display:flex;align-items:center;gap:.75rem;font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;color:rgba(18,18,18,.62)}
+.bk-perk-dot{width:1.5rem;height:1.5rem;border-radius:50%;background:rgba(180,122,69,.1);border:1px solid rgba(180,122,69,.22);display:flex;align-items:center;justify-content:center;color:var(--p);font-size:.6rem;flex-shrink:0}
+.bk-price-tag{margin-top:2.5rem;padding:1.375rem 1.75rem;background:var(--d);border-radius:1rem;display:inline-flex;align-items:baseline;gap:.5rem}
+.bk-price-amt{font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:300;color:var(--a);line-height:1}
+.bk-price-per{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.38);letter-spacing:.1em}
+.bk-form-wrap{background:#fff;border-radius:1.5rem;padding:2.5rem;box-shadow:0 8px 48px rgba(18,18,18,.07),0 2px 12px rgba(180,122,69,.05);border:1px solid rgba(18,18,18,.05);position:relative;overflow:hidden}
+.bk-form-title{font-family:'Cormorant Garamond',serif;font-size:1.625rem;font-weight:400;color:var(--d);margin-bottom:.25rem}
+.bk-form-sub{font-family:'Jost',sans-serif;font-size:.65rem;font-weight:300;color:rgba(18,18,18,.38);letter-spacing:.06em;margin-bottom:2rem;line-height:1.6}
+.fl-wrap{position:relative;margin-bottom:1rem}
+.fl-wrap input,.fl-wrap select,.fl-wrap textarea{width:100%;padding:1.35rem 1.1rem .55rem;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:var(--d);background:rgba(18,18,18,.025);border:1.5px solid rgba(18,18,18,.09);border-radius:.75rem;outline:none;transition:border-color .3s var(--ease-lux),box-shadow .3s var(--ease-lux);-webkit-appearance:none;appearance:none}
+.fl-wrap textarea{resize:vertical;min-height:96px;padding-top:1.5rem}
+.fl-wrap select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B47A45' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.1rem center;padding-right:2.5rem;cursor:pointer}
+.fl-wrap input:focus,.fl-wrap select:focus,.fl-wrap textarea:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(180,122,69,.09)}
+.fl-label{position:absolute;left:1.1rem;top:1rem;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;color:rgba(18,18,18,.38);pointer-events:none;transition:top .25s var(--ease-lux),font-size .25s var(--ease-lux),color .25s}
+.fl-wrap input:focus + .fl-label,.fl-wrap input:not(:placeholder-shown) + .fl-label,.fl-wrap textarea:focus + .fl-label,.fl-wrap textarea:not(:placeholder-shown) + .fl-label,.fl-wrap.has-val .fl-label{top:.3rem;font-size:.55rem;color:var(--p);letter-spacing:.07em}
+.fl-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+.bk-submit{width:100%;padding:.975rem 1.5rem;background:var(--p);color:var(--l);font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:none;border-radius:.75rem;cursor:pointer;margin-top:.5rem;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring);display:flex;align-items:center;justify-content:center;gap:.5rem}
+.bk-submit:hover{background:var(--a);transform:scale(1.02)}
+.bk-submit:active{transform:scale(.97)}
+.bk-success{position:absolute;inset:0;background:#fff;border-radius:1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem;opacity:0;pointer-events:none;transition:opacity .5s var(--ease-lux)}
+.bk-success.show{opacity:1;pointer-events:all}
+.bk-ok-ring{width:4.5rem;height:4.5rem;border-radius:50%;background:rgba(180,122,69,.1);border:1.5px solid rgba(180,122,69,.28);display:flex;align-items:center;justify-content:center;margin:0 auto 1.75rem}
+.bk-ok-ring svg{width:1.75rem;height:1.75rem;stroke:var(--p);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.bk-ok-h{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--d);margin-bottom:.5rem}
+.bk-ok-p{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.85;max-width:280px;margin:0 auto 1.75rem}
+.bk-ok-reset{font-family:'Jost',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.14em;color:var(--p);text-transform:uppercase;background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color .3s}
+.bk-ok-reset:hover{color:var(--a)}
 
-/* ── RESPONSIVE ───────────────────────────────────────────── */
-@media(max-width:1024px){
-  .acc-cards{grid-template-columns:1fr 1fr}
-  .acc-cards .ac:last-child{grid-column:1/-1}
-  .hero-content{grid-template-columns:1fr;gap:2.5rem}
-  .review-badge{display:none}
+/* ── FLOATING WHATSAPP ──────────────────────────────────── */
+#wa-float{position:fixed;bottom:1.875rem;right:1.875rem;z-index:8500;width:3.25rem;height:3.25rem;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.38),0 2px 8px rgba(0,0,0,.18);transition:transform .3s var(--ease-spring),box-shadow .3s;text-decoration:none}
+#wa-float:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5),0 4px 12px rgba(0,0,0,.18)}
+#wa-float:active{transform:scale(.94)}
+#wa-float svg{width:1.5rem;height:1.5rem;fill:#fff}
+
+/* ── FOOTER ENHANCED ────────────────────────────────────── */
+footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
+.ft-accent{height:2px;background:linear-gradient(90deg,transparent 0%,rgba(180,122,69,.3) 15%,var(--p) 35%,var(--a) 50%,var(--p) 65%,rgba(180,122,69,.3) 85%,transparent 100%);position:relative}
+.ft-inner{padding:4rem clamp(1.5rem,6vw,6rem) 0}
+.ft-social{display:flex;gap:.75rem;margin-top:1.75rem}
+.ft-soc{width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:transparent;display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.35);transition:border-color .3s,color .3s,background .3s;text-decoration:none;flex-shrink:0}
+.ft-soc:hover{border-color:rgba(180,122,69,.5);color:var(--a);background:rgba(180,122,69,.1)}
+.ft-soc svg{width:1rem;height:1rem;fill:currentColor}
+.ft-book-btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Jost',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--d);background:var(--p);padding:.7rem 1.5rem;border-radius:9999px;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring);margin-top:1.25rem}
+.ft-book-btn:hover{background:var(--a);transform:scale(1.04)}
+
+/* ── CONTACT MAP & FORM ──────────────────────────────────── */
+.loc-map-wrap{border-radius:1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:.4rem;overflow:hidden}
+.loc-map-inner{border-radius:calc(1.375rem - .15rem);overflow:hidden;height:300px}
+.loc-map-inner iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(25%) brightness(.88)}
+.loc-contact-form{margin-top:1.75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:1.125rem;padding:1.75rem}
+.lcf-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--l);margin-bottom:1.375rem}
+.lcf-field{position:relative;margin-bottom:.875rem}
+.lcf-field input,.lcf-field textarea{width:100%;padding:1rem 1rem .5rem;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;color:var(--l);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:.75rem;outline:none;transition:border-color .3s,box-shadow .3s;-webkit-appearance:none;appearance:none}
+.lcf-field textarea{min-height:80px;resize:vertical;padding-top:1rem}
+.lcf-field input:focus,.lcf-field textarea:focus{border-color:rgba(180,122,69,.5);box-shadow:0 0 0 3px rgba(180,122,69,.09)}
+.lcf-label{position:absolute;left:1rem;top:.875rem;font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.32);pointer-events:none;transition:top .25s var(--ease-lux),font-size .25s var(--ease-lux),color .25s}
+.lcf-field input:focus + .lcf-label,.lcf-field input:not(:placeholder-shown) + .lcf-label,.lcf-field textarea:focus + .lcf-label,.lcf-field textarea:not(:placeholder-shown) + .lcf-label{top:.25rem;font-size:.52rem;color:var(--a);letter-spacing:.07em}
+.lcf-submit{width:100%;padding:.875rem 1.5rem;background:var(--p);color:var(--l);font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:none;border-radius:.75rem;cursor:pointer;margin-top:.25rem;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring)}
+.lcf-submit:hover{background:var(--a);transform:scale(1.02)}
+.lcf-submit:active{transform:scale(.97)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:900px){
-  .about-grid,.loc-grid{grid-template-columns:1fr;gap:2.75rem}
-  .test-grid,.exp-grid{grid-template-columns:1fr;gap:1rem}
+  .about-grid,.loc-grid,.apt-grid,.bk-grid{grid-template-columns:1fr;gap:2.75rem}
+  .hero-content{grid-template-columns:1fr}
+  .review-badge{display:none}
   .ft-grid{grid-template-columns:1fr 1fr;gap:2.25rem}
-  .gal-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;height:auto}
-  .gi:nth-child(1),.gi:nth-child(2),.gi:nth-child(3),.gi:nth-child(4),.gi:nth-child(5){grid-column:auto;grid-row:auto;height:200px}
   .nav-links,.nav-book{display:none}
   .ham{display:flex}
   body{cursor:auto}
   #cur,#cur-r{display:none}
-  .acc-cards{grid-template-columns:1fr}
-  .acc-cards .ac:last-child{grid-column:auto}
+  .tc{width:calc(80vw)}
+  .mas-grid{grid-template-columns:1fr 1fr;grid-auto-rows:155px}
+  .mi:nth-child(1){grid-row:span 2}
+  .mi:nth-child(2){grid-row:span 2}
+  .mi:nth-child(3){grid-row:span 1}
+  .mi:nth-child(4){grid-row:span 1}
+  .mi:nth-child(5){grid-row:span 2}
+  .mi:nth-child(6){grid-row:span 1}
+  .mi:nth-child(7){grid-row:span 1}
+  .mi:nth-child(8){grid-row:span 2}
 }
-@media(max-width:600px){
-  .test-grid,.ft-grid{grid-template-columns:1fr}
-  .hero-title{font-size:clamp(2.75rem,13vw,4rem)}
+@media(max-width:680px){
+  .why-grid,.exp-grid,.ft-grid{grid-template-columns:1fr}
+  .mas-grid{grid-template-columns:1fr;grid-auto-rows:220px}
+  .mi{grid-row:span 1!important}
+  .apt-imgs{grid-template-rows:240px 160px 160px}
+  .apt-img-main{grid-column:auto}
+  .fl-row{grid-template-columns:1fr}
+  .bk-form-wrap{padding:1.75rem}
 }
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -370,10 +402,17 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 <div id="cur"></div>
 <div id="cur-r"></div>
 
+<!-- FLOATING WHATSAPP BUTTON -->
+<a id="wa-float" href="https://wa.me/27723606294" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
 <!-- PRELOADER -->
 <div id="preloader">
   <div id="pl-wrap">
-    <div class="pl-logo">Expreso</div>
+    <div class="pl-logo">Expresso</div>
     <div class="pl-sub">Accommodation · Nelspruit</div>
     <div class="pl-bar-wrap"><div class="pl-bar" id="pl-bar"></div></div>
   </div>
@@ -382,54 +421,53 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 <!-- MOBILE MENU -->
 <div id="mob-menu">
   <a href="#hero"          class="mob-link">Home</a>
-  <a href="#accommodation" class="mob-link">Accommodation</a>
+  <a href="#why"           class="mob-link">Why Us</a>
+  <a href="#accommodation" class="mob-link">Apartment</a>
   <a href="#gallery"       class="mob-link">Gallery</a>
   <a href="#experiences"   class="mob-link">Experiences</a>
-  <a href="#about"         class="mob-link">About</a>
   <a href="#location"      class="mob-link">Contact</a>
 </div>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">Expreso</a>
+  <a href="#hero" class="nav-logo">Expresso</a>
   <div class="nav-links">
     <a href="#hero"          class="nav-link" data-section="hero">Home</a>
-    <a href="#accommodation" class="nav-link" data-section="accommodation">Accommodation</a>
+    <a href="#why"           class="nav-link" data-section="why">Why Us</a>
+    <a href="#accommodation" class="nav-link" data-section="accommodation">Apartment</a>
     <a href="#gallery"       class="nav-link" data-section="gallery">Gallery</a>
     <a href="#experiences"   class="nav-link" data-section="experiences">Experiences</a>
-    <a href="#about"         class="nav-link" data-section="about">About</a>
     <a href="#location"      class="nav-link" data-section="location">Contact</a>
   </div>
   <div style="display:flex;align-items:center;gap:1rem">
-    <a href="tel:0723606294" class="nav-book">Book Now</a>
-    <button class="ham" id="ham-btn" aria-label="Menu">
+    <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+    <button class="ham" id="ham-btn" aria-label="Open menu">
       <span id="h1"></span><span id="h2"></span><span id="h3"></span>
     </button>
   </div>
 </nav>
 
-<!-- ═══ HERO ════════════════════════════════════════════════ -->
+<!-- ══════════════ HERO ══════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-img-wrap">
-    <img src="brand_assets/Outside%202.jpeg" alt="Expreso Accommodation" class="hero-img" id="hero-img">
+    <img src="brand_assets/Outside%202.jpeg" alt="Expresso Accommodation Nelspruit" class="hero-img" id="hero-img">
     <div class="hero-ov"></div>
     <div class="hero-ov2"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-left">
+    <div>
       <div class="hero-eyebrow" id="hero-ey">Nelspruit · Mpumalanga · South Africa</div>
       <h1 class="hero-title" id="hero-title">
-        <span class="ln"><span class="lni ht-plain" id="hl1">Stay in Comfort.</span></span>
-        <span class="ln"><span class="lni ht-italic-copper" id="hl2">Experience</span></span>
-        <span class="ln"><span class="lni ht-plain" id="hl3">Nelspruit.</span></span>
+        <span class="ln"><span class="lni" id="hl1">Stay in Comfort.</span></span>
+        <span class="ln"><span class="lni ht-copper" id="hl2">Experience</span></span>
+        <span class="ln"><span class="lni" id="hl3">Nelspruit.</span></span>
       </h1>
-      <p class="hero-sub" id="hero-sub">Modern accommodation designed for comfort, relaxation, and memorable stays in the heart of Mpumalanga.</p>
+      <p class="hero-sub" id="hero-sub">A luxury 2-bedroom self-catering apartment designed for comfort, relaxation, and memorable stays in the heart of Mpumalanga.</p>
       <div class="hero-ctas" id="hero-ctas">
-        <a href="tel:0723606294" class="btn-p">Book Your Stay <span class="btn-icon">↗</span></a>
-        <a href="#accommodation" class="btn-outline">View Rooms</a>
+        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon">↗</span></a>
+        <a href="#accommodation" class="btn-outline">View Apartment</a>
       </div>
     </div>
-    <!-- Floating Review Badge -->
     <div class="review-badge" id="review-badge">
       <div class="rb-stars">★★★★★</div>
       <div class="rb-score">5.0</div>
@@ -447,308 +485,471 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 <!-- MARQUEE -->
 <div id="marquee">
   <div class="marquee-track">
-    <span class="marquee-item">Nelspruit <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Mpumalanga <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Gateway to Kruger National Park <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Panorama Route <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Blyde River Canyon <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Premium Self-Catering <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">South Africa <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Nelspruit <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Mpumalanga <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Gateway to Kruger National Park <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Panorama Route <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Blyde River Canyon <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">Premium Self-Catering <span class="marquee-dot">·</span></span>
-    <span class="marquee-item">South Africa <span class="marquee-dot">·</span></span>
+    <span class="mi-text">Nelspruit <span class="mq-dot">·</span></span>
+    <span class="mi-text">Mpumalanga <span class="mq-dot">·</span></span>
+    <span class="mi-text">Gateway to Kruger National Park <span class="mq-dot">·</span></span>
+    <span class="mi-text">Luxury 2-Bedroom Apartment <span class="mq-dot">·</span></span>
+    <span class="mi-text">R900 Per Night <span class="mq-dot">·</span></span>
+    <span class="mi-text">Self-Catering <span class="mq-dot">·</span></span>
+    <span class="mi-text">Secure Parking <span class="mq-dot">·</span></span>
+    <span class="mi-text">South Africa <span class="mq-dot">·</span></span>
+    <span class="mi-text">Nelspruit <span class="mq-dot">·</span></span>
+    <span class="mi-text">Mpumalanga <span class="mq-dot">·</span></span>
+    <span class="mi-text">Gateway to Kruger National Park <span class="mq-dot">·</span></span>
+    <span class="mi-text">Luxury 2-Bedroom Apartment <span class="mq-dot">·</span></span>
+    <span class="mi-text">R900 Per Night <span class="mq-dot">·</span></span>
+    <span class="mi-text">Self-Catering <span class="mq-dot">·</span></span>
+    <span class="mi-text">Secure Parking <span class="mq-dot">·</span></span>
+    <span class="mi-text">South Africa <span class="mq-dot">·</span></span>
   </div>
 </div>
 
-<!-- ═══ ABOUT ════════════════════════════════════════════════ -->
-<section id="about" class="sp" style="position:relative;overflow:hidden">
-  <div class="watermark" style="right:-5%;top:-8%">Expreso</div>
-  <div class="about-grid" style="position:relative;z-index:1">
+<!-- ══════════════ WHY CHOOSE US ═════════════════════════════ -->
+<section id="why" class="sp">
+  <div class="why-intro">
     <div>
-      <div class="etag" id="a-tag">Our Story</div>
-      <h2 class="stitle" id="a-title">A home away<br>from home, in the<br><em>heart of the wild</em></h2>
-      <div class="crule" id="a-rule"></div>
-      <p class="about-body" id="a-b1">Expreso Accommodation is a warm, character-rich guesthouse nestled in Nelspruit — Mpumalanga's vibrant capital. Steps from the city centre and a short drive from Kruger's gates.</p>
-      <p class="about-body" id="a-b2">Every room is appointed with care: bold colours, comfortable furnishings, fully equipped kitchen facilities, and the personal touch of hosts who genuinely love welcoming guests.</p>
-      <div class="stat-row" id="a-stats">
-        <div><div class="stat-n">5★</div><div class="stat-l">Guest Rating</div></div>
-        <div><div class="stat-n">3</div><div class="stat-l">Room Types</div></div>
-        <div><div class="stat-n">100%</div><div class="stat-l">Self-Catering</div></div>
+      <div class="etag etag-dk">Why Choose Us</div>
+      <h2 class="stitle stitle-lt">Everything you need,<br><em>nothing you don't</em></h2>
+    </div>
+    <p class="why-intro-right">A stay at Expresso means quality, comfort, and genuine care — from the moment you arrive to the moment you leave.</p>
+  </div>
+  <div class="why-grid">
+
+    <div class="wc">
+      <div class="wc-num">01</div>
+      <div class="wc-ico">
+        <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="wc-title">Prime Nelspruit Location</div>
+      <p class="wc-body">Minutes from the CBD, hospitals, shopping centres, and major routes — the perfect base for business or exploring Mpumalanga.</p>
+    </div>
+
+    <div class="wc">
+      <div class="wc-num">02</div>
+      <div class="wc-ico">
+        <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+      </div>
+      <div class="wc-title">Fast Wi-Fi</div>
+      <p class="wc-body">High-speed internet throughout — work remotely, stream your favourites, or stay connected with loved ones back home.</p>
+    </div>
+
+    <div class="wc">
+      <div class="wc-num">03</div>
+      <div class="wc-ico">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1v-4"/></svg>
+      </div>
+      <div class="wc-title">Secure Parking</div>
+      <p class="wc-body">Gated, on-site parking with a security boom gate. Peace of mind included — your vehicle is safe while you explore.</p>
+    </div>
+
+    <div class="wc">
+      <div class="wc-num">04</div>
+      <div class="wc-ico">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="wc-title">Comfortable Rooms</div>
+      <p class="wc-body">Two beautifully furnished bedrooms with quality beds, premium linen, air-conditioning, and warm African character in every detail.</p>
+    </div>
+
+    <div class="wc">
+      <div class="wc-num">05</div>
+      <div class="wc-ico">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="wc-title">Professional Service</div>
+      <p class="wc-body">Warm, responsive hosts reachable on WhatsApp — ready to assist with recommendations, Kruger bookings, and any queries.</p>
+    </div>
+
+    <div class="wc">
+      <div class="wc-num">06</div>
+      <div class="wc-ico">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="wc-title">Affordable Luxury</div>
+      <p class="wc-body">A full luxury 2-bedroom apartment at R900 per night — premium comfort and quality at a price that makes sense.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════════════════════════════ -->
+<section id="about" class="sp">
+  <div class="about-wm">Expresso</div>
+  <div class="about-grid">
+    <div>
+      <div class="etag">Our Story</div>
+      <h2 class="stitle" id="about-title">Your Home<br>Away From <em>Home</em></h2>
+      <div class="crule"></div>
+      <p class="about-pull">"Every detail has been chosen to make you feel genuinely at home — not just accommodated."</p>
+      <p class="about-body">Expresso Accommodation is a warm, character-rich 2-bedroom apartment nestled in Nelspruit, Mpumalanga's vibrant capital. Whether you're here for business, adventure, or rest — this apartment was made for you.</p>
+      <p class="about-body">A fully equipped kitchen lets you cook your own meals. The welcoming lounge invites you to unwind. Two generous bedrooms promise deep, restorative sleep. And a team of caring hosts is always close by.</p>
+      <div class="about-pillars">
+        <div class="ap">Genuine Comfort</div>
+        <div class="ap">Warm Hospitality</div>
+        <div class="ap">Deep Relaxation</div>
+        <div class="ap">Quality Service</div>
+        <div class="ap">Convenient Location</div>
+        <div class="ap">Full Self-Catering</div>
       </div>
     </div>
-    <div id="a-img">
+    <div id="about-img-col" style="position:relative">
       <div class="bezel">
         <div class="bezel-inner">
-          <img src="brand_assets/Outside%201.jpeg" alt="Expreso entrance" style="height:520px;object-fit:cover;object-position:center">
+          <img src="brand_assets/Picture%203.jpeg" alt="Expresso lounge" style="height:540px;object-fit:cover;object-position:center" id="about-par" loading="lazy">
         </div>
+      </div>
+      <div class="about-float">
+        <div class="af-n">R900</div>
+        <div class="af-l">Per Night</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ ACCOMMODATION ════════════════════════════════════════ -->
+<!-- ══════════════ APARTMENT ══════════════════════════════════ -->
 <section id="accommodation" class="sp">
-  <div class="acc-header">
-    <div>
-      <div class="etag etag-dark">Accommodation</div>
-      <h2 class="stitle stitle-lt">Rooms <em>crafted</em><br>for your comfort</h2>
-    </div>
-    <a href="tel:0723606294" class="btn-p">Check Availability <span class="btn-icon">↗</span></a>
-  </div>
-
-  <div class="acc-cards">
-    <!-- Card 1: Deluxe Double Room -->
-    <div class="ac">
-      <div class="ac-img-wrap">
-        <img src="brand_assets/ROOM%202.jpeg" class="ac-img" alt="Deluxe Double Room" style="object-position:center 30%">
-        <div class="ac-img-ov"></div>
-        <div class="ac-badge">Signature</div>
+  <div class="apt-grid">
+    <div class="apt-imgs" id="apt-imgs">
+      <div class="apt-img-main">
+        <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room" loading="lazy">
       </div>
-      <div class="ac-body">
-        <div class="ac-type">Room Type</div>
-        <div class="ac-name">Deluxe Double Room</div>
-        <p class="ac-desc">A bold, vibrant space featuring a striking crimson accent wall, plush king bed with luxury linen, and beautifully fan-folded towels. Pure comfort, South African style.</p>
-        <div class="ac-amenities">
-          <div class="ac-am"><div class="ac-am-dot"></div>King Bed</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>En-suite Bathroom</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Air Conditioning</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Smart TV</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Premium Linen</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Daily Housekeeping</div>
-        </div>
-        <div class="ac-occ">
-          <div class="ac-occ-item"><span class="ac-occ-icon">🛏</span> King Bed</div>
-          <div class="ac-occ-item"><span class="ac-occ-icon">👥</span> 2 Guests</div>
-          <div class="ac-occ-item"><span class="ac-occ-icon">🚿</span> En-suite</div>
-        </div>
-        <div class="ac-foot">
-          <div>
-            <div class="ac-price-from">From</div>
-            <div class="ac-price">R750</div>
-            <div class="ac-price-note">per night · est.</div>
-          </div>
-          <a href="tel:0723606294" class="ac-btn">Enquire →</a>
-        </div>
+      <div class="apt-img-sm">
+        <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%" loading="lazy">
+      </div>
+      <div class="apt-img-sm">
+        <img src="brand_assets/Picture%205.jpeg" alt="Fully equipped kitchen" loading="lazy">
       </div>
     </div>
-
-    <!-- Card 2: Standard Comfort Room -->
-    <div class="ac">
-      <div class="ac-img-wrap">
-        <img src="brand_assets/Room%201.jpeg" class="ac-img" alt="Standard Room" style="object-position:center 20%">
-        <div class="ac-img-ov"></div>
-        <div class="ac-badge" style="background:rgba(250,248,245,.15);color:var(--l)">Standard</div>
+    <div id="apt-detail">
+      <div class="etag etag-dk">The Apartment</div>
+      <h2 class="stitle stitle-lt">A Luxury 2-Bedroom<br><em>Self-Catering Retreat</em></h2>
+      <div class="crule" style="background:var(--a)"></div>
+      <p style="font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(250,248,245,.48);line-height:1.9">A spacious, beautifully furnished apartment offering everything for a memorable stay in Nelspruit. Perfect for couples, families, or business travellers seeking quality and comfort.</p>
+      <div class="apt-features">
+        <div class="af2"><div class="af2-dot"></div>2 Bedrooms</div>
+        <div class="af2"><div class="af2-dot"></div>Full Kitchen</div>
+        <div class="af2"><div class="af2-dot"></div>Lounge &amp; Dining</div>
+        <div class="af2"><div class="af2-dot"></div>Air Conditioning</div>
+        <div class="af2"><div class="af2-dot"></div>DSTV &amp; Smart TV</div>
+        <div class="af2"><div class="af2-dot"></div>Fast Wi-Fi</div>
+        <div class="af2"><div class="af2-dot"></div>Bathroom</div>
+        <div class="af2"><div class="af2-dot"></div>Secure Parking</div>
+        <div class="af2"><div class="af2-dot"></div>Premium Linen</div>
+        <div class="af2"><div class="af2-dot"></div>Daily Housekeeping</div>
       </div>
-      <div class="ac-body">
-        <div class="ac-type">Room Type</div>
-        <div class="ac-name">Comfort Room</div>
-        <p class="ac-desc">Warm terracotta walls surround a comfortable double bed dressed in crisp white linen. Ideal for couples or solo travellers seeking a quality night's rest in Nelspruit.</p>
-        <div class="ac-amenities">
-          <div class="ac-am"><div class="ac-am-dot"></div>Double Bed</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>En-suite Bathroom</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Air Conditioning</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Smart TV</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Quality Linen</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Towel Service</div>
+      <div class="apt-price-box">
+        <div>
+          <div class="apt-from">Per Night</div>
+          <div class="apt-price">R900</div>
+          <div class="apt-per">all inclusive · self-catering</div>
         </div>
-        <div class="ac-occ">
-          <div class="ac-occ-item"><span class="ac-occ-icon">🛏</span> Double Bed</div>
-          <div class="ac-occ-item"><span class="ac-occ-icon">👥</span> 2 Guests</div>
-          <div class="ac-occ-item"><span class="ac-occ-icon">🚿</span> En-suite</div>
-        </div>
-        <div class="ac-foot">
-          <div>
-            <div class="ac-price-from">From</div>
-            <div class="ac-price">R600</div>
-            <div class="ac-price-note">per night · est.</div>
-          </div>
-          <a href="tel:0723606294" class="ac-btn">Enquire →</a>
+        <div>
+          <div class="apt-occ-n">4+</div>
+          <div class="apt-occ-l">Guests</div>
         </div>
       </div>
-    </div>
-
-    <!-- Card 3: Self-Catering Suite -->
-    <div class="ac">
-      <div class="ac-img-wrap">
-        <img src="brand_assets/Picture%206.jpeg" class="ac-img" alt="Self-Catering Suite">
-        <div class="ac-img-ov"></div>
-        <div class="ac-badge" style="background:rgba(180,122,69,.85)">Suite</div>
-      </div>
-      <div class="ac-body">
-        <div class="ac-type">Room Type</div>
-        <div class="ac-name">Self-Catering Suite</div>
-        <p class="ac-desc">A full open-plan living space — vibrant lounge, fully equipped kitchen, and private bedroom. Perfect for families, extended stays, or those who love cooking their own meals.</p>
-        <div class="ac-amenities">
-          <div class="ac-am"><div class="ac-am-dot"></div>Full Kitchen</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Lounge Area</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Fridge + Stove</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>DSTV + Smart TV</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Double Bedroom</div>
-          <div class="ac-am"><div class="ac-am-dot"></div>Secure Parking</div>
-        </div>
-        <div class="ac-occ">
-          <div class="ac-occ-item"><span class="ac-occ-icon">🏠</span> Full Suite</div>
-          <div class="ac-occ-item"><span class="ac-occ-icon">👥</span> 4 Guests</div>
-          <div class="ac-occ-item"><span class="ac-occ-icon">🍳</span> Kitchen</div>
-        </div>
-        <div class="ac-foot">
-          <div>
-            <div class="ac-price-from">From</div>
-            <div class="ac-price">R1,200</div>
-            <div class="ac-price-note">per night · est.</div>
-          </div>
-          <a href="tel:0723606294" class="ac-btn">Enquire →</a>
-        </div>
-      </div>
+      <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon">↗</span></a>
     </div>
   </div>
 </section>
 
-<!-- ═══ AMENITIES ════════════════════════════════════════════ -->
-<section id="amenities" class="sp">
-  <div style="text-align:center;margin-bottom:.5rem">
-    <div class="etag" style="margin:0 auto 1.375rem">Amenities</div>
-    <h2 class="stitle" id="am-title">Every comfort,<br><em>thoughtfully provided</em></h2>
-  </div>
-  <div class="am-grid">
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      <div class="am-name">Fully Equipped Kitchen</div>
-      <div class="am-desc">Stove, fridge, microwave, kettle — everything for a comfortable self-catering stay.</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      <div class="am-name">Smart TV & DSTV</div>
-      <div class="am-desc">Flat-screen TV with satellite channels in lounge and bedroom.</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
-      <div class="am-name">High-Speed Wi-Fi</div>
-      <div class="am-desc">Reliable internet throughout — work or stream seamlessly.</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1v-4"/></svg>
-      <div class="am-name">Secure Parking</div>
-      <div class="am-desc">Gated, on-site parking with security boom — peace of mind included.</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M12 3v1m0 16v1M4.22 4.22l.71.71m12.02 12.02.71.71M1 12h1m20 0h1M4.22 19.78l.71-.71m12.02-12.02.71-.71"/><circle cx="12" cy="12" r="4"/></svg>
-      <div class="am-name">Air Conditioning</div>
-      <div class="am-desc">Climate control for Mpumalanga's warm summers and cool winters.</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <div class="am-name">Personal Hosting</div>
-      <div class="am-desc">Hosts available to assist with local tips, Kruger bookings and more.</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-      <div class="am-name">Central Location</div>
-      <div class="am-desc">Walking distance to CBD, restaurants, hospitals & shopping.</div>
-    </div>
-    <div class="am-card">
-      <svg class="am-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-      <div class="am-name">Daily Housekeeping</div>
-      <div class="am-desc">Fresh towels and clean spaces — your comfort is our commitment.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ GALLERY ══════════════════════════════════════════════ -->
+<!-- ══════════════ GALLERY ════════════════════════════════════ -->
 <section id="gallery">
   <div class="gal-hdr">
-    <div class="etag etag-dark">Gallery</div>
-    <h2 class="stitle stitle-lt">Life at <em>Expreso</em></h2>
+    <div>
+      <div class="etag etag-dk">Gallery</div>
+      <h2 class="stitle stitle-lt">Inside <em>Expresso</em></h2>
+    </div>
+    <div class="gal-hint">Click any image to enlarge</div>
   </div>
-  <div class="gal-grid">
-    <div class="gi"><img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room"></div>
-    <div class="gi"><img src="brand_assets/Picture%204.jpeg" alt="Lounge area" style="object-position:center top"></div>
-    <div class="gi"><img src="brand_assets/Outside%202.jpeg" alt="Property exterior" style="object-position:center 65%"></div>
-    <div class="gi"><img src="brand_assets/Picture%205.jpeg" alt="Kitchen"></div>
-    <div class="gi"><img src="brand_assets/ROOM%202.jpeg" alt="Bedroom" style="object-position:center 30%"></div>
+  <div class="mas-grid">
+    <div class="mi" onclick="openLb(0)">
+      <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Living Room</div>
+    </div>
+    <div class="mi" onclick="openLb(1)">
+      <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Master Bedroom</div>
+    </div>
+    <div class="mi" onclick="openLb(2)">
+      <img src="brand_assets/Outside%202.jpeg" alt="Exterior" style="object-position:center 60%">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Property Exterior</div>
+    </div>
+    <div class="mi" onclick="openLb(3)">
+      <img src="brand_assets/Room%201.jpeg" alt="Second bedroom" style="object-position:center 20%">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Second Bedroom</div>
+    </div>
+    <div class="mi" onclick="openLb(4)">
+      <img src="brand_assets/Picture%205.jpeg" alt="Kitchen">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Kitchen</div>
+    </div>
+    <div class="mi" onclick="openLb(5)">
+      <img src="brand_assets/Picture%204.jpeg" alt="Lounge area">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Lounge Area</div>
+    </div>
+    <div class="mi" onclick="openLb(6)">
+      <img src="brand_assets/Picture%203.jpeg" alt="Sitting room">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Sitting Room</div>
+    </div>
+    <div class="mi" onclick="openLb(7)">
+      <img src="brand_assets/Outside%201.jpeg" alt="Secure entrance">
+      <div class="mi-ov"></div><div class="mi-zoom">⊕</div>
+      <div class="mi-caption">Secure Entrance</div>
+    </div>
   </div>
 </section>
 
-<!-- ═══ EXPERIENCES ══════════════════════════════════════════ -->
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <div class="lb-close-btn" id="lb-close">✕</div>
+  <div class="lb-nav-btn" id="lb-prev">‹</div>
+  <div class="lb-nav-btn" id="lb-next">›</div>
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption-text" id="lb-cap"></div>
+  </div>
+  <div class="lb-counter" id="lb-counter">1 / 8</div>
+</div>
+
+<!-- ══════════════ EXPERIENCES ════════════════════════════════ -->
 <section id="experiences" class="sp">
-  <div class="etag">Experiences</div>
-  <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:.5rem">
-    <h2 class="stitle" id="exp-title">Adventures<br>at your <em>doorstep</em></h2>
-    <p style="font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(18,18,18,.55);max-width:320px;line-height:1.85">Nelspruit is your launchpad to some of Africa's most breathtaking landscapes and wildlife encounters.</p>
+  <div class="exp-header">
+    <div>
+      <div class="etag">Experiences</div>
+      <h2 class="stitle" id="exp-title">Adventures at<br>your <em>doorstep</em></h2>
+    </div>
+    <p class="exp-sub-txt">Nelspruit is your launchpad to some of Africa's most breathtaking landscapes, wildlife, and iconic landmarks.</p>
   </div>
   <div class="exp-grid">
-    <div class="exp-card">
-      <div class="exp-img-wrap">
-        <img class="exp-img" src="brand_assets/Outside%202.jpeg" alt="Kruger National Park" style="object-position:center 50%;filter:saturate(1.1)">
-        <div class="exp-ov"></div>
+
+    <div class="ec">
+      <div class="ec-img-wrap">
+        <img class="ec-img" src="brand_assets/Outside%202.jpeg" alt="Kruger National Park" style="filter:saturate(1.2) brightness(.7)">
+        <div class="ec-ov"></div>
       </div>
-      <div class="exp-arrow">↗</div>
-      <div class="exp-content">
-        <div class="exp-dist">87km · ±1hr drive</div>
-        <div class="exp-name">Kruger National Park</div>
-        <p class="exp-desc">Africa's greatest wildlife sanctuary. Encounter the Big Five at dawn, just an hour from your door.</p>
-      </div>
-    </div>
-    <div class="exp-card">
-      <div class="exp-img-wrap">
-        <img class="exp-img" src="brand_assets/Outside%201.jpeg" alt="Panorama Route" style="object-position:center 35%;filter:saturate(1.2) brightness(0.9)">
-        <div class="exp-ov"></div>
-      </div>
-      <div class="exp-arrow">↗</div>
-      <div class="exp-content">
-        <div class="exp-dist">60km · ±45min drive</div>
-        <div class="exp-name">Panorama Route</div>
-        <p class="exp-desc">A scenic drive of unrivalled beauty — God's Window, Bourke's Luck Potholes and sweeping escarpment views.</p>
+      <div class="ec-body">
+        <div class="ec-dist">87 km · ±1 hr drive</div>
+        <div class="ec-name">Kruger National Park</div>
+        <p class="ec-blurb">Africa's greatest game reserve. Encounter the Big Five in their natural habitat — just one hour from your door.</p>
       </div>
     </div>
-    <div class="exp-card">
-      <div class="exp-img-wrap">
-        <img class="exp-img" src="brand_assets/Picture%203.jpeg" alt="Blyde River Canyon" style="object-position:center 25%;filter:saturate(1.15)">
-        <div class="exp-ov"></div>
+
+    <div class="ec">
+      <div class="ec-img-wrap">
+        <img class="ec-img" src="brand_assets/Outside%201.jpeg" alt="Lowveld Botanical Garden" style="filter:saturate(1.3) brightness(.65);object-position:center 40%">
+        <div class="ec-ov"></div>
       </div>
-      <div class="exp-arrow">↗</div>
-      <div class="exp-content">
-        <div class="exp-dist">65km · ±50min drive</div>
-        <div class="exp-name">Blyde River Canyon</div>
-        <p class="exp-desc">One of the world's largest green canyons — dramatic gorges, hiking trails and boat trips on the dam.</p>
+      <div class="ec-body">
+        <div class="ec-dist">3 km · ±5 min drive</div>
+        <div class="ec-name">Lowveld Botanical Garden</div>
+        <p class="ec-blurb">One of SA's most beautiful botanical gardens — set at the confluence of two rivers, perfect for a tranquil morning walk.</p>
+      </div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-img-wrap">
+        <img class="ec-img" src="brand_assets/Picture%203.jpeg" alt="Sudwala Caves" style="filter:saturate(.7) brightness(.5);object-position:center 20%">
+        <div class="ec-ov"></div>
+      </div>
+      <div class="ec-body">
+        <div class="ec-dist">38 km · ±30 min drive</div>
+        <div class="ec-name">Sudwala Caves</div>
+        <p class="ec-blurb">Among the oldest caves on Earth — a dramatic underground world of ancient stalactites and dolomite formations.</p>
+      </div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-img-wrap">
+        <img class="ec-img" src="brand_assets/Picture%206.jpeg" alt="Riverside &amp; Ilanga Mall" style="filter:saturate(1.1) brightness(.55)">
+        <div class="ec-ov"></div>
+      </div>
+      <div class="ec-body">
+        <div class="ec-dist">2 km · ±5 min drive</div>
+        <div class="ec-name">Riverside &amp; Ilanga Mall</div>
+        <p class="ec-blurb">World-class shopping, restaurants, a cinema, and entertainment — two major malls just minutes from the apartment.</p>
+      </div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-img-wrap">
+        <img class="ec-img" src="brand_assets/Picture%204.jpeg" alt="Mbombela Stadium" style="filter:saturate(.9) brightness(.5)">
+        <div class="ec-ov"></div>
+      </div>
+      <div class="ec-body">
+        <div class="ec-dist">4 km · ±8 min drive</div>
+        <div class="ec-name">Mbombela Stadium</div>
+        <p class="ec-blurb">Nelspruit's iconic giraffe-inspired FIFA World Cup venue — host to major football matches and large-scale events.</p>
+      </div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-img-wrap">
+        <img class="ec-img" src="brand_assets/Picture%205.jpeg" alt="Mpumalanga Scenic Routes" style="filter:saturate(1.2) brightness(.55)">
+        <div class="ec-ov"></div>
+      </div>
+      <div class="ec-body">
+        <div class="ec-dist">60 km · ±45 min drive</div>
+        <div class="ec-name">Mpumalanga Scenic Routes</div>
+        <p class="ec-blurb">God's Window, Blyde River Canyon, Bourke's Luck Potholes — day trips through some of the world's most spectacular scenery.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ BOOKING ════════════════════════════════════ -->
+<section id="booking" class="sp">
+  <div class="bk-grid">
+    <div>
+      <div class="etag">Reserve Your Stay</div>
+      <h2 class="bk-info-title">Book your stay,<br><em>instantly on WhatsApp</em></h2>
+      <p class="bk-info-body">Fill in your details and we'll send your request directly to our WhatsApp. We respond fast — most bookings confirmed within the hour.</p>
+      <div class="bk-perks">
+        <div class="bk-perk"><div class="bk-perk-dot">✓</div>Instant WhatsApp confirmation</div>
+        <div class="bk-perk"><div class="bk-perk-dot">✓</div>No booking fees, no hidden charges</div>
+        <div class="bk-perk"><div class="bk-perk-dot">✓</div>Flexible check-in arrangements</div>
+        <div class="bk-perk"><div class="bk-perk-dot">✓</div>Special requests always welcome</div>
+      </div>
+      <div class="bk-price-tag">
+        <span class="bk-price-amt">R900</span>
+        <span class="bk-price-per">per night · all inclusive</span>
+      </div>
+    </div>
+    <div>
+      <div class="bk-form-wrap">
+        <div class="bk-form-title">Book Now</div>
+        <div class="bk-form-sub">Your details go directly to our WhatsApp · Fast response guaranteed</div>
+        <form id="bk-form" novalidate>
+          <div class="fl-wrap">
+            <input type="text" id="bk-name" placeholder=" " required autocomplete="name">
+            <label class="fl-label" for="bk-name">Full Name</label>
+          </div>
+          <div class="fl-row">
+            <div class="fl-wrap">
+              <input type="email" id="bk-email" placeholder=" " autocomplete="email">
+              <label class="fl-label" for="bk-email">Email Address</label>
+            </div>
+            <div class="fl-wrap">
+              <input type="tel" id="bk-phone" placeholder=" " required autocomplete="tel">
+              <label class="fl-label" for="bk-phone">Phone Number</label>
+            </div>
+          </div>
+          <div class="fl-row">
+            <div class="fl-wrap" id="wrap-checkin">
+              <input type="date" id="bk-checkin">
+              <label class="fl-label" for="bk-checkin">Check-In Date</label>
+            </div>
+            <div class="fl-wrap" id="wrap-checkout">
+              <input type="date" id="bk-checkout">
+              <label class="fl-label" for="bk-checkout">Check-Out Date</label>
+            </div>
+          </div>
+          <div class="fl-wrap" id="wrap-guests">
+            <select id="bk-guests">
+              <option value=""></option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="4+">4+ Guests</option>
+            </select>
+            <label class="fl-label" for="bk-guests">Number of Guests</label>
+          </div>
+          <div class="fl-wrap">
+            <textarea id="bk-special" placeholder=" "></textarea>
+            <label class="fl-label" for="bk-special">Special Requests (optional)</label>
+          </div>
+          <button type="submit" class="bk-submit">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Send Booking Request on WhatsApp
+          </button>
+        </form>
+        <div class="bk-success" id="bk-success">
+          <div class="bk-ok-ring">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="bk-ok-h">Request Sent!</div>
+          <p class="bk-ok-p">Your booking request has been opened in WhatsApp. We'll confirm your reservation within the hour.</p>
+          <button class="bk-ok-reset" id="bk-reset">Make another booking</button>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═════════════════════════════════════════ -->
-<section id="testimonials" class="sp">
-  <div class="etag">Guest Stories</div>
-  <h2 class="stitle" id="test-title">Voices from our <em>guests</em></h2>
-  <div class="test-grid">
-    <div class="tc">
-      <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-      <p class="tc-text">"Expreso was the highlight of our Mpumalanga trip. The room was beautiful — bold, warm, and immaculately clean. The hosts were incredibly welcoming. We'll be back."</p>
-      <div class="tc-auth">
-        <div class="tc-av"><img src="https://placehold.co/80x80/B47A45/FAF8F5?text=SM" alt="Sarah M."></div>
-        <div><div class="tc-name">Sarah M.</div><div class="tc-from">Johannesburg, South Africa</div></div>
-      </div>
+<!-- ══════════════ TESTIMONIALS ══════════════════════════════ -->
+<section id="testimonials">
+  <div class="test-hdr">
+    <div>
+      <div class="etag etag-dk">Guest Reviews</div>
+      <h2 class="stitle stitle-lt">Voices from our <em>guests</em></h2>
     </div>
-    <div class="tc">
-      <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-      <p class="tc-text">"A genuinely special place. The self-catering kitchen was fully stocked and the location perfect for Kruger. The character of these rooms is unlike anything we've stayed in."</p>
-      <div class="tc-auth">
-        <div class="tc-av"><img src="https://placehold.co/80x80/D8A876/121212?text=MT" alt="Mark T."></div>
-        <div><div class="tc-name">Mark & Lisa T.</div><div class="tc-from">Cape Town, South Africa</div></div>
-      </div>
+    <div class="test-ctrl">
+      <button class="t-btn" id="t-prev" aria-label="Previous review">‹</button>
+      <button class="t-btn" id="t-next" aria-label="Next review">›</button>
     </div>
-    <div class="tc">
-      <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-      <p class="tc-text">"The warmth of this place matched the warmth of its colours — which perfectly matched the warmth of South Africa. Exceeded every expectation. Highly recommended."</p>
-      <div class="tc-auth">
-        <div class="tc-av"><img src="https://placehold.co/80x80/121212/D8A876?text=JO" alt="James O."></div>
-        <div><div class="tc-name">James O.</div><div class="tc-from">London, United Kingdom</div></div>
+  </div>
+  <div class="test-track-wrap">
+    <div class="test-track" id="test-track">
+
+      <div class="tc">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-text">"Expresso was the highlight of our Mpumalanga trip. The apartment was stunning — bold, warm, and immaculately clean. The hosts were incredibly welcoming. We will absolutely be back."</p>
+        <div class="tc-auth">
+          <div class="tc-av"><img src="https://placehold.co/80x80/B47A45/FAF8F5?text=SM" alt="Sarah M."></div>
+          <div><div class="tc-name">Sarah M.</div><div class="tc-from">Johannesburg, South Africa</div></div>
+        </div>
       </div>
+
+      <div class="tc">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-text">"A genuinely special place. The kitchen had everything we needed and the location was perfect for Kruger. The character of this apartment is unlike anything we've stayed in before."</p>
+        <div class="tc-auth">
+          <div class="tc-av"><img src="https://placehold.co/80x80/D8A876/121212?text=MT" alt="Mark T."></div>
+          <div><div class="tc-name">Mark &amp; Lisa T.</div><div class="tc-from">Cape Town, South Africa</div></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-text">"The warmth of this apartment perfectly matched the warmth of South Africa. Two beautiful bedrooms, a fully equipped kitchen, and hosts who genuinely cared. Exceeded every expectation."</p>
+        <div class="tc-auth">
+          <div class="tc-av"><img src="https://placehold.co/80x80/2a1a0a/D8A876?text=JO" alt="James O."></div>
+          <div><div class="tc-name">James O.</div><div class="tc-from">London, United Kingdom</div></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-text">"Stayed a full week with the family and could not have been happier. Spacious, spotlessly clean, and the R900/night price is unbeatable for what you get. Nelspruit has a hidden gem."</p>
+        <div class="tc-auth">
+          <div class="tc-av"><img src="https://placehold.co/80x80/B47A45/FAF8F5?text=NK" alt="Nomsa K."></div>
+          <div><div class="tc-name">Nomsa K.</div><div class="tc-from">Pretoria, South Africa</div></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tc-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="tc-text">"Perfect base for our Kruger adventure. The apartment is comfortable and great value. The hosts responded instantly on WhatsApp and couldn't be more helpful. 10/10 — will be back."</p>
+        <div class="tc-auth">
+          <div class="tc-av"><img src="https://placehold.co/80x80/4a3020/D8A876?text=PV" alt="Pieter V."></div>
+          <div><div class="tc-name">Pieter V.</div><div class="tc-from">Durban, South Africa</div></div>
+        </div>
+      </div>
+
     </div>
+  </div>
+  <div class="test-dots" id="test-dots">
+    <div class="td active" onclick="goSlide(0)"></div>
+    <div class="td" onclick="goSlide(1)"></div>
+    <div class="td" onclick="goSlide(2)"></div>
   </div>
 </section>
 
@@ -756,300 +957,464 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 <div id="bstrip">
   <div class="bstrip-inner">
     <div>
-      <div class="bstrip-txt">Ready to experience Mpumalanga?</div>
-      <div class="bstrip-sub">Contact us directly — availability fills fast.</div>
+      <div class="bstrip-txt">Ready to book your stay?</div>
+      <div class="bstrip-sub">Message us on WhatsApp — fast responses, easy booking.</div>
     </div>
-    <a href="tel:0723606294" class="btn-strip">Call to Book →</a>
+    <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-strip">Chat on WhatsApp →</a>
   </div>
 </div>
 
-<!-- ═══ CONTACT / LOCATION ═══════════════════════════════════ -->
+<!-- ══════════════ CONTACT ════════════════════════════════════ -->
 <section id="location" class="sp">
   <div class="loc-grid">
     <div>
-      <div class="etag etag-dark">Find Us</div>
-      <h2 class="loc-title">Gateway to<br><em style="font-style:italic;color:var(--p)">Africa's</em><br>Greatest Wild</h2>
-      <p class="loc-body">Situated in Nelspruit, Mpumalanga — minutes from the CBD and 87 km from Kruger's Numbi Gate. Panorama Route, Blyde River Canyon, and God's Window all within easy reach.</p>
-      <div>
-        <div class="ci"><div class="ci-ico">📞</div><div><div class="ci-lbl">Phone</div><a href="tel:0723606294" class="ci-val">072 360 6294</a></div></div>
-        <div class="ci"><div class="ci-ico">✉</div><div><div class="ci-lbl">Email</div><a href="mailto:expreso@airbnb.co.za" class="ci-val">expreso@airbnb.co.za</a></div></div>
-        <div class="ci"><div class="ci-ico">📍</div><div><div class="ci-lbl">Location</div><span class="ci-val">Nelspruit, Mpumalanga, South Africa</span></div></div>
+      <div class="etag etag-dk">Find Us</div>
+      <h2 class="loc-title">Gateway to<br><em>Africa's</em><br>Greatest Wild</h2>
+      <p class="loc-body">Situated in Nelspruit, Mpumalanga — minutes from the CBD and 87 km from Kruger's Numbi Gate. Panorama Route, Blyde River Canyon, and Sudwala Caves all within easy reach.</p>
+      <div class="ci">
+        <div class="ci-ico">📞</div>
+        <div>
+          <div class="ci-lbl">WhatsApp / Phone</div>
+          <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="ci-val">072 360 6294</a>
+        </div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico">✉</div>
+        <div>
+          <div class="ci-lbl">Email</div>
+          <a href="mailto:expreso@airbnb.co.za" class="ci-val">expreso@airbnb.co.za</a>
+        </div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico">📍</div>
+        <div>
+          <div class="ci-lbl">Location</div>
+          <span class="ci-val">Nelspruit, Mpumalanga, South Africa</span>
+        </div>
       </div>
       <div style="margin-top:2.25rem">
-        <a href="tel:0723606294" class="btn-p">Make an Enquiry <span class="btn-icon">↗</span></a>
+        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon">↗</span></a>
       </div>
     </div>
     <div>
-      <div class="map-bezel">
-        <div class="map-inner">
-          <img src="brand_assets/Outside%202.jpeg" alt="Location">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(18,18,18,.75),rgba(180,122,69,.12))"></div>
-          <div class="map-pin-wrap">
-            <div class="map-pin"></div>
-            <div class="map-txt">Nelspruit, Mpumalanga</div>
-          </div>
+      <div class="loc-map-wrap">
+        <div class="loc-map-inner">
+          <iframe
+            src="https://maps.google.com/maps?q=Nelspruit+Mpumalanga+South+Africa&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            title="Expresso Accommodation — Nelspruit, Mpumalanga"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
+      </div>
+      <div class="loc-contact-form">
+        <div class="lcf-title">Send a Message</div>
+        <form id="loc-contact-form" novalidate>
+          <div class="lcf-field">
+            <input type="text" id="lcf-name" placeholder=" " required autocomplete="name">
+            <label class="lcf-label" for="lcf-name">Your Name</label>
+          </div>
+          <div class="lcf-field">
+            <textarea id="lcf-msg" placeholder=" " required></textarea>
+            <label class="lcf-label" for="lcf-msg">Your Message</label>
+          </div>
+          <button type="submit" class="lcf-submit">Send via WhatsApp →</button>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══════════════════════════════════════════════ -->
+<!-- ══════════════ FOOTER ══════════════════════════════════════ -->
 <footer>
-  <div class="ft-grid">
-    <div>
-      <div class="ft-brand">Expreso</div>
-      <div class="ft-brand-sub">Accommodation · Nelspruit</div>
-      <p class="ft-desc">A vibrant, character-filled guesthouse in the heart of Mpumalanga. Where bold African spirit meets premium comfort and genuine hospitality.</p>
+  <div class="ft-accent"></div>
+  <div class="ft-inner">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand">Expresso</div>
+        <div class="ft-brand-sub">Accommodation · Nelspruit</div>
+        <p class="ft-desc">A luxury 2-bedroom self-catering apartment in the heart of Mpumalanga. Bold African character, genuine comfort, and hosts who care.</p>
+        <div class="ft-social">
+          <!-- WhatsApp -->
+          <a class="ft-soc" href="https://wa.me/27723606294" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a class="ft-soc" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a class="ft-soc" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+        <a class="ft-book-btn" href="https://wa.me/27723606294" target="_blank" rel="noopener">Book Now →</a>
+      </div>
+      <div>
+        <div class="ft-col-title">Navigate</div>
+        <ul class="ft-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#accommodation">The Apartment</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#booking">Book a Stay</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#location">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Nearby</div>
+        <ul class="ft-links">
+          <li><a href="#">Kruger National Park</a></li>
+          <li><a href="#">Lowveld Botanical Garden</a></li>
+          <li><a href="#">Sudwala Caves</a></li>
+          <li><a href="#">Blyde River Canyon</a></li>
+          <li><a href="#">Mbombela Stadium</a></li>
+          <li><a href="#">Riverside Mall</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Contact</div>
+        <ul class="ft-links">
+          <li><a href="https://wa.me/27723606294" target="_blank" rel="noopener">WhatsApp: 072 360 6294</a></li>
+          <li><a href="mailto:expreso@airbnb.co.za">expreso@airbnb.co.za</a></li>
+          <li><span style="color:rgba(250,248,245,.38);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300">Nelspruit, Mpumalanga</span></li>
+          <li><span style="color:rgba(250,248,245,.38);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300">South Africa</span></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <div class="ft-col-title">Navigate</div>
-      <ul class="ft-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#accommodation">Accommodation</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#experiences">Experiences</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
+    <div class="ft-btm">
+      <div class="ft-copy">© 2026 Expresso Accommodation · Nelspruit, Mpumalanga · All rights reserved</div>
+      <div class="ft-copy">Crafted with care for South African hospitality</div>
     </div>
-    <div>
-      <div class="ft-col-title">Explore Nearby</div>
-      <ul class="ft-links">
-        <li><a href="#">Kruger National Park</a></li>
-        <li><a href="#">Panorama Route</a></li>
-        <li><a href="#">Blyde River Canyon</a></li>
-        <li><a href="#">God's Window</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="ft-col-title">Contact</div>
-      <ul class="ft-links">
-        <li><a href="tel:0723606294">072 360 6294</a></li>
-        <li><a href="mailto:expreso@airbnb.co.za">expreso@airbnb.co.za</a></li>
-        <li><a href="#">Nelspruit, Mpumalanga</a></li>
-        <li><a href="#">South Africa</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="ft-btm">
-    <div class="ft-copy">© 2026 Expreso Accommodation · Nelspruit, Mpumalanga · All rights reserved</div>
-    <div class="ft-copy">Crafted with care for South African hospitality</div>
   </div>
 </footer>
 
 <script>
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// ── CURSOR ────────────────────────────────────────────────
+/* ── CURSOR ─────────────────────────────────────────────── */
 const cur = document.getElementById('cur');
 const curR = document.getElementById('cur-r');
-let mx = window.innerWidth/2, my = window.innerHeight/2;
-let rx = mx, ry = my;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  gsap.to(cur, { x: mx, y: my, duration: .1, ease: 'power2.out' });
-});
-(function raf() { rx += (mx-rx)*.09; ry += (my-ry)*.09; gsap.set(curR,{x:rx,y:ry}); requestAnimationFrame(raf); })();
-document.querySelectorAll('a,button,.am-card,.tc,.ac,.exp-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    gsap.to(cur, { scale:3.5, opacity:.5, duration:.3, ease:'power2.out' });
-    gsap.to(curR, { scale:1.6, borderColor:'rgba(180,122,69,.6)', duration:.35 });
+if (cur && window.matchMedia('(pointer:fine)').matches) {
+  let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    gsap.to(cur, {x:mx, y:my, duration:.1, ease:'power2.out'});
   });
-  el.addEventListener('mouseleave', () => {
-    gsap.to(cur, { scale:1, opacity:1, duration:.3, ease:'power2.out' });
-    gsap.to(curR, { scale:1, borderColor:'rgba(180,122,69,.35)', duration:.35 });
+  (function raf(){rx+=(mx-rx)*.09; ry+=(my-ry)*.09; gsap.set(curR,{x:rx,y:ry}); requestAnimationFrame(raf);})();
+  document.querySelectorAll('a,button,.wc,.tc,.ec,.mi,.apt-img-main,.apt-img-sm').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{gsap.to(cur,{scale:3.5,opacity:.5,duration:.3}); gsap.to(curR,{scale:1.6,borderColor:'rgba(180,122,69,.6)',duration:.35});});
+    el.addEventListener('mouseleave',()=>{gsap.to(cur,{scale:1,opacity:1,duration:.3}); gsap.to(curR,{scale:1,borderColor:'rgba(180,122,69,.35)',duration:.35});});
   });
-});
+}
 
-// ── HAMBURGER ─────────────────────────────────────────────
+/* ── HAMBURGER ──────────────────────────────────────────── */
 let menuOpen = false;
 const mob = document.getElementById('mob-menu');
-const h1 = document.getElementById('h1');
-const h2 = document.getElementById('h2');
-const h3 = document.getElementById('h3');
-document.getElementById('ham-btn').addEventListener('click', () => {
-  menuOpen = !menuOpen;
-  if (menuOpen) {
-    mob.classList.add('open');
-    gsap.to(h1,{y:6.5,rotation:45,duration:.35,ease:'power3.out'});
-    gsap.to(h2,{opacity:0,duration:.2});
-    gsap.to(h3,{y:-6.5,rotation:-45,duration:.35,ease:'power3.out'});
-  } else {
-    mob.classList.remove('open');
-    gsap.to(h1,{y:0,rotation:0,duration:.35,ease:'power3.out'});
-    gsap.to(h2,{opacity:1,duration:.25});
-    gsap.to(h3,{y:0,rotation:0,duration:.35,ease:'power3.out'});
-  }
-});
-mob.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => {
-  menuOpen = false; mob.classList.remove('open');
+const h1=document.getElementById('h1'), h2=document.getElementById('h2'), h3=document.getElementById('h3');
+function closeMenu(){
+  menuOpen=false; mob.classList.remove('open');
   gsap.to(h1,{y:0,rotation:0,duration:.35,ease:'power3.out'});
   gsap.to(h2,{opacity:1,duration:.25});
   gsap.to(h3,{y:0,rotation:0,duration:.35,ease:'power3.out'});
-}));
+}
+document.getElementById('ham-btn').addEventListener('click',()=>{
+  menuOpen=!menuOpen; mob.classList.toggle('open',menuOpen);
+  if(menuOpen){
+    gsap.to(h1,{y:6.5,rotation:45,duration:.35,ease:'power3.out'});
+    gsap.to(h2,{opacity:0,duration:.2});
+    gsap.to(h3,{y:-6.5,rotation:-45,duration:.35,ease:'power3.out'});
+  } else { closeMenu(); }
+});
+mob.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click',closeMenu));
 
-// ── PRELOADER ─────────────────────────────────────────────
+/* ── PRELOADER ──────────────────────────────────────────── */
 const bar = document.getElementById('pl-bar');
 let prog = 0;
-gsap.from('#pl-wrap', { opacity:0, y:24, duration:.8, ease:'power3.out' });
-const iv = setInterval(() => {
+gsap.from('#pl-wrap',{opacity:0,y:24,duration:.8,ease:'power3.out'});
+const iv = setInterval(()=>{
   prog = Math.min(prog + Math.random()*18+5, 100);
-  bar.style.width = prog + '%';
-  if (prog >= 100) { clearInterval(iv); setTimeout(revealPage, 380); }
-}, 100);
+  bar.style.width = prog+'%';
+  if(prog>=100){clearInterval(iv); setTimeout(revealPage,380);}
+},100);
 
-function revealPage() {
-  gsap.to('#pl-wrap', { opacity:0, y:-16, duration:.5, ease:'power3.in', onComplete: () => {
-    gsap.to('#preloader', {
-      yPercent:-100, duration:1.1, ease:'power4.inOut',
-      onComplete: () => { document.getElementById('preloader').style.display='none'; startHero(); }
-    });
+function revealPage(){
+  gsap.to('#pl-wrap',{opacity:0,y:-16,duration:.5,ease:'power3.in',onComplete:()=>{
+    gsap.to('#preloader',{yPercent:-100,duration:1.1,ease:'power4.inOut',onComplete:()=>{
+      document.getElementById('preloader').style.display='none';
+      startHero();
+    }});
   }});
 }
 
-// ── HERO ANIMATIONS ───────────────────────────────────────
-function startHero() {
-  // Cinematic slow zoom
-  gsap.fromTo('#hero-img', { scale:1 }, { scale:1.08, duration:14, ease:'none' });
-
-  // Nav entrance
-  gsap.from('#nav', { y:-30, opacity:0, duration:.9, ease:'power3.out', delay:.1 });
-
-  // Hero content stagger
-  gsap.from('#hero-ey', { x:-20, opacity:0, duration:.8, ease:'power3.out', delay:.25 });
-  gsap.from(['#hl1','#hl2','#hl3'], { y:'110%', stagger:.14, duration:1.2, ease:'power4.out', delay:.35 });
-  gsap.from('#hero-sub', { y:16, opacity:0, duration:.9, ease:'power3.out', delay:.9 });
-  gsap.from('#hero-ctas', { y:16, opacity:0, duration:.9, ease:'power3.out', delay:1.0 });
-  gsap.from('#review-badge', { x:30, opacity:0, duration:1.0, ease:'power3.out', delay:1.1 });
-  gsap.from('.scroll-hint', { opacity:0, duration:1, delay:1.5 });
-
-  // Hero parallax on scroll
-  gsap.to('#hero-img', {
-    yPercent:20, ease:'none',
-    scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:1 }
-  });
-
+/* ── HERO ───────────────────────────────────────────────── */
+function startHero(){
+  gsap.fromTo('#hero-img',{scale:1},{scale:1.08,duration:14,ease:'none'});
+  gsap.from('#nav',{y:-30,opacity:0,duration:.9,ease:'power3.out',delay:.1});
+  gsap.from('#hero-ey',{x:-20,opacity:0,duration:.8,ease:'power3.out',delay:.25});
+  gsap.from(['#hl1','#hl2','#hl3'],{y:'110%',stagger:.14,duration:1.2,ease:'power4.out',delay:.35});
+  gsap.from('#hero-sub',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:.9});
+  gsap.from('#hero-ctas',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:1.0});
+  gsap.from('#review-badge',{x:30,opacity:0,duration:1.0,ease:'power3.out',delay:1.15});
+  gsap.to('#hero-img',{yPercent:20,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1}});
   initScrollAnims();
   initActiveNav();
 }
 
-// ── NAV GLASSMORPHIC ON SCROLL ────────────────────────────
+/* ── NAV GLASSMORPHIC ───────────────────────────────────── */
 ScrollTrigger.create({
-  start:'top -80', end:99999,
-  onUpdate: s => {
-    document.getElementById('nav').classList.toggle('scrolled', s.isActive);
-  }
+  start:'top -80',end:99999,
+  onUpdate:s=>document.getElementById('nav').classList.toggle('scrolled',s.isActive)
 });
 
-// ── ACTIVE NAV INDICATOR ──────────────────────────────────
-function initActiveNav() {
-  const sections = document.querySelectorAll('section[id], div[id="bstrip"]');
+/* ── ACTIVE NAV ─────────────────────────────────────────── */
+function initActiveNav(){
   const links = document.querySelectorAll('.nav-link[data-section]');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        links.forEach(l => {
-          l.classList.toggle('active', l.dataset.section === id);
-        });
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id=e.target.id;
+        links.forEach(l=>l.classList.toggle('active',l.dataset.section===id));
       }
     });
-  }, { threshold: 0.35, rootMargin:'-80px 0px -40% 0px' });
-
-  sections.forEach(s => observer.observe(s));
+  },{threshold:.3,rootMargin:'-80px 0px -40% 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
 }
 
-// ── SCROLL ANIMATIONS ─────────────────────────────────────
-function initScrollAnims() {
-  function reveal(targets, opts = {}) {
-    gsap.from(targets, {
-      y: opts.y ?? 50, opacity:0, duration: opts.dur ?? 1.0,
-      stagger: opts.stagger ?? 0, ease:'power3.out',
-      scrollTrigger:{
-        trigger: opts.trigger ?? (typeof targets==='string' ? targets : null) ?? targets,
-        start:'top 88%', once:true, ...(opts.st || {})
-      }
+/* ── SCROLL ANIMATIONS ──────────────────────────────────── */
+function initScrollAnims(){
+  function rv(sel,opts={}){
+    gsap.from(sel,{
+      y:opts.y??50,opacity:0,duration:opts.dur??1.0,stagger:opts.stagger??0,ease:'power3.out',
+      scrollTrigger:{trigger:opts.trigger??sel,start:'top 88%',once:true}
     });
   }
 
-  // Watermark parallax
-  gsap.to('.watermark', {
-    yPercent:-28, ease:'none',
-    scrollTrigger:{ trigger:'#about', start:'top bottom', end:'bottom top', scrub:1 }
-  });
+  /* About parallax */
+  gsap.to('#about-par',{yPercent:-12,ease:'none',
+    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
+  gsap.to('.about-wm',{yPercent:-22,ease:'none',
+    scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
 
-  // About floating image
-  gsap.to('.bezel', { y:-14, duration:3.5, ease:'sine.inOut', yoyo:true, repeat:-1, delay:.5 });
+  /* Why Choose Us — staggered card reveals */
+  rv('.why-intro > *',{stagger:.1,trigger:'#why'});
+  gsap.from('.wc',{y:55,opacity:0,stagger:.12,duration:1.05,ease:'power3.out',
+    scrollTrigger:{trigger:'.why-grid',start:'top 84%',once:true}});
 
-  // About
-  reveal(['#a-tag','#a-title','#a-rule','#a-b1','#a-b2','#a-stats'], { stagger:.1, trigger:'#about' });
-  reveal('#a-img', { y:60, trigger:'#a-img' });
+  /* About */
+  rv(['#about .etag','#about-title','.crule','.about-pull','.about-body','.about-pillars'],
+    {stagger:.08,trigger:'#about'});
+  rv('#about-img-col',{y:70,dur:1.1,trigger:'#about-img-col'});
+  gsap.from('.about-float',{x:-30,opacity:0,duration:1.0,delay:.4,ease:'power3.out',
+    scrollTrigger:{trigger:'#about-img-col',start:'top 85%',once:true}});
 
-  // Accommodation header + cards
-  reveal('.acc-header', { trigger:'.acc-header' });
-  gsap.from('.ac', {
-    y:55, opacity:0, stagger:.15, duration:1.1, ease:'power3.out',
-    scrollTrigger:{ trigger:'.acc-cards', start:'top 85%', once:true }
-  });
+  /* Apartment */
+  rv('#apt-detail > *',{stagger:.1,trigger:'#accommodation'});
+  gsap.from('.apt-img-main,.apt-img-sm',{y:40,opacity:0,stagger:.13,duration:1.0,ease:'power3.out',
+    scrollTrigger:{trigger:'#apt-imgs',start:'top 85%',once:true}});
 
-  // Amenities
-  reveal('#am-title', { trigger:'#am-title' });
-  gsap.from('.am-card', {
-    y:30, opacity:0, stagger:.07, duration:.85, ease:'power3.out',
-    scrollTrigger:{ trigger:'.am-grid', start:'top 86%', once:true }
-  });
+  /* Gallery */
+  gsap.from('.gal-hdr > *',{y:30,opacity:0,stagger:.1,duration:.9,ease:'power3.out',
+    scrollTrigger:{trigger:'.gal-hdr',start:'top 88%',once:true}});
+  gsap.from('.mi',{y:45,opacity:0,stagger:.07,duration:.95,ease:'power3.out',
+    scrollTrigger:{trigger:'.mas-grid',start:'top 86%',once:true}});
 
-  // Gallery
-  gsap.from('.gal-hdr > *', { y:30, opacity:0, stagger:.1, duration:.9, ease:'power3.out',
-    scrollTrigger:{ trigger:'.gal-hdr', start:'top 88%', once:true }
-  });
-  gsap.from('.gi', {
-    y:50, opacity:0, stagger:.1, duration:1.1, ease:'power3.out',
-    scrollTrigger:{ trigger:'.gal-grid', start:'top 85%', once:true }
-  });
+  /* Experiences */
+  rv('.exp-header > *',{stagger:.1,trigger:'#experiences'});
+  gsap.from('.ec',{y:45,opacity:0,stagger:.1,duration:1.0,ease:'power3.out',
+    scrollTrigger:{trigger:'.exp-grid',start:'top 85%',once:true}});
 
-  // Experiences
-  reveal('#exp-title', { trigger:'#exp-title' });
-  gsap.from('.exp-card', {
-    y:50, opacity:0, stagger:.14, duration:1.0, ease:'power3.out',
-    scrollTrigger:{ trigger:'.exp-grid', start:'top 85%', once:true }
-  });
+  /* Testimonials */
+  gsap.from('.test-hdr > *',{y:30,opacity:0,stagger:.12,duration:.9,ease:'power3.out',
+    scrollTrigger:{trigger:'#testimonials',start:'top 86%',once:true}});
 
-  // Testimonials
-  reveal('#test-title', { trigger:'#test-title' });
-  gsap.from('.tc', {
-    y:40, opacity:0, stagger:.14, duration:.95, ease:'power3.out',
-    scrollTrigger:{ trigger:'.test-grid', start:'top 86%', once:true }
-  });
+  /* Booking */
+  rv('.bk-grid > *',{stagger:.15,trigger:'#booking'});
+  gsap.from('.bk-perk',{x:-20,opacity:0,stagger:.09,duration:.75,ease:'power3.out',
+    scrollTrigger:{trigger:'.bk-perks',start:'top 88%',once:true}});
+  rv('.bk-form-wrap',{y:45,dur:1.05,trigger:'.bk-form-wrap'});
 
-  // Booking strip
-  gsap.from('#bstrip', { opacity:0, y:20, duration:.8, ease:'power3.out',
-    scrollTrigger:{ trigger:'#bstrip', start:'top 90%', once:true }
-  });
-
-  // Location
-  gsap.from('#location .loc-grid > *', {
-    y:50, opacity:0, stagger:.18, duration:1.0, ease:'power3.out',
-    scrollTrigger:{ trigger:'#location', start:'top 86%', once:true }
-  });
-
-  // Footer
-  gsap.from('footer', { opacity:0, y:20, duration:.7, ease:'power3.out',
-    scrollTrigger:{ trigger:'footer', start:'top 90%', once:true }
-  });
+  /* Booking strip, location, footer */
+  gsap.from('#bstrip',{opacity:0,y:20,duration:.8,ease:'power3.out',
+    scrollTrigger:{trigger:'#bstrip',start:'top 90%',once:true}});
+  gsap.from('#location .loc-grid > *',{y:50,opacity:0,stagger:.18,duration:1.0,ease:'power3.out',
+    scrollTrigger:{trigger:'#location',start:'top 86%',once:true}});
+  gsap.from('.loc-map-wrap',{y:30,opacity:0,duration:.9,ease:'power3.out',
+    scrollTrigger:{trigger:'.loc-map-wrap',start:'top 88%',once:true}});
+  gsap.from('.loc-contact-form',{y:25,opacity:0,duration:.8,ease:'power3.out',
+    scrollTrigger:{trigger:'.loc-contact-form',start:'top 90%',once:true}});
+  gsap.from('footer',{opacity:0,y:20,duration:.7,ease:'power3.out',
+    scrollTrigger:{trigger:'footer',start:'top 90%',once:true}});
 }
 
-// ── SMOOTH SCROLL ─────────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (!t) return;
+/* ── SMOOTH SCROLL ──────────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(!t)return;
     e.preventDefault();
-    gsap.to(window, { duration:1.3, scrollTo:{ y:t, offsetY:80 }, ease:'power4.inOut' });
+    gsap.to(window,{duration:1.3,scrollTo:{y:t,offsetY:80},ease:'power4.inOut'});
   });
 });
 
+/* ── LIGHTBOX ───────────────────────────────────────────── */
+const galleryData=[
+  {src:'brand_assets/Picture%206.jpeg',  cap:'Open-Plan Living Room'},
+  {src:'brand_assets/ROOM%202.jpeg',     cap:'Master Bedroom'},
+  {src:'brand_assets/Outside%202.jpeg',  cap:'Property Exterior'},
+  {src:'brand_assets/Room%201.jpeg',     cap:'Second Bedroom'},
+  {src:'brand_assets/Picture%205.jpeg',  cap:'Fully Equipped Kitchen'},
+  {src:'brand_assets/Picture%204.jpeg',  cap:'Lounge Area'},
+  {src:'brand_assets/Picture%203.jpeg',  cap:'Sitting Room'},
+  {src:'brand_assets/Outside%201.jpeg',  cap:'Secure Entrance'},
+];
+let lbIdx=0;
+const lb=document.getElementById('lightbox');
+const lbImg=document.getElementById('lb-img');
+const lbCap=document.getElementById('lb-cap');
+const lbCtr=document.getElementById('lb-counter');
+
+function openLb(i){
+  lbIdx=i;
+  lbImg.src=galleryData[i].src;
+  lbCap.textContent=galleryData[i].cap;
+  lbCtr.textContent=(i+1)+' / '+galleryData.length;
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+  gsap.fromTo(lbImg,{scale:.88,opacity:0},{scale:1,opacity:1,duration:.45,ease:'power3.out'});
+}
+function closeLb(){
+  gsap.to(lbImg,{scale:.9,opacity:0,duration:.25,ease:'power3.in',onComplete:()=>{
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+  }});
+}
+function shiftLb(dir){
+  lbIdx=(lbIdx+dir+galleryData.length)%galleryData.length;
+  const ox=dir>0?-40:40;
+  gsap.to(lbImg,{opacity:0,x:ox,duration:.2,onComplete:()=>{
+    lbImg.src=galleryData[lbIdx].src;
+    lbCap.textContent=galleryData[lbIdx].cap;
+    lbCtr.textContent=(lbIdx+1)+' / '+galleryData.length;
+    gsap.fromTo(lbImg,{opacity:0,x:-ox},{opacity:1,x:0,duration:.3,ease:'power3.out'});
+  }});
+}
+document.getElementById('lb-close').addEventListener('click',closeLb);
+document.getElementById('lb-prev').addEventListener('click',()=>shiftLb(-1));
+document.getElementById('lb-next').addEventListener('click',()=>shiftLb(1));
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')shiftLb(-1);
+  if(e.key==='ArrowRight')shiftLb(1);
+});
+
+/* ── TESTIMONIAL CAROUSEL ───────────────────────────────── */
+let tIdx=0;
+const tTrack=document.getElementById('test-track');
+const tDots=document.querySelectorAll('.td');
+
+function goSlide(n){
+  tIdx=Math.max(0,Math.min(n,2));
+  const card=tTrack.querySelector('.tc');
+  const gapPx=20; // 1.25rem gap ≈ 20px
+  const cardW=card.offsetWidth+gapPx;
+  gsap.to(tTrack,{x:-tIdx*cardW,duration:.8,ease:'power3.inOut'});
+  tDots.forEach((d,i)=>d.classList.toggle('active',i===tIdx));
+}
+
+document.getElementById('t-prev').addEventListener('click',()=>goSlide(tIdx-1));
+document.getElementById('t-next').addEventListener('click',()=>goSlide(tIdx+1));
+
+let tAuto=setInterval(()=>goSlide((tIdx+1)%3),5000);
+tTrack.addEventListener('mouseenter',()=>clearInterval(tAuto));
+tTrack.addEventListener('mouseleave',()=>{tAuto=setInterval(()=>goSlide((tIdx+1)%3),5000);});
+
+/* ── BOOKING FORM ───────────────────────────────────────── */
+(function(){
+  // Force float labels on date/select inputs
+  ['bk-checkin','bk-checkout','bk-guests'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    const wrap=el.closest('.fl-wrap');
+    const update=()=>wrap.classList.toggle('has-val',el.value!=='');
+    el.addEventListener('change',update);
+    el.addEventListener('input',update);
+    update();
+  });
+
+  const form=document.getElementById('bk-form');
+  const success=document.getElementById('bk-success');
+  const resetBtn=document.getElementById('bk-reset');
+  if(!form)return;
+
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const name=(document.getElementById('bk-name').value||'').trim();
+    const email=(document.getElementById('bk-email').value||'').trim();
+    const phone=(document.getElementById('bk-phone').value||'').trim();
+    const checkin=document.getElementById('bk-checkin').value;
+    const checkout=document.getElementById('bk-checkout').value;
+    const guests=document.getElementById('bk-guests').value;
+    const special=(document.getElementById('bk-special').value||'').trim();
+
+    let nightsLine='';
+    if(checkin&&checkout){
+      const nights=Math.round((new Date(checkout)-new Date(checkin))/(864e5));
+      if(nights>0) nightsLine=`\n\u{1F4C5} Duration: ${nights} night${nights>1?'s':''} — R${nights*900} total`;
+    }
+
+    const msg=`*Expresso Accommodation — Booking Request*\n\n`+
+      `\u{1F464} Name: ${name}\n`+
+      `\u{1F4E7} Email: ${email||'—'}\n`+
+      `\u{1F4F1} Phone: ${phone}\n`+
+      (checkin?`\u{1F4C5} Check-In: ${checkin}\n`:'')+
+      (checkout?`\u{1F4C5} Check-Out: ${checkout}\n`:'')+
+      nightsLine+
+      (guests?`\n\u{1F465} Guests: ${guests}`:'')+
+      (special?`\n\u{1F4AC} Special Requests: ${special}`:'');
+
+    window.open('https://wa.me/27723606294?text='+encodeURIComponent(msg),'_blank');
+
+    gsap.to(form,{opacity:0,y:-14,duration:.4,ease:'power3.in',onComplete:()=>{
+      form.style.display='none';
+      success.classList.add('show');
+      gsap.from(['.bk-ok-ring','.bk-ok-h','.bk-ok-p','.bk-ok-reset'],
+        {y:18,opacity:0,stagger:.1,duration:.55,ease:'power3.out'});
+    }});
+  });
+
+  if(resetBtn){
+    resetBtn.addEventListener('click',()=>{
+      success.classList.remove('show');
+      form.style.display='';
+      form.reset();
+      ['bk-checkin','bk-checkout','bk-guests'].forEach(id=>{
+        const el=document.getElementById(id);
+        if(el)el.closest('.fl-wrap')?.classList.remove('has-val');
+      });
+      gsap.fromTo(form,{opacity:0,y:14},{opacity:1,y:0,duration:.5,ease:'power3.out'});
+    });
+  }
+})();
+
+/* ── CONTACT FORM ───────────────────────────────────────── */
+(function(){
+  const lcf=document.getElementById('loc-contact-form');
+  if(!lcf)return;
+  lcf.addEventListener('submit',e=>{
+    e.preventDefault();
+    const name=(document.getElementById('lcf-name').value||'').trim();
+    const msg=(document.getElementById('lcf-msg').value||'').trim();
+    const text=`*Expresso Accommodation — Enquiry*\n\n\u{1F464} Name: ${name}\n\u{1F4AC} Message: ${msg}`;
+    window.open('https://wa.me/27723606294?text='+encodeURIComponent(text),'_blank');
+  });
+})();
 </script>
 </body>
 </html>
