@@ -386,7 +386,8 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 .svc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,3.5rem);font-weight:300;color:var(--d);line-height:1.12;letter-spacing:-.02em;margin-bottom:1rem}
 .svc-title em{font-style:italic;color:var(--p)}
 .svc-sub{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:rgba(18,18,18,.6);line-height:1.75}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto 4rem}
+.svc-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;max-width:1100px;margin:0 auto 4rem}
+.svc-card{flex:0 0 calc(33.333% - 1rem);min-width:0}
 .svc-card{background:#fff;border:1px solid rgba(180,122,69,.12);border-radius:1.25rem;padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(0.32,0.72,0,1),box-shadow .35s cubic-bezier(0.32,0.72,0,1)}
 .svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(180,122,69,.04) 0%,transparent 60%);pointer-events:none}
 .svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(180,122,69,.14),0 2px 8px rgba(0,0,0,.06)}
@@ -418,7 +419,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   .about-vis-over{display:none}
   .about-col{padding:3.5rem clamp(1.5rem,5vw,2.5rem)}
   .loc-grid,.apt-grid,.bk-grid{grid-template-columns:1fr;gap:2.75rem}
-  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc-card{flex:0 0 calc(50% - 0.75rem)}
   .svc-contact{grid-template-columns:1fr;gap:2rem}
   .hero-content{grid-template-columns:1fr}
   .review-badge{display:none}
@@ -447,7 +448,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 }
 @media(max-width:680px){
   .why-grid,.ft-grid{grid-template-columns:1fr}
-  .svc-grid{grid-template-columns:1fr}
+  .svc-card{flex:0 0 100%}
   .ec{grid-template-columns:2.5rem 1fr;gap:0 1.25rem}
   .ec-dist{display:none}
   .exp-header{flex-direction:column;align-items:flex-start;gap:1rem}
@@ -483,7 +484,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <div id="cur-r"></div>
 
 <!-- FLOATING WHATSAPP BUTTON -->
-<a id="wa-float" href="https://wa.me/27820592632" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a id="wa-float" href="https://wa.me/27813869988" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -765,40 +766,40 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   <div class="mas-grid">
     <!-- BEDROOMS -->
     <div class="mi" onclick="openLb(0)">
-      <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%" loading="lazy" decoding="async">
+      <img src="brand_assets/ROOM%202.jpeg" alt="Main bedroom" style="object-position:center 30%" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Master Bedroom</div>
+      <div class="mi-caption">Main Bedroom</div>
     </div>
     <div class="mi" onclick="openLb(1)">
-      <img src="brand_assets/Room%201.jpeg" alt="Second bedroom" style="object-position:center 20%" loading="lazy" decoding="async">
+      <img src="brand_assets/Room%201.jpeg" alt="Main bedroom" style="object-position:center 20%" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Main Bedroom</div>
+    </div>
+    <div class="mi" onclick="openLb(2)">
+      <img src="brand_assets/Bedroom%202.jpeg" alt="Second bedroom" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Second Bedroom</div>
     </div>
-    <div class="mi" onclick="openLb(2)">
-      <img src="brand_assets/Bedroom%202.jpeg" alt="Bedroom" loading="lazy" decoding="async">
-      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Bedroom</div>
-    </div>
     <div class="mi" onclick="openLb(3)">
-      <img src="brand_assets/Bedroom%202.1.jpeg" alt="Bedroom detail" loading="lazy" decoding="async">
+      <img src="brand_assets/Bedroom%202.1.jpeg" alt="Second bedroom" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Bedroom</div>
+      <div class="mi-caption">Second Bedroom</div>
     </div>
     <!-- LIVING ROOM & KITCHEN -->
     <div class="mi" onclick="openLb(4)">
-      <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room" loading="lazy" decoding="async">
+      <img src="brand_assets/Picture%206.jpeg" alt="Living room" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Living Room</div>
     </div>
     <div class="mi" onclick="openLb(5)">
-      <img src="brand_assets/Picture%204.jpeg" alt="Lounge area" loading="lazy" decoding="async">
+      <img src="brand_assets/Picture%204.jpeg" alt="Living room" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Lounge Area</div>
+      <div class="mi-caption">Living Room</div>
     </div>
     <div class="mi" onclick="openLb(6)">
-      <img src="brand_assets/Picture%203.jpeg" alt="Sitting room" loading="lazy" decoding="async">
+      <img src="brand_assets/Picture%203.jpeg" alt="Living room" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Sitting Room</div>
+      <div class="mi-caption">Living Room</div>
     </div>
     <div class="mi" onclick="openLb(7)">
       <img src="brand_assets/Living%20room%20Picture.jpeg" alt="Living room" loading="lazy" decoding="async">
@@ -983,7 +984,6 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
               <option value="2">2 Guests</option>
               <option value="3">3 Guests</option>
               <option value="4">4 Guests</option>
-              <option value="4+">4+ Guests</option>
             </select>
             <label class="fl-label" for="bk-guests">Number of Guests</label>
           </div>
@@ -1201,38 +1201,38 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 
     <div class="svc-card io-el" data-io-d="0.07">
       <div class="svc-ico">
-        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 012 2v5a2 2 0 01-2 2h-1m-2 0H9"/><circle cx="6.5" cy="18.5" r="2.5"/><circle cx="16.5" cy="18.5" r="2.5"/></svg>
-      </div>
-      <div class="svc-name">Courier Services</div>
-      <p class="svc-desc">Reliable parcel and document delivery around Nelspruit town. Fast, trusted, and tracked for your peace of mind.</p>
-      <span class="svc-badge">Around Town</span>
-    </div>
-
-    <div class="svc-card io-el" data-io-d="0.14">
-      <div class="svc-ico">
-        <svg viewBox="0 0 24 24"><path d="M3 22V7l9-5 9 5v15"/><path d="M6 11h.01M6 15h.01M18 11h.01M18 15h.01M12 11h.01M12 15h.01"/><path d="M9 22V12h6v10"/></svg>
-      </div>
-      <div class="svc-name">Laundry Services</div>
-      <p class="svc-desc">Wash, dry, and fold done to a high standard. Returned fresh and neatly presented so you can focus on what matters most.</p>
-      <span class="svc-badge">Same Day Available</span>
-    </div>
-
-    <div class="svc-card io-el" data-io-d="0.21">
-      <div class="svc-ico">
         <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
       </div>
       <div class="svc-name">Grocery Shopping</div>
       <p class="svc-desc">Send us your list and we will stock your kitchen before you arrive or replenish supplies during your stay.</p>
-      <span class="svc-badge">On Request</span>
+      <span class="svc-badge">Available On Request</span>
     </div>
 
-    <div class="svc-card io-el" data-io-d="0.35">
+    <div class="svc-card io-el" data-io-d="0.14">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 012 2v5a2 2 0 01-2 2h-1m-2 0H9"/><circle cx="6.5" cy="18.5" r="2.5"/><circle cx="16.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="svc-name">Courier Services</div>
+      <p class="svc-desc">Reliable parcel and document delivery around Nelspruit town. Fast, trusted, and tracked for your peace of mind.</p>
+      <span class="svc-badge">Available On Request</span>
+    </div>
+
+    <div class="svc-card io-el" data-io-d="0.21">
       <div class="svc-ico">
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </div>
       <div class="svc-name">Special Occasion Setup</div>
       <p class="svc-desc">Celebrating a birthday, anniversary, or proposal? We arrange decorations and personal touches to make your moment unforgettable.</p>
-      <span class="svc-badge">Advance Notice Required</span>
+      <span class="svc-badge">Available On Request</span>
+    </div>
+
+    <div class="svc-card io-el" data-io-d="0.28">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24"><path d="M3 22V7l9-5 9 5v15"/><path d="M6 11h.01M6 15h.01M18 11h.01M18 15h.01M12 11h.01M12 15h.01"/><path d="M9 22V12h6v10"/></svg>
+      </div>
+      <div class="svc-name">Laundry Services</div>
+      <p class="svc-desc">Wash, dry, and fold done to a high standard. Returned fresh and neatly presented so you can focus on what matters most.</p>
+      <span class="svc-badge">Available On Request</span>
     </div>
 
   </div>
@@ -1285,15 +1285,15 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="ci">
         <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
         <div>
-          <div class="ci-lbl">Ringetani Maluleke</div>
-          <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="ci-val">082 059 2632</a>
+          <div class="ci-lbl">Reach Moloto</div>
+          <a href="https://wa.me/27813869988" target="_blank" rel="noopener" class="ci-val">081 386 9988</a>
         </div>
       </div>
       <div class="ci">
         <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
         <div>
-          <div class="ci-lbl">WhatsApp</div>
-          <a href="https://wa.me/27813869988" target="_blank" rel="noopener" class="ci-val">081 386 9988</a>
+          <div class="ci-lbl">Reach Ringetani</div>
+          <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="ci-val">082 059 2632</a>
         </div>
       </div>
       <div class="ci">
@@ -1358,11 +1358,11 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <p class="ft-desc">A luxury 2 bedroom apartment at 26 Van Rensburg St, Nelspruit. Rated 9.8 by guests. Hosted by Moloto.</p>
         <div class="ft-social">
           <!-- WhatsApp -->
-          <a class="ft-soc" href="https://wa.me/27820592632" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <a class="ft-soc" href="https://wa.me/27813869988" target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </a>
         </div>
-        <a class="ft-book-btn" href="https://wa.me/27820592632" target="_blank" rel="noopener">Book Now <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a class="ft-book-btn" href="https://wa.me/27813869988" target="_blank" rel="noopener">Book Now <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div>
         <div class="ft-col-title">Navigate</div>
@@ -1392,8 +1392,8 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div>
         <div class="ft-col-title">Contact</div>
         <ul class="ft-links">
-          <li><a href="https://wa.me/27820592632" target="_blank" rel="noopener">Ringetani: 082 059 2632</a></li>
-          <li><a href="https://wa.me/27813869988" target="_blank" rel="noopener">WhatsApp: 081 386 9988</a></li>
+          <li><a href="https://wa.me/27813869988" target="_blank" rel="noopener">Reach Moloto: 081 386 9988</a></li>
+          <li><a href="https://wa.me/27820592632" target="_blank" rel="noopener">Reach Ringetani: 082 059 2632</a></li>
           <li><a href="mailto:expressoairbnb@gmail.com">expressoairbnb@gmail.com</a></li>
           <li><span style="color:rgba(250,248,245,.72);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400">26 Van Rensburg St, 2nd Block, 2nd Floor</span></li>
           <li><span style="color:rgba(250,248,245,.72);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400">Nelspruit 1201, South Africa</span></li>
@@ -1627,13 +1627,13 @@ function initScrollAnims(){
 
 /* ── LIGHTBOX ───────────────────────────────────────────── */
 const galleryData=[
-  {src:'brand_assets/ROOM%202.jpeg',                cap:'Master Bedroom'},
-  {src:'brand_assets/Room%201.jpeg',                cap:'Second Bedroom'},
-  {src:'brand_assets/Bedroom%202.jpeg',             cap:'Bedroom'},
-  {src:'brand_assets/Bedroom%202.1.jpeg',           cap:'Bedroom'},
-  {src:'brand_assets/Picture%206.jpeg',             cap:'Open-Plan Living Room'},
-  {src:'brand_assets/Picture%204.jpeg',             cap:'Lounge Area'},
-  {src:'brand_assets/Picture%203.jpeg',             cap:'Sitting Room'},
+  {src:'brand_assets/ROOM%202.jpeg',                cap:'Main Bedroom'},
+  {src:'brand_assets/Room%201.jpeg',                cap:'Main Bedroom'},
+  {src:'brand_assets/Bedroom%202.jpeg',             cap:'Second Bedroom'},
+  {src:'brand_assets/Bedroom%202.1.jpeg',           cap:'Second Bedroom'},
+  {src:'brand_assets/Picture%206.jpeg',             cap:'Living Room'},
+  {src:'brand_assets/Picture%204.jpeg',             cap:'Living Room'},
+  {src:'brand_assets/Picture%203.jpeg',             cap:'Living Room'},
   {src:'brand_assets/Living%20room%20Picture.jpeg', cap:'Living Room'},
   {src:'brand_assets/Living%20room%20quality.jpeg', cap:'Living Room'},
   {src:'brand_assets/Picture%205.jpeg',             cap:'Kitchen'},
