@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="brand_assets/Outside%202.jpeg">
+<link rel="preload" as="image" href="brand_assets/Header%20picture.jpeg">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <style>
@@ -195,6 +195,13 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 .mi:nth-child(6){grid-row:span 2}
 .mi:nth-child(7){grid-row:span 2}
 .mi:nth-child(8){grid-row:span 1}
+.mi:nth-child(9){grid-row:span 2}
+.mi:nth-child(10){grid-row:span 1}
+.mi:nth-child(11){grid-row:span 2}
+.mi:nth-child(12){grid-row:span 2}
+.mi:nth-child(13){grid-row:span 1}
+.mi:nth-child(14){grid-row:span 2}
+.mi:nth-child(15){grid-row:span 2}
 
 /* LIGHTBOX */
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:8000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s var(--ease-lux)}
@@ -373,6 +380,34 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 .lcf-submit:hover{background:var(--a);transform:scale(1.02)}
 .lcf-submit:active{transform:scale(.97)}
 
+/* SERVICES */
+#services{background:var(--l);padding:clamp(5rem,10vh,7.5rem) clamp(1.5rem,6vw,6rem)}
+.svc-header{text-align:center;max-width:680px;margin:0 auto 4rem}
+.svc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,3.5rem);font-weight:300;color:var(--d);line-height:1.12;letter-spacing:-.02em;margin-bottom:1rem}
+.svc-title em{font-style:italic;color:var(--p)}
+.svc-sub{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:rgba(18,18,18,.6);line-height:1.75}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto 4rem}
+.svc-card{background:#fff;border:1px solid rgba(180,122,69,.12);border-radius:1.25rem;padding:2rem 1.75rem;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(0.32,0.72,0,1),box-shadow .35s cubic-bezier(0.32,0.72,0,1)}
+.svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(180,122,69,.04) 0%,transparent 60%);pointer-events:none}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(180,122,69,.14),0 2px 8px rgba(0,0,0,.06)}
+.svc-ico{width:2.75rem;height:2.75rem;border-radius:.75rem;background:rgba(180,122,69,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;color:var(--p)}
+.svc-ico svg{width:1.25rem;height:1.25rem;stroke:var(--p);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--d);margin-bottom:.4rem;letter-spacing:-.01em}
+.svc-desc{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;color:rgba(18,18,18,.6);line-height:1.7}
+.svc-badge{display:inline-block;font-family:'Jost',sans-serif;font-size:.48rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--p);background:rgba(180,122,69,.1);border-radius:9999px;padding:.22rem .7rem;margin-top:.85rem}
+.svc-contact{background:var(--d);border-radius:1.5rem;padding:3rem clamp(1.5rem,4vw,3rem);max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.svc-ct-lead{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.25rem);font-weight:300;color:var(--l);line-height:1.2;margin-bottom:.6rem}
+.svc-ct-lead em{font-style:italic;color:var(--a)}
+.svc-ct-sub{font-family:'Jost',sans-serif;font-size:.72rem;color:rgba(250,248,245,.6);line-height:1.7}
+.svc-ct-links{display:flex;flex-direction:column;gap:.85rem}
+.svc-ct-row{display:flex;align-items:center;gap:.85rem}
+.svc-ct-dot{width:2rem;height:2rem;border-radius:50%;background:rgba(180,122,69,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.svc-ct-dot svg{width:.85rem;height:.85rem;stroke:var(--a);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.svc-ct-info{display:flex;flex-direction:column;gap:.1rem}
+.svc-ct-name{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,248,245,.5)}
+.svc-ct-val{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:var(--l);text-decoration:none;transition:color .3s}
+.svc-ct-val:hover{color:var(--a)}
+
 /* RESPONSIVE */
 @media(max-width:1100px){
   .why-grid{grid-template-columns:repeat(2,1fr)}
@@ -383,6 +418,8 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   .about-vis-over{display:none}
   .about-col{padding:3.5rem clamp(1.5rem,5vw,2.5rem)}
   .loc-grid,.apt-grid,.bk-grid{grid-template-columns:1fr;gap:2.75rem}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc-contact{grid-template-columns:1fr;gap:2rem}
   .hero-content{grid-template-columns:1fr}
   .review-badge{display:none}
   .ft-grid{grid-template-columns:1fr 1fr;gap:2.25rem}
@@ -400,9 +437,17 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   .mi:nth-child(6){grid-row:span 1}
   .mi:nth-child(7){grid-row:span 1}
   .mi:nth-child(8){grid-row:span 2}
+  .mi:nth-child(9){grid-row:span 1}
+  .mi:nth-child(10){grid-row:span 2}
+  .mi:nth-child(11){grid-row:span 2}
+  .mi:nth-child(12){grid-row:span 1}
+  .mi:nth-child(13){grid-row:span 2}
+  .mi:nth-child(14){grid-row:span 1}
+  .mi:nth-child(15){grid-row:span 1}
 }
 @media(max-width:680px){
   .why-grid,.ft-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
   .ec{grid-template-columns:2.5rem 1fr;gap:0 1.25rem}
   .ec-dist{display:none}
   .exp-header{flex-direction:column;align-items:flex-start;gap:1rem}
@@ -427,6 +472,10 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 
@@ -434,7 +483,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <div id="cur-r"></div>
 
 <!-- FLOATING WHATSAPP BUTTON -->
-<a id="wa-float" href="https://wa.me/27723606294" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a id="wa-float" href="https://wa.me/27820592632" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -456,6 +505,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   <a href="#accommodation" class="mob-link">Apartment</a>
   <a href="#gallery"       class="mob-link">Gallery</a>
   <a href="#experiences"   class="mob-link">Experiences</a>
+  <a href="#services"      class="mob-link">Services</a>
   <a href="#location"      class="mob-link">Contact</a>
 </div>
 
@@ -468,10 +518,11 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <a href="#accommodation" class="nav-link" data-section="accommodation">Apartment</a>
     <a href="#gallery"       class="nav-link" data-section="gallery">Gallery</a>
     <a href="#experiences"   class="nav-link" data-section="experiences">Experiences</a>
+    <a href="#services"      class="nav-link" data-section="services">Services</a>
     <a href="#location"      class="nav-link" data-section="location">Contact</a>
   </div>
   <div style="display:flex;align-items:center;gap:1rem">
-    <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+    <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="nav-book">Book Now</a>
     <button class="ham" id="ham-btn" aria-label="Open menu">
       <span id="h1"></span><span id="h2"></span><span id="h3"></span>
     </button>
@@ -481,7 +532,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <!-- ══════════════ HERO ══════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-img-wrap">
-    <img src="brand_assets/Outside%202.jpeg" alt="Express at Urban Cove Nelspruit" class="hero-img" id="hero-img" decoding="async" fetchpriority="high">
+    <img src="brand_assets/Header%20picture.jpeg" alt="Express at Urban Cove Nelspruit" class="hero-img" id="hero-img" decoding="async" fetchpriority="high">
     <div class="hero-ov"></div>
     <div class="hero-ov2"></div>
   </div>
@@ -495,7 +546,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       </h1>
       <p class="hero-sub" id="hero-sub">A luxury 2 bedroom apartment in the heart of Mpumalanga. Everything you need for a comfortable stay.</p>
       <div class="hero-ctas" id="hero-ctas">
-        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
+        <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
         <a href="#accommodation" class="btn-outline">View Apartment</a>
       </div>
     </div>
@@ -504,7 +555,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="rb-score">9.8</div>
       <div class="rb-label">Rated by<br>Guests</div>
       <div class="rb-sep"></div>
-      <div class="rb-source">Hosted by Calfornia</div>
+      <div class="rb-source">Hosted by Moloto</div>
     </div>
   </div>
   <div class="scroll-hint">
@@ -552,7 +603,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="wc-title">Prime Nelspruit Location</div>
-      <p class="wc-body">Minutes from the CBD, hospitals, shopping centres, and major routes. The perfect base for business or exploring Mpumalanga.</p>
+      <p class="wc-body">A few minutes from the CBD, hospitals, shopping centres, and major routes. The perfect base for business or exploring Mpumalanga.</p>
     </div>
 
     <div class="wc">
@@ -628,7 +679,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <h2 class="about-h">Your Home<br>Away From<br><em>Home</em></h2>
       <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.375rem">
         <div style="width:2.125rem;height:2.125rem;border-radius:50%;background:var(--p);display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;color:#FAF8F5;flex-shrink:0">C</div>
-        <span style="font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.14em;color:rgba(18,18,18,.68);text-transform:uppercase">Hosted by Calfornia</span>
+        <span style="font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.14em;color:rgba(18,18,18,.68);text-transform:uppercase">Hosted by Moloto</span>
       </div>
       <p class="about-bq">"We love hosting and meeting new people. The moment you walk in, you must feel at home and welcomed."</p>
       <p class="about-prose">The unit is fully equipped with everything you need to feel right at home. Detailed decor is available on request for special occasions including birthdays, anniversaries, Valentine's Day and more. Contact us for a quote on festive arrangements.</p>
@@ -673,7 +724,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <span class="apt-tag">60 m²</span>
         <span class="apt-tag">Full Kitchen</span>
         <span class="apt-tag">Lounge &amp; Dining</span>
-        <span class="apt-tag">Air Conditioning</span>
+        <span class="apt-tag">Fan</span>
         <span class="apt-tag">DSTV &amp; Smart TV</span>
         <span class="apt-tag">Free Wi-Fi</span>
         <span class="apt-tag">Private Bathroom</span>
@@ -697,7 +748,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
           <div class="apt-occ-l">Guests</div>
         </div>
       </div>
-      <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
+      <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -712,30 +763,32 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div class="gal-hint">Click any image to enlarge</div>
   </div>
   <div class="mas-grid">
+    <!-- BEDROOMS -->
     <div class="mi" onclick="openLb(0)">
-      <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room" loading="lazy" decoding="async">
-      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Living Room</div>
-    </div>
-    <div class="mi" onclick="openLb(1)">
       <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Master Bedroom</div>
     </div>
-    <div class="mi" onclick="openLb(2)">
-      <img src="brand_assets/Outside%202.jpeg" alt="Exterior" style="object-position:center 60%" loading="lazy" decoding="async">
-      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Property Exterior</div>
-    </div>
-    <div class="mi" onclick="openLb(3)">
+    <div class="mi" onclick="openLb(1)">
       <img src="brand_assets/Room%201.jpeg" alt="Second bedroom" style="object-position:center 20%" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Second Bedroom</div>
     </div>
-    <div class="mi" onclick="openLb(4)">
-      <img src="brand_assets/Picture%205.jpeg" alt="Kitchen" loading="lazy" decoding="async">
+    <div class="mi" onclick="openLb(2)">
+      <img src="brand_assets/Bedroom%202.jpeg" alt="Bedroom" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-      <div class="mi-caption">Kitchen</div>
+      <div class="mi-caption">Bedroom</div>
+    </div>
+    <div class="mi" onclick="openLb(3)">
+      <img src="brand_assets/Bedroom%202.1.jpeg" alt="Bedroom detail" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Bedroom</div>
+    </div>
+    <!-- LIVING ROOM & KITCHEN -->
+    <div class="mi" onclick="openLb(4)">
+      <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Living Room</div>
     </div>
     <div class="mi" onclick="openLb(5)">
       <img src="brand_assets/Picture%204.jpeg" alt="Lounge area" loading="lazy" decoding="async">
@@ -748,6 +801,43 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="mi-caption">Sitting Room</div>
     </div>
     <div class="mi" onclick="openLb(7)">
+      <img src="brand_assets/Living%20room%20Picture.jpeg" alt="Living room" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Living Room</div>
+    </div>
+    <div class="mi" onclick="openLb(8)">
+      <img src="brand_assets/Living%20room%20quality.jpeg" alt="Living room" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Living Room</div>
+    </div>
+    <div class="mi" onclick="openLb(9)">
+      <img src="brand_assets/Picture%205.jpeg" alt="Kitchen" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Kitchen</div>
+    </div>
+    <!-- BATHROOMS -->
+    <div class="mi" onclick="openLb(10)">
+      <img src="brand_assets/Bathroom%201.jpeg" alt="Bathroom" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Bathroom</div>
+    </div>
+    <div class="mi" onclick="openLb(11)">
+      <img src="brand_assets/Bathroom%201.1.jpeg" alt="Bathroom detail" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Bathroom</div>
+    </div>
+    <div class="mi" onclick="openLb(12)">
+      <img src="brand_assets/Bathroom%201.2.jpeg" alt="Bathroom overview" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Bathroom</div>
+    </div>
+    <!-- EXTERIOR -->
+    <div class="mi" onclick="openLb(13)">
+      <img src="brand_assets/Outside%202.jpeg" alt="Exterior" style="object-position:center 60%" loading="lazy" decoding="async">
+      <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      <div class="mi-caption">Property Exterior</div>
+    </div>
+    <div class="mi" onclick="openLb(14)">
       <img src="brand_assets/Outside%201.jpeg" alt="Secure entrance" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Secure Entrance</div>
@@ -764,7 +854,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <img id="lb-img" src="" alt="">
     <div class="lb-caption-text" id="lb-cap"></div>
   </div>
-  <div class="lb-counter" id="lb-counter">1 / 8</div>
+  <div class="lb-counter" id="lb-counter">1 / 15</div>
 </div>
 
 <!-- ══════════════ WHAT'S NEARBY ══════════════════════════════ -->
@@ -1006,7 +1096,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div>
       <div class="bstrip-txt">Ready for your next<br>African adventure?</div>
     </div>
-    <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-strip">
+    <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="btn-strip">
       Chat on WhatsApp
       <span class="btn-strip-ico"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
@@ -1090,25 +1180,127 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   </div>
 </section>
 
+<!-- ══════════════ SERVICES ══════════════════════════════════ -->
+<section id="services">
+  <div class="svc-header">
+    <div class="etag">What We Offer</div>
+    <h2 class="svc-title">Services That Make Your Stay <em>Effortless</em></h2>
+    <p class="svc-sub">From fresh laundry to tailored garments, we go beyond accommodation to ensure every need is met during your time with us.</p>
+  </div>
+
+  <div class="svc-grid">
+
+    <div class="svc-card io-el" data-io-d="0">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg>
+      </div>
+      <div class="svc-name">Altering of Clothes</div>
+      <p class="svc-desc">Professional garment alterations and tailoring done with care. Perfect fit for any occasion, handled discreetly during your stay.</p>
+      <span class="svc-badge">Available On Request</span>
+    </div>
+
+    <div class="svc-card io-el" data-io-d="0.07">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 012 2v5a2 2 0 01-2 2h-1m-2 0H9"/><circle cx="6.5" cy="18.5" r="2.5"/><circle cx="16.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="svc-name">Courier Services</div>
+      <p class="svc-desc">Reliable parcel and document delivery around Nelspruit town. Fast, trusted, and tracked for your peace of mind.</p>
+      <span class="svc-badge">Around Town</span>
+    </div>
+
+    <div class="svc-card io-el" data-io-d="0.14">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24"><path d="M3 22V7l9-5 9 5v15"/><path d="M6 11h.01M6 15h.01M18 11h.01M18 15h.01M12 11h.01M12 15h.01"/><path d="M9 22V12h6v10"/></svg>
+      </div>
+      <div class="svc-name">Laundry Services</div>
+      <p class="svc-desc">Wash, dry, and fold done to a high standard. Returned fresh and neatly presented so you can focus on what matters most.</p>
+      <span class="svc-badge">Same Day Available</span>
+    </div>
+
+    <div class="svc-card io-el" data-io-d="0.21">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </div>
+      <div class="svc-name">Grocery Shopping</div>
+      <p class="svc-desc">Send us your list and we will stock your kitchen before you arrive or replenish supplies during your stay.</p>
+      <span class="svc-badge">On Request</span>
+    </div>
+
+    <div class="svc-card io-el" data-io-d="0.35">
+      <div class="svc-ico">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <div class="svc-name">Special Occasion Setup</div>
+      <p class="svc-desc">Celebrating a birthday, anniversary, or proposal? We arrange decorations and personal touches to make your moment unforgettable.</p>
+      <span class="svc-badge">Advance Notice Required</span>
+    </div>
+
+  </div>
+
+  <div class="svc-contact io-el" data-io-d="0.1">
+    <div>
+      <div class="etag etag-dk" style="color:rgba(250,248,245,.55);border-color:rgba(250,248,245,.15)">Service Enquiries</div>
+      <h3 class="svc-ct-lead">Reach Our <em>Team</em> Directly</h3>
+      <p class="svc-ct-sub">For any of the above services, get in touch with Moloto or Ringetani. We will confirm availability and arrange everything for you.</p>
+    </div>
+    <div class="svc-ct-links">
+      <div class="svc-ct-row">
+        <div class="svc-ct-dot">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="svc-ct-info">
+          <span class="svc-ct-name">Reach Moloto</span>
+          <a href="https://wa.me/27813869988" target="_blank" rel="noopener" class="svc-ct-val">081 386 9988</a>
+        </div>
+      </div>
+      <div class="svc-ct-row">
+        <div class="svc-ct-dot">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="svc-ct-info">
+          <span class="svc-ct-name">Reach Ringetani</span>
+          <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="svc-ct-val">082 059 2632</a>
+        </div>
+      </div>
+      <div class="svc-ct-row">
+        <div class="svc-ct-dot">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="svc-ct-info">
+          <span class="svc-ct-name">Email</span>
+          <a href="mailto:expressoairbnb@gmail.com" class="svc-ct-val">expressoairbnb@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════ CONTACT ════════════════════════════════════ -->
 <section id="location" class="sp">
   <div class="loc-grid">
     <div>
       <div class="etag etag-dk">Find Us</div>
       <h2 class="loc-title">Gateway to<br><em>Africa's</em><br>Greatest Wild</h2>
-      <p class="loc-body">26 Van Rensburg St, 2nd Block, 2nd Floor, Nelspruit 1201. Minutes from the CBD, 24 km from Kruger Mpumalanga International Airport, and 87 km from Kruger's Numbi Gate. Rated 9.8 by guests.</p>
+      <p class="loc-body">26 Van Rensburg St, 2nd Block, 2nd Floor, Nelspruit 1201. A few minutes from the CBD, 24 km from Kruger Mpumalanga International Airport, and 87 km from Kruger's Numbi Gate. Rated 9.8 by guests.</p>
       <div class="ci">
         <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
         <div>
-          <div class="ci-lbl">WhatsApp / Phone</div>
-          <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="ci-val">072 360 6294</a>
+          <div class="ci-lbl">Ringetani Maluleke</div>
+          <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="ci-val">082 059 2632</a>
+        </div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div>
+          <div class="ci-lbl">WhatsApp</div>
+          <a href="https://wa.me/27813869988" target="_blank" rel="noopener" class="ci-val">081 386 9988</a>
         </div>
       </div>
       <div class="ci">
         <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div>
           <div class="ci-lbl">Email</div>
-          <a href="mailto:expreso@airbnb.co.za" class="ci-val">expreso@airbnb.co.za</a>
+          <a href="mailto:expressoairbnb@gmail.com" class="ci-val">expressoairbnb@gmail.com</a>
         </div>
       </div>
       <div class="ci">
@@ -1119,7 +1311,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         </div>
       </div>
       <div style="margin-top:2.25rem">
-        <a href="https://wa.me/27723606294" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
+        <a href="https://wa.me/27820592632" target="_blank" rel="noopener" class="btn-p">Book on WhatsApp <span class="btn-icon"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="9" x2="9" y2="1"/><polyline points="3,1 9,1 9,7"/></svg></span></a>
       </div>
     </div>
     <div>
@@ -1163,14 +1355,14 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div>
         <div class="ft-brand">Express</div>
         <div class="ft-brand-sub">at Urban Cove · Nelspruit</div>
-        <p class="ft-desc">A luxury 2 bedroom apartment at 26 Van Rensburg St, Nelspruit. Rated 9.8 by guests. Hosted by Calfornia.</p>
+        <p class="ft-desc">A luxury 2 bedroom apartment at 26 Van Rensburg St, Nelspruit. Rated 9.8 by guests. Hosted by Moloto.</p>
         <div class="ft-social">
           <!-- WhatsApp -->
-          <a class="ft-soc" href="https://wa.me/27723606294" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <a class="ft-soc" href="https://wa.me/27820592632" target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </a>
         </div>
-        <a class="ft-book-btn" href="https://wa.me/27723606294" target="_blank" rel="noopener">Book Now <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a class="ft-book-btn" href="https://wa.me/27820592632" target="_blank" rel="noopener">Book Now <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div>
         <div class="ft-col-title">Navigate</div>
@@ -1182,6 +1374,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#booking">Book a Stay</a></li>
           <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#location">Contact</a></li>
         </ul>
       </div>
@@ -1199,8 +1392,9 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div>
         <div class="ft-col-title">Contact</div>
         <ul class="ft-links">
-          <li><a href="https://wa.me/27723606294" target="_blank" rel="noopener">WhatsApp: 072 360 6294</a></li>
-          <li><a href="mailto:expreso@airbnb.co.za">expreso@airbnb.co.za</a></li>
+          <li><a href="https://wa.me/27820592632" target="_blank" rel="noopener">Ringetani: 082 059 2632</a></li>
+          <li><a href="https://wa.me/27813869988" target="_blank" rel="noopener">WhatsApp: 081 386 9988</a></li>
+          <li><a href="mailto:expressoairbnb@gmail.com">expressoairbnb@gmail.com</a></li>
           <li><span style="color:rgba(250,248,245,.72);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400">26 Van Rensburg St, 2nd Block, 2nd Floor</span></li>
           <li><span style="color:rgba(250,248,245,.72);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400">Nelspruit 1201, South Africa</span></li>
         </ul>
@@ -1394,6 +1588,9 @@ function initScrollAnims(){
   prep('.test-hdr > *',{stagger:.1});
   prep('.exp-header > *',{stagger:.1});
   prep('.ec',{x:-20,stagger:.07});
+  prep('.svc-header > *',{stagger:.1});
+  prep('.svc-card',{stagger:.07});
+  prep('.svc-contact',{y:30});
   prep('.bk-grid > *',{stagger:.12});
   prep('.bk-perk',{x:-20,stagger:.08});
   prep('.bk-form-wrap',{y:45});
@@ -1430,14 +1627,21 @@ function initScrollAnims(){
 
 /* ── LIGHTBOX ───────────────────────────────────────────── */
 const galleryData=[
-  {src:'brand_assets/Picture%206.jpeg',  cap:'Open-Plan Living Room'},
-  {src:'brand_assets/ROOM%202.jpeg',     cap:'Master Bedroom'},
-  {src:'brand_assets/Outside%202.jpeg',  cap:'Property Exterior'},
-  {src:'brand_assets/Room%201.jpeg',     cap:'Second Bedroom'},
-  {src:'brand_assets/Picture%205.jpeg',  cap:'Fully Equipped Kitchen'},
-  {src:'brand_assets/Picture%204.jpeg',  cap:'Lounge Area'},
-  {src:'brand_assets/Picture%203.jpeg',  cap:'Sitting Room'},
-  {src:'brand_assets/Outside%201.jpeg',  cap:'Secure Entrance'},
+  {src:'brand_assets/ROOM%202.jpeg',                cap:'Master Bedroom'},
+  {src:'brand_assets/Room%201.jpeg',                cap:'Second Bedroom'},
+  {src:'brand_assets/Bedroom%202.jpeg',             cap:'Bedroom'},
+  {src:'brand_assets/Bedroom%202.1.jpeg',           cap:'Bedroom'},
+  {src:'brand_assets/Picture%206.jpeg',             cap:'Open-Plan Living Room'},
+  {src:'brand_assets/Picture%204.jpeg',             cap:'Lounge Area'},
+  {src:'brand_assets/Picture%203.jpeg',             cap:'Sitting Room'},
+  {src:'brand_assets/Living%20room%20Picture.jpeg', cap:'Living Room'},
+  {src:'brand_assets/Living%20room%20quality.jpeg', cap:'Living Room'},
+  {src:'brand_assets/Picture%205.jpeg',             cap:'Kitchen'},
+  {src:'brand_assets/Bathroom%201.jpeg',            cap:'Bathroom'},
+  {src:'brand_assets/Bathroom%201.1.jpeg',          cap:'Bathroom'},
+  {src:'brand_assets/Bathroom%201.2.jpeg',          cap:'Bathroom'},
+  {src:'brand_assets/Outside%202.jpeg',             cap:'Property Exterior'},
+  {src:'brand_assets/Outside%201.jpeg',             cap:'Secure Entrance'},
 ];
 let lbIdx=0;
 const lb=document.getElementById('lightbox');
@@ -1584,7 +1788,7 @@ tTrack.addEventListener('mouseleave',()=>startAuto());
       (guests?`\n\u{1F465} Guests: ${guests}`:'')+
       (special?`\n\u{1F4AC} Special Requests: ${special}`:'');
 
-    window.open('https://wa.me/27723606294?text='+encodeURIComponent(msg),'_blank');
+    window.open('https://wa.me/27820592632?text='+encodeURIComponent(msg),'_blank');
 
     gsap.to(form,{opacity:0,y:-14,duration:.4,ease:'power3.in',onComplete:()=>{
       form.style.display='none';
@@ -1617,9 +1821,10 @@ tTrack.addEventListener('mouseleave',()=>startAuto());
     const name=(document.getElementById('lcf-name').value||'').trim();
     const msg=(document.getElementById('lcf-msg').value||'').trim();
     const text=`*Express at Urban Cove Enquiry*\n\n\u{1F464} Name: ${name}\n\u{1F4AC} Message: ${msg}`;
-    window.open('https://wa.me/27723606294?text='+encodeURIComponent(text),'_blank');
+    window.open('https://wa.me/27820592632?text='+encodeURIComponent(text),'_blank');
   });
 })();
 </script>
 </body>
+
 </html>

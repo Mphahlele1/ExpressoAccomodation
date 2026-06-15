@@ -24,6 +24,7 @@ const sections = [
   { id: '#accommodation', name: 'accommodation' },
   { id: '#gallery',       name: 'gallery' },
   { id: '#experiences',   name: 'experiences' },
+  { id: '#services',      name: 'services' },
   { id: '#booking',       name: 'booking' },
   { id: '#testimonials',  name: 'testimonials' },
   { id: '#location',      name: 'location' },
