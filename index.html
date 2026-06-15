@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preload" as="image" href="brand_assets/Outside%202.jpeg">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <style>
@@ -64,7 +64,7 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 /* HERO */
 #hero{position:relative;min-height:100dvh;display:flex;align-items:center;overflow:hidden;background:var(--d)}
 .hero-img-wrap{position:absolute;inset:0;overflow:hidden}
-.hero-img{width:100%;height:120%;object-fit:cover;object-position:center 40%;transform-origin:center}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transform-origin:center}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,10,10,.9) 35%,rgba(10,10,10,.45) 70%,rgba(10,10,10,.2) 100%)}
 .hero-ov2{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 30%,rgba(180,122,69,.09) 0%,transparent 55%)}
 .hero-content{position:relative;z-index:10;padding:0 clamp(1.5rem,6vw,6rem);width:100%;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4rem}
@@ -481,7 +481,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <!-- ══════════════ HERO ══════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-img-wrap">
-    <img src="brand_assets/Outside%202.jpeg" alt="Express at Urban Cove Nelspruit" class="hero-img" id="hero-img">
+    <img src="brand_assets/Outside%202.jpeg" alt="Express at Urban Cove Nelspruit" class="hero-img" id="hero-img" decoding="async" fetchpriority="high">
     <div class="hero-ov"></div>
     <div class="hero-ov2"></div>
   </div>
@@ -610,10 +610,10 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 
     <!-- Image column — Z-axis depth stack -->
     <div class="about-vis" id="about-vis">
-      <img class="about-vis-img" id="about-par" src="brand_assets/Outside%201.jpeg" alt="Express at Urban Cove exterior" loading="lazy">
+      <img class="about-vis-img" id="about-par" src="brand_assets/Outside%201.jpeg" alt="Express at Urban Cove exterior" loading="lazy" decoding="async">
       <!-- Offset second image — creates physical Z-axis depth -->
       <div class="about-vis-over" id="about-over">
-        <img src="brand_assets/Picture%203.jpeg" alt="Express at Urban Cove lounge" loading="lazy">
+        <img src="brand_assets/Picture%203.jpeg" alt="Express at Urban Cove lounge" loading="lazy" decoding="async">
       </div>
       <!-- Floating glassmorphism stat card -->
       <div class="about-vis-card" id="about-card">
@@ -713,42 +713,42 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   </div>
   <div class="mas-grid">
     <div class="mi" onclick="openLb(0)">
-      <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room">
+      <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Living Room</div>
     </div>
     <div class="mi" onclick="openLb(1)">
-      <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%">
+      <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Master Bedroom</div>
     </div>
     <div class="mi" onclick="openLb(2)">
-      <img src="brand_assets/Outside%202.jpeg" alt="Exterior" style="object-position:center 60%">
+      <img src="brand_assets/Outside%202.jpeg" alt="Exterior" style="object-position:center 60%" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Property Exterior</div>
     </div>
     <div class="mi" onclick="openLb(3)">
-      <img src="brand_assets/Room%201.jpeg" alt="Second bedroom" style="object-position:center 20%">
+      <img src="brand_assets/Room%201.jpeg" alt="Second bedroom" style="object-position:center 20%" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Second Bedroom</div>
     </div>
     <div class="mi" onclick="openLb(4)">
-      <img src="brand_assets/Picture%205.jpeg" alt="Kitchen">
+      <img src="brand_assets/Picture%205.jpeg" alt="Kitchen" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Kitchen</div>
     </div>
     <div class="mi" onclick="openLb(5)">
-      <img src="brand_assets/Picture%204.jpeg" alt="Lounge area">
+      <img src="brand_assets/Picture%204.jpeg" alt="Lounge area" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Lounge Area</div>
     </div>
     <div class="mi" onclick="openLb(6)">
-      <img src="brand_assets/Picture%203.jpeg" alt="Sitting room">
+      <img src="brand_assets/Picture%203.jpeg" alt="Sitting room" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Sitting Room</div>
     </div>
     <div class="mi" onclick="openLb(7)">
-      <img src="brand_assets/Outside%201.jpeg" alt="Secure entrance">
+      <img src="brand_assets/Outside%201.jpeg" alt="Secure entrance" loading="lazy" decoding="async">
       <div class="mi-ov"></div><div class="mi-zoom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       <div class="mi-caption">Secure Entrance</div>
     </div>
@@ -1278,14 +1278,16 @@ function revealPage(){
 
 /* ── HERO ───────────────────────────────────────────────── */
 function startHero(){
-  gsap.fromTo('#hero-img',{scale:1},{scale:1.08,duration:14,ease:'none'});
-  gsap.from('#nav',{y:-30,opacity:0,duration:.9,ease:'power3.out',delay:.1});
-  gsap.from('#hero-ey',{x:-20,opacity:0,duration:.8,ease:'power3.out',delay:.25});
-  gsap.from(['#hl1','#hl2','#hl3'],{y:'110%',stagger:.14,duration:1.2,ease:'power4.out',delay:.35});
-  gsap.from('#hero-sub',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:.9});
-  gsap.from('#hero-ctas',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:1.0});
-  gsap.from('#review-badge',{x:30,opacity:0,duration:1.0,ease:'power3.out',delay:1.15});
-  /* hero parallax removed — eliminated continuous scrub scroll listener */
+  const isTouch=window.matchMedia('(hover:none)').matches;
+  if(!isTouch){
+    gsap.fromTo('#hero-img',{scale:1},{scale:1.08,duration:14,ease:'none'});
+    gsap.from('#nav',{y:-30,opacity:0,duration:.9,ease:'power3.out',delay:.1});
+    gsap.from('#hero-ey',{x:-20,opacity:0,duration:.8,ease:'power3.out',delay:.25});
+    gsap.from(['#hl1','#hl2','#hl3'],{y:'110%',stagger:.14,duration:1.2,ease:'power4.out',delay:.35});
+    gsap.from('#hero-sub',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:.9});
+    gsap.from('#hero-ctas',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:1.0});
+    gsap.from('#review-badge',{x:30,opacity:0,duration:1.0,ease:'power3.out',delay:1.15});
+  }
   /* Pause scroll-hint animation when hero leaves viewport */
   new IntersectionObserver(entries=>{
     document.getElementById('hero').classList.toggle('offscreen',!entries[0].isIntersecting);
@@ -1347,6 +1349,10 @@ function initActiveNav(){
 
 /* ── SCROLL ANIMATIONS ──────────────────────────────────── */
 function initScrollAnims(){
+  /* On touch devices skip all animations — elements appear immediately,
+     zero GSAP in the scroll path, maximum smoothness on phones/tablets */
+  if(window.matchMedia('(hover:none)').matches) return;
+
   /* One IntersectionObserver replaces 20+ ScrollTrigger instances.
      IO callbacks are async — zero JS blocks scroll. Animations run on RAF. */
   const io=new IntersectionObserver((entries,self)=>{
