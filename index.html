@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expresso Accommodation — Nelspruit, Mpumalanga</title>
+<title>Express at Urban Cove — Nelspruit, Mpumalanga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 #nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom-color:rgba(255,255,255,.06);padding-top:1rem;padding-bottom:1rem}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--l);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;flex-shrink:0}
 .nav-links{display:flex;align-items:center;gap:2.25rem;flex:1;justify-content:center}
-.nav-link{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;color:rgba(250,248,245,.5);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;position:relative;padding-bottom:3px;transition:color .35s var(--ease-lux)}
+.nav-link{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;color:rgba(250,248,245,.78);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;position:relative;padding-bottom:3px;transition:color .35s var(--ease-lux)}
 .nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--a);transition:width .4s var(--ease-lux)}
 .nav-link:hover{color:rgba(250,248,245,.85)}
 .nav-link:hover::after,.nav-link.active::after{width:100%}
@@ -65,7 +65,7 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 /* HERO */
 #hero{position:relative;min-height:100dvh;display:flex;align-items:center;overflow:hidden;background:var(--d)}
 .hero-img-wrap{position:absolute;inset:0;overflow:hidden}
-.hero-img{width:100%;height:120%;object-fit:cover;object-position:center 40%;transform-origin:center;will-change:transform}
+.hero-img{width:100%;height:120%;object-fit:cover;object-position:center 40%;transform-origin:center}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,10,10,.9) 35%,rgba(10,10,10,.45) 70%,rgba(10,10,10,.2) 100%)}
 .hero-ov2{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 30%,rgba(180,122,69,.09) 0%,transparent 55%)}
 .hero-content{position:relative;z-index:10;padding:0 clamp(1.5rem,6vw,6rem);width:100%;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4rem}
@@ -75,18 +75,19 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 .hero-title .ln{display:block;overflow:hidden}
 .hero-title .lni{display:block}
 .ht-copper{color:var(--a);font-style:italic}
-.hero-sub{font-family:'Jost',sans-serif;font-size:.88rem;font-weight:300;color:rgba(250,248,245,.6);line-height:1.85;max-width:420px;margin-bottom:2.75rem}
+.hero-sub{font-family:'Jost',sans-serif;font-size:.88rem;font-weight:400;color:rgba(250,248,245,.85);line-height:1.85;max-width:420px;margin-bottom:2.75rem}
 .hero-ctas{display:flex;align-items:center;gap:1.125rem;flex-wrap:wrap}
 .review-badge{flex-shrink:0;background:rgba(10,10,10,.55);border:1px solid rgba(250,248,245,.1);border-radius:1.25rem;padding:1.75rem 2rem;text-align:center;min-width:180px}
 .rb-stars{color:var(--a);font-size:1.1rem;letter-spacing:.1em;margin-bottom:.75rem}
 .rb-score{font-family:'Cormorant Garamond',serif;font-size:3.25rem;font-weight:300;color:var(--l);line-height:1;margin-bottom:.35rem}
-.rb-label{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.22em;color:rgba(250,248,245,.5);text-transform:uppercase;line-height:1.5}
+.rb-label{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.22em;color:rgba(250,248,245,.80);text-transform:uppercase;line-height:1.5}
 .rb-sep{width:2rem;height:1px;background:rgba(180,122,69,.4);margin:1rem auto}
-.rb-source{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:300;letter-spacing:.12em;color:rgba(250,248,245,.35);text-transform:uppercase}
+.rb-source{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:400;letter-spacing:.12em;color:rgba(250,248,245,.68);text-transform:uppercase}
 .scroll-hint{position:absolute;left:50%;bottom:2rem;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:.4rem}
 .scroll-hint span{font-family:'Jost',sans-serif;font-size:.5rem;letter-spacing:.3em;color:rgba(250,248,245,.3);text-transform:uppercase}
 .scroll-line{width:1px;height:2.5rem;background:rgba(250,248,245,.1);position:relative;overflow:hidden}
-.scroll-line::after{content:'';position:absolute;top:-100%;left:0;right:0;height:100%;background:var(--p);animation:sdrop 2s cubic-bezier(.76,0,.24,1) infinite}
+.scroll-line::after{content:'';position:absolute;top:-100%;left:0;right:0;height:100%;background:var(--p);animation:sdrop 2s cubic-bezier(.76,0,.24,1) infinite;animation-play-state:running}
+#hero.offscreen .scroll-line::after{animation-play-state:paused}
 @keyframes sdrop{0%{top:-100%}100%{top:100%}}
 
 /* BUTTONS */
@@ -118,7 +119,7 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 #why::before{content:'';position:absolute;top:-20%;left:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(180,122,69,.055) 0%,transparent 65%);pointer-events:none}
 #why::after{content:'';position:absolute;bottom:-20%;right:-5%;width:45%;height:60%;background:radial-gradient(ellipse,rgba(180,122,69,.04) 0%,transparent 65%);pointer-events:none}
 .why-intro{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:3.5rem;position:relative;z-index:1}
-.why-intro-right{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(250,248,245,.38);max-width:280px;line-height:1.9}
+.why-intro-right{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:rgba(250,248,245,.75);max-width:280px;line-height:1.9}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;position:relative;z-index:1}
 .wc{border-radius:1.25rem;border:1px solid rgba(255,255,255,.06);background:#181818;padding:2.25rem 1.875rem;position:relative;overflow:hidden;transition:transform .5s var(--ease-lux),border-color .4s,box-shadow .5s var(--ease-lux)}
 .wc::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 0%,rgba(180,122,69,.07) 0%,transparent 60%);opacity:0;transition:opacity .5s}
@@ -129,30 +130,30 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 .wc-ico svg{width:1.375rem;height:1.375rem;color:var(--a);stroke:currentColor;fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
 .wc:hover .wc-ico{background:rgba(180,122,69,.18);border-color:rgba(180,122,69,.35)}
 .wc-title{font-family:'Cormorant Garamond',serif;font-size:1.375rem;font-weight:300;color:var(--l);margin-bottom:.625rem;line-height:1.2}
-.wc-body{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(250,248,245,.4);line-height:1.85}
+.wc-body{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;color:rgba(250,248,245,.75);line-height:1.85}
 
 /* ── ABOUT — EDITORIAL LUXURY SPLIT ────────────────────── */
 #about{background:var(--l);position:relative;overflow:hidden;padding:0}
 .about-wm{position:absolute;right:-2%;top:15%;font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,18vw,16rem);font-weight:300;color:rgba(180,122,69,.028);letter-spacing:-.04em;pointer-events:none;user-select:none;line-height:1;white-space:nowrap;z-index:0}
 .about-frame{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;position:relative;z-index:1}
 .about-vis{position:relative;overflow:hidden;background:#1a1410}
-.about-vis-img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;will-change:transform}
-.about-vis-over{position:absolute;bottom:3.5rem;right:-3rem;width:50%;aspect-ratio:4/5;overflow:hidden;border-radius:.5rem;box-shadow:0 28px 70px rgba(0,0,0,.32),0 0 0 3px rgba(250,248,245,.94),0 0 0 5px rgba(180,122,69,.1);will-change:transform;z-index:5}
+.about-vis-img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.about-vis-over{position:absolute;bottom:3.5rem;right:-3rem;width:50%;aspect-ratio:4/5;overflow:hidden;border-radius:.5rem;box-shadow:0 28px 70px rgba(0,0,0,.32),0 0 0 3px rgba(250,248,245,.94),0 0 0 5px rgba(180,122,69,.1);z-index:5}
 .about-vis-over img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 1.4s var(--ease-lux)}
 .about-vis-over:hover img{transform:scale(1.06)}
 .about-vis-card{position:absolute;bottom:3.5rem;left:2.5rem;background:rgba(5,4,3,.87);border:1px solid rgba(255,255,255,.06);border-radius:.875rem;padding:1.375rem 1.875rem;z-index:10}
 .avc-n{font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:300;color:var(--a);line-height:1;display:block}
 .avc-star{font-size:1rem;color:var(--p);font-style:normal;vertical-align:top;margin-top:.35rem;display:inline-block;margin-left:.125rem}
-.avc-l{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.2em;color:rgba(250,248,245,.28);text-transform:uppercase;margin-top:.3rem;display:block}
+.avc-l{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.2em;color:rgba(250,248,245,.65);text-transform:uppercase;margin-top:.3rem;display:block}
 .about-col{padding:clamp(4.5rem,8vw,7.5rem) clamp(3rem,6vw,5.5rem);display:flex;flex-direction:column;justify-content:center}
 .about-h{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:300;line-height:.96;letter-spacing:-.025em;color:var(--d);margin-bottom:2.25rem;margin-top:1rem}
 .about-h em{font-style:italic;color:var(--p)}
-.about-bq{font-family:'Cormorant Garamond',serif;font-size:clamp(.95rem,1.4vw,1.25rem);font-weight:300;font-style:italic;color:rgba(18,18,18,.44);line-height:1.65;margin-bottom:2rem;padding-left:1.5rem;border-left:1.5px solid var(--p)}
-.about-prose{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.95}
+.about-bq{font-family:'Cormorant Garamond',serif;font-size:clamp(.95rem,1.4vw,1.25rem);font-weight:400;font-style:italic;color:rgba(18,18,18,.72);line-height:1.65;margin-bottom:2rem;padding-left:1.5rem;border-left:1.5px solid var(--p)}
+.about-prose{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;color:rgba(18,18,18,.75);line-height:1.95}
 .about-metrics{display:flex;align-items:center;border-top:1px solid rgba(18,18,18,.07);padding-top:2.25rem;margin-top:2.5rem}
 .am{flex:1;text-align:center}
 .am-n{font-family:'Cormorant Garamond',serif;font-size:2.125rem;font-weight:300;color:var(--d);line-height:1}
-.am-l{font-family:'Jost',sans-serif;font-size:.5rem;font-weight:400;letter-spacing:.2em;color:rgba(18,18,18,.28);text-transform:uppercase;margin-top:.3rem}
+.am-l{font-family:'Jost',sans-serif;font-size:.5rem;font-weight:500;letter-spacing:.2em;color:rgba(18,18,18,.58);text-transform:uppercase;margin-top:.3rem}
 .am-sep{width:1px;height:2.5rem;background:rgba(18,18,18,.07);flex-shrink:0}
 
 /* ── APARTMENT ──────────────────────────────────────────── */
@@ -165,19 +166,19 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 .apt-img-main:hover img,.apt-img-sm:hover img{transform:scale(1.05)}
 .apt-img-sm{border-radius:.875rem;overflow:hidden;cursor:pointer}
 .apt-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.75rem 0 2rem}
-.apt-tag{font-family:'Jost',sans-serif;font-size:.57rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,245,.42);border:1px solid rgba(255,255,255,.09);border-radius:9999px;padding:.35rem .9rem;transition:border-color .35s var(--ease-lux),color .35s}
+.apt-tag{font-family:'Jost',sans-serif;font-size:.57rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,245,.80);border:1px solid rgba(255,255,255,.18);border-radius:9999px;padding:.35rem .9rem;transition:border-color .35s var(--ease-lux),color .35s}
 .apt-tag:hover{border-color:rgba(180,122,69,.32);color:rgba(250,248,245,.72)}
 .apt-price-box{background:rgba(180,122,69,.08);border:1px solid rgba(180,122,69,.2);border-radius:1rem;padding:1.625rem;margin:2rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.apt-from{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.2em;color:rgba(250,248,245,.38);text-transform:uppercase;margin-bottom:.25rem}
+.apt-from{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.2em;color:rgba(250,248,245,.70);text-transform:uppercase;margin-bottom:.25rem}
 .apt-price{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--a);line-height:1}
-.apt-per{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.28);letter-spacing:.08em}
+.apt-per{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;color:rgba(250,248,245,.65);letter-spacing:.08em}
 .apt-occ-n{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--l);text-align:right}
-.apt-occ-l{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:300;letter-spacing:.15em;color:rgba(250,248,245,.32);text-transform:uppercase;text-align:right;margin-top:.15rem}
+.apt-occ-l{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:400;letter-spacing:.15em;color:rgba(250,248,245,.68);text-transform:uppercase;text-align:right;margin-top:.15rem}
 
 /* ── GALLERY ────────────────────────────────────────────── */
 #gallery{background:var(--d);padding:clamp(5rem,10vh,7.5rem) 0}
 .gal-hdr{padding:0 clamp(1.5rem,6vw,6rem);margin-bottom:3rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.gal-hint{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.18em;color:rgba(250,248,245,.28);text-transform:uppercase;display:flex;align-items:center;gap:.625rem}
+.gal-hint{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:400;letter-spacing:.18em;color:rgba(250,248,245,.70);text-transform:uppercase;display:flex;align-items:center;gap:.625rem}
 .gal-hint::before{content:'';width:1.5rem;height:1px;background:rgba(250,248,245,.18)}
 
 /* Masonry */
@@ -205,19 +206,19 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:8000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s var(--ease-lux)}
 #lightbox.open{opacity:1;pointer-events:all}
 #lb-img{max-width:88vw;max-height:80vh;object-fit:contain;border-radius:.875rem;display:block}
-.lb-caption-text{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.2em;color:rgba(250,248,245,.38);text-transform:uppercase;text-align:center;margin-top:1rem}
+.lb-caption-text{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:400;letter-spacing:.2em;color:rgba(250,248,245,.78);text-transform:uppercase;text-align:center;margin-top:1rem}
 .lb-close-btn{position:fixed;top:1.75rem;right:1.75rem;width:2.75rem;height:2.75rem;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.65);font-size:1.125rem;cursor:pointer;transition:background .3s,color .3s}
 .lb-close-btn:hover{background:rgba(255,255,255,.14);color:var(--l)}
 .lb-nav-btn{position:fixed;top:50%;transform:translateY(-50%);width:2.75rem;height:2.75rem;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.65);font-size:1.5rem;cursor:pointer;transition:background .3s,border-color .3s,color .3s}
 .lb-nav-btn:hover{background:rgba(180,122,69,.18);border-color:rgba(180,122,69,.4);color:var(--a)}
 #lb-prev{left:1.75rem}
 #lb-next{right:1.75rem}
-.lb-counter{position:fixed;bottom:1.75rem;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:.58rem;font-weight:300;letter-spacing:.28em;color:rgba(250,248,245,.28)}
+.lb-counter{position:fixed;bottom:1.75rem;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.28em;color:rgba(250,248,245,.70)}
 
 /* ── EXPERIENCES ────────────────────────────────────────── */
 #experiences{background:var(--l)}
 .exp-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem}
-.exp-sub-txt{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(18,18,18,.5);max-width:300px;line-height:1.9}
+.exp-sub-txt{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:rgba(18,18,18,.72);max-width:300px;line-height:1.9}
 .exp-grid{display:flex;flex-direction:column}
 .ec{display:grid;grid-template-columns:3.5rem 1fr auto;gap:0 2.5rem;padding:1.875rem 0;border-top:1px solid rgba(18,18,18,.08);align-items:start;transition:background .35s var(--ease-lux)}
 .ec:last-child{border-bottom:1px solid rgba(18,18,18,.08)}
@@ -225,8 +226,22 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 .ec-num{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.2em;color:var(--p);padding-top:.35rem;flex-shrink:0}
 .ec-name{font-family:'Cormorant Garamond',serif;font-size:1.625rem;font-weight:400;color:var(--d);line-height:1.15;margin-bottom:.5rem;transition:color .35s var(--ease-lux)}
 .ec:hover .ec-name{color:var(--p)}
-.ec-blurb{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(18,18,18,.45);line-height:1.8}
-.ec-dist{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:400;letter-spacing:.18em;color:rgba(18,18,18,.3);text-transform:uppercase;padding-top:.35rem;text-align:right;white-space:nowrap;flex-shrink:0}
+.ec-blurb{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;color:rgba(18,18,18,.70);line-height:1.8}
+.ec-dist{font-family:'Jost',sans-serif;font-size:.52rem;font-weight:500;letter-spacing:.18em;color:rgba(18,18,18,.58);text-transform:uppercase;padding-top:.35rem;text-align:right;white-space:nowrap;flex-shrink:0}
+
+/* ── NEARBY ─────────────────────────────────────────────── */
+#nearby{background:var(--l)}
+.nb-intro{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:3.5rem}
+.nb-sub{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:rgba(18,18,18,.65);max-width:300px;line-height:1.9}
+.nb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,3rem)}
+.nb-cat{border-top:2px solid rgba(18,18,18,.08);padding-top:2rem}
+.nb-cat-hd{display:flex;align-items:center;gap:.5rem;font-family:'Jost',sans-serif;font-size:.55rem;font-weight:600;letter-spacing:.22em;color:var(--p);text-transform:uppercase;margin-bottom:1.5rem}
+.nb-item{display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem;padding:.625rem 0;border-bottom:1px solid rgba(18,18,18,.06)}
+.nb-item:last-child{border-bottom:none}
+.nb-name{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400;color:rgba(18,18,18,.82);line-height:1.4;flex:1}
+.nb-type{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:400;color:rgba(18,18,18,.45);letter-spacing:.06em;display:block;margin-top:.18rem}
+.nb-dist{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:600;color:var(--p);letter-spacing:.1em;white-space:nowrap;flex-shrink:0;padding-top:.15rem}
+@media(max-width:768px){.nb-grid{grid-template-columns:1fr;gap:2rem}}
 
 /* ── TESTIMONIALS ───────────────────────────────────────── */
 #testimonials{background:var(--d);padding:clamp(5rem,10vh,7.5rem) 0;position:relative;overflow:hidden}
@@ -246,7 +261,7 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 .tc-av{width:2.5rem;height:2.5rem;border-radius:50%;overflow:hidden;border:1.5px solid rgba(180,122,69,.3);flex-shrink:0}
 .tc-av img{width:100%;height:100%;object-fit:cover}
 .tc-name{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;color:rgba(250,248,245,.78)}
-.tc-from{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:300;color:rgba(250,248,245,.32);margin-top:.1rem}
+.tc-from{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:400;color:rgba(250,248,245,.65);margin-top:.1rem}
 /* Dots */
 .test-dots{display:flex;gap:.625rem;justify-content:center;margin-top:2.5rem;position:relative;z-index:1}
 .td{width:6px;height:6px;border-radius:9999px;background:rgba(255,255,255,.16);cursor:pointer;transition:background .35s,width .35s var(--ease-lux)}
@@ -268,10 +283,10 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,6rem);align-items:center}
 .loc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,4rem);font-weight:300;color:var(--l);line-height:1.08;letter-spacing:-.02em;margin-bottom:1.375rem}
 .loc-title em{font-style:italic;color:var(--p)}
-.loc-body{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:rgba(250,248,245,.45);line-height:1.9;margin-bottom:2.25rem}
+.loc-body{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;color:rgba(250,248,245,.82);line-height:1.9;margin-bottom:2.25rem}
 .ci{display:flex;align-items:center;gap:.875rem;margin-bottom:.875rem}
 .ci-ico{width:2.125rem;height:2.125rem;border-radius:50%;background:rgba(180,122,69,.14);border:1px solid rgba(180,122,69,.24);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--a);font-size:.75rem}
-.ci-lbl{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.15em;color:rgba(250,248,245,.28);text-transform:uppercase;margin-bottom:.12rem}
+.ci-lbl{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.15em;color:rgba(250,248,245,.62);text-transform:uppercase;margin-bottom:.12rem}
 .ci-val{font-family:'Jost',sans-serif;font-size:.82rem;font-weight:400;color:rgba(250,248,245,.72);text-decoration:none;transition:color .3s}
 .ci-val:hover{color:var(--a)}
 .map-frame{border-radius:1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:.4rem}
@@ -287,13 +302,13 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem}
 .ft-brand{font-family:'Cormorant Garamond',serif;font-size:1.375rem;font-weight:300;color:var(--l);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem}
 .ft-brand-sub{font-family:'Jost',sans-serif;font-size:.55rem;font-weight:300;letter-spacing:.32em;color:var(--p);text-transform:uppercase;margin-bottom:1.375rem}
-.ft-desc{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.28);line-height:1.85;max-width:260px}
-.ft-col-title{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:500;letter-spacing:.22em;color:rgba(250,248,245,.28);text-transform:uppercase;margin-bottom:1.375rem}
+.ft-desc{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400;color:rgba(250,248,245,.65);line-height:1.85;max-width:260px}
+.ft-col-title{font-family:'Jost',sans-serif;font-size:.56rem;font-weight:600;letter-spacing:.22em;color:rgba(250,248,245,.65);text-transform:uppercase;margin-bottom:1.375rem}
 .ft-links{list-style:none;display:flex;flex-direction:column;gap:.75rem}
-.ft-links a{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.38);text-decoration:none;transition:color .3s}
+.ft-links a{font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400;color:rgba(250,248,245,.72);text-decoration:none;transition:color .3s}
 .ft-links a:hover{color:var(--a)}
 .ft-btm{padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.ft-copy{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.18);letter-spacing:.04em}
+.ft-copy{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:400;color:rgba(250,248,245,.50);letter-spacing:.04em}
 
 /* ── BOOKING ────────────────────────────────────────────── */
 #booking{background:var(--l);position:relative;overflow:hidden}
@@ -301,7 +316,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 .bk-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(3rem,7vw,6rem);align-items:start;position:relative;z-index:1}
 .bk-info-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,3.5rem);font-weight:300;line-height:1.1;letter-spacing:-.02em;color:var(--d);margin-bottom:1.25rem}
 .bk-info-title em{font-style:italic;color:var(--p)}
-.bk-info-body{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.9;margin-bottom:2rem}
+.bk-info-body{font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:rgba(18,18,18,.75);line-height:1.9;margin-bottom:2rem}
 .bk-perks{display:flex;flex-direction:column;gap:.875rem}
 .bk-perk{display:flex;align-items:center;gap:.75rem;font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;color:rgba(18,18,18,.62)}
 .bk-perk-dot{width:1.5rem;height:1.5rem;border-radius:50%;background:rgba(180,122,69,.1);border:1px solid rgba(180,122,69,.22);display:flex;align-items:center;justify-content:center;color:var(--p);font-size:.6rem;flex-shrink:0}
@@ -310,13 +325,13 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 .bk-price-per{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:300;color:rgba(250,248,245,.38);letter-spacing:.1em}
 .bk-form-wrap{background:#fff;border-radius:1.5rem;padding:2.5rem;box-shadow:0 8px 48px rgba(18,18,18,.07),0 2px 12px rgba(180,122,69,.05);border:1px solid rgba(18,18,18,.05);position:relative;overflow:hidden}
 .bk-form-title{font-family:'Cormorant Garamond',serif;font-size:1.625rem;font-weight:400;color:var(--d);margin-bottom:.25rem}
-.bk-form-sub{font-family:'Jost',sans-serif;font-size:.65rem;font-weight:300;color:rgba(18,18,18,.38);letter-spacing:.06em;margin-bottom:2rem;line-height:1.6}
+.bk-form-sub{font-family:'Jost',sans-serif;font-size:.65rem;font-weight:400;color:rgba(18,18,18,.65);letter-spacing:.06em;margin-bottom:2rem;line-height:1.6}
 .fl-wrap{position:relative;margin-bottom:1rem}
 .fl-wrap input,.fl-wrap select,.fl-wrap textarea{width:100%;padding:1.35rem 1.1rem .55rem;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:var(--d);background:rgba(18,18,18,.025);border:1.5px solid rgba(18,18,18,.09);border-radius:.75rem;outline:none;transition:border-color .3s var(--ease-lux),box-shadow .3s var(--ease-lux);-webkit-appearance:none;appearance:none}
 .fl-wrap textarea{resize:vertical;min-height:96px;padding-top:1.5rem}
 .fl-wrap select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B47A45' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.1rem center;padding-right:2.5rem;cursor:pointer}
 .fl-wrap input:focus,.fl-wrap select:focus,.fl-wrap textarea:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(180,122,69,.09)}
-.fl-label{position:absolute;left:1.1rem;top:1rem;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;color:rgba(18,18,18,.38);pointer-events:none;transition:top .25s var(--ease-lux),font-size .25s var(--ease-lux),color .25s}
+.fl-label{position:absolute;left:1.1rem;top:1rem;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:400;color:rgba(18,18,18,.60);pointer-events:none;transition:top .25s var(--ease-lux),font-size .25s var(--ease-lux),color .25s}
 .fl-wrap input:focus + .fl-label,.fl-wrap input:not(:placeholder-shown) + .fl-label,.fl-wrap textarea:focus + .fl-label,.fl-wrap textarea:not(:placeholder-shown) + .fl-label,.fl-wrap.has-val .fl-label{top:.3rem;font-size:.55rem;color:var(--p);letter-spacing:.07em}
 .fl-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
 .bk-submit{width:100%;padding:.975rem 1.5rem;background:var(--p);color:var(--l);font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:none;border-radius:.75rem;cursor:pointer;margin-top:.5rem;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring);display:flex;align-items:center;justify-content:center;gap:.5rem}
@@ -327,7 +342,7 @@ footer{background:#080808;border-top:1px solid rgba(255,255,255,.05);padding:4re
 .bk-ok-ring{width:4.5rem;height:4.5rem;border-radius:50%;background:rgba(180,122,69,.1);border:1.5px solid rgba(180,122,69,.28);display:flex;align-items:center;justify-content:center;margin:0 auto 1.75rem}
 .bk-ok-ring svg{width:1.75rem;height:1.75rem;stroke:var(--p);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .bk-ok-h{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--d);margin-bottom:.5rem}
-.bk-ok-p{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:300;color:rgba(18,18,18,.5);line-height:1.85;max-width:280px;margin:0 auto 1.75rem}
+.bk-ok-p{font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;color:rgba(18,18,18,.75);line-height:1.85;max-width:280px;margin:0 auto 1.75rem}
 .bk-ok-reset{font-family:'Jost',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.14em;color:var(--p);text-transform:uppercase;background:none;border:none;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color .3s}
 .bk-ok-reset:hover{color:var(--a)}
 
@@ -342,7 +357,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 .ft-accent{height:2px;background:linear-gradient(90deg,transparent 0%,rgba(180,122,69,.3) 15%,var(--p) 35%,var(--a) 50%,var(--p) 65%,rgba(180,122,69,.3) 85%,transparent 100%);position:relative}
 .ft-inner{padding:4rem clamp(1.5rem,6vw,6rem) 0}
 .ft-social{display:flex;gap:.75rem;margin-top:1.75rem}
-.ft-soc{width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:transparent;display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.35);transition:border-color .3s,color .3s,background .3s;text-decoration:none;flex-shrink:0}
+.ft-soc{width:2.25rem;height:2.25rem;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:transparent;display:flex;align-items:center;justify-content:center;color:rgba(250,248,245,.68);transition:border-color .3s,color .3s,background .3s;text-decoration:none;flex-shrink:0}
 .ft-soc:hover{border-color:rgba(180,122,69,.5);color:var(--a);background:rgba(180,122,69,.1)}
 .ft-soc svg{width:1rem;height:1rem;fill:currentColor}
 .ft-book-btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Jost',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--d);background:var(--p);padding:.7rem 1.5rem;border-radius:9999px;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring);margin-top:1.25rem}
@@ -358,7 +373,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 .lcf-field input,.lcf-field textarea{width:100%;padding:1rem 1rem .5rem;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:300;color:var(--l);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:.75rem;outline:none;transition:border-color .3s,box-shadow .3s;-webkit-appearance:none;appearance:none}
 .lcf-field textarea{min-height:80px;resize:vertical;padding-top:1rem}
 .lcf-field input:focus,.lcf-field textarea:focus{border-color:rgba(180,122,69,.5);box-shadow:0 0 0 3px rgba(180,122,69,.09)}
-.lcf-label{position:absolute;left:1rem;top:.875rem;font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300;color:rgba(250,248,245,.32);pointer-events:none;transition:top .25s var(--ease-lux),font-size .25s var(--ease-lux),color .25s}
+.lcf-label{position:absolute;left:1rem;top:.875rem;font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400;color:rgba(250,248,245,.68);pointer-events:none;transition:top .25s var(--ease-lux),font-size .25s var(--ease-lux),color .25s}
 .lcf-field input:focus + .lcf-label,.lcf-field input:not(:placeholder-shown) + .lcf-label,.lcf-field textarea:focus + .lcf-label,.lcf-field textarea:not(:placeholder-shown) + .lcf-label{top:.25rem;font-size:.52rem;color:var(--a);letter-spacing:.07em}
 .lcf-submit{width:100%;padding:.875rem 1.5rem;background:var(--p);color:var(--l);font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:none;border-radius:.75rem;cursor:pointer;margin-top:.25rem;transition:background .35s var(--ease-lux),transform .25s var(--ease-spring)}
 .lcf-submit:hover{background:var(--a);transform:scale(1.02)}
@@ -437,8 +452,8 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <!-- PRELOADER -->
 <div id="preloader">
   <div id="pl-wrap">
-    <div class="pl-logo">Expresso</div>
-    <div class="pl-sub">Accommodation · Nelspruit</div>
+    <div class="pl-logo">Express</div>
+    <div class="pl-sub">at Urban Cove · Nelspruit</div>
     <div class="pl-bar-wrap"><div class="pl-bar" id="pl-bar"></div></div>
   </div>
 </div>
@@ -455,7 +470,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">Expresso</a>
+  <a href="#hero" class="nav-logo">Express</a>
   <div class="nav-links">
     <a href="#hero"          class="nav-link" data-section="hero">Home</a>
     <a href="#why"           class="nav-link" data-section="why">Why Us</a>
@@ -475,7 +490,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <!-- ══════════════ HERO ══════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-img-wrap">
-    <img src="brand_assets/Outside%202.jpeg" alt="Expresso Accommodation Nelspruit" class="hero-img" id="hero-img">
+    <img src="brand_assets/Outside%202.jpeg" alt="Express at Urban Cove Nelspruit" class="hero-img" id="hero-img">
     <div class="hero-ov"></div>
     <div class="hero-ov2"></div>
   </div>
@@ -495,10 +510,10 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     </div>
     <div class="review-badge" id="review-badge">
       <div class="rb-stars">★★★★★</div>
-      <div class="rb-score">5.0</div>
-      <div class="rb-label">Rated Guest<br>Experience</div>
+      <div class="rb-score">9.8</div>
+      <div class="rb-label">Rated by<br>Guests</div>
       <div class="rb-sep"></div>
-      <div class="rb-source">Airbnb · Google</div>
+      <div class="rb-source">Hosted by Calfornia</div>
     </div>
   </div>
   <div class="scroll-hint">
@@ -536,7 +551,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="etag etag-dk">Why Choose Us</div>
       <h2 class="stitle stitle-lt">Everything you need,<br><em>nothing you don't</em></h2>
     </div>
-    <p class="why-intro-right">A stay at Expresso means quality, comfort, and genuine care from the moment you arrive to the moment you leave.</p>
+    <p class="why-intro-right">A stay at Express at Urban Cove means quality, comfort, and genuine care from the moment you arrive to the moment you leave.</p>
   </div>
   <div class="why-grid">
 
@@ -599,34 +614,40 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 
 <!-- ══════════════ ABOUT ══════════════════════════════════════ -->
 <section id="about">
-  <div class="about-wm" aria-hidden="true">Expresso</div>
+  <div class="about-wm" aria-hidden="true">Express</div>
   <div class="about-frame">
 
     <!-- Image column — Z-axis depth stack -->
     <div class="about-vis" id="about-vis">
-      <img class="about-vis-img" id="about-par" src="brand_assets/Outside%201.jpeg" alt="Expresso Accommodation exterior" loading="lazy">
+      <img class="about-vis-img" id="about-par" src="brand_assets/Outside%201.jpeg" alt="Express at Urban Cove exterior" loading="lazy">
       <!-- Offset second image — creates physical Z-axis depth -->
       <div class="about-vis-over" id="about-over">
-        <img src="brand_assets/Picture%203.jpeg" alt="Expresso lounge interior" loading="lazy">
+        <img src="brand_assets/Picture%203.jpeg" alt="Express at Urban Cove lounge" loading="lazy">
       </div>
       <!-- Floating glassmorphism stat card -->
       <div class="about-vis-card" id="about-card">
-        <span class="avc-n">5.0<span class="avc-star">★</span></span>
-        <span class="avc-l">Airbnb Rating</span>
+        <span class="avc-n">9.8<span class="avc-star">★</span></span>
+        <span class="avc-l">Guest Rating</span>
       </div>
     </div>
 
     <!-- Editorial text column -->
     <div class="about-col">
-      <div class="etag">Our Story</div>
+      <div class="etag">Your Hosts</div>
       <h2 class="about-h">Your Home<br>Away From<br><em>Home</em></h2>
-      <p class="about-bq">"Every detail has been chosen to make you feel genuinely at home, not just accommodated."</p>
-      <p class="about-prose">A warm, character-rich 2-bedroom apartment nestled in Nelspruit, Mpumalanga's vibrant capital. Whether here for business, adventure, or rest, this apartment was made for you. A fully equipped kitchen, welcoming lounge, and two generous bedrooms promising deep, restorative sleep.</p>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.375rem">
+        <div style="width:2.125rem;height:2.125rem;border-radius:50%;background:var(--p);display:flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;color:#FAF8F5;flex-shrink:0">C</div>
+        <span style="font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.14em;color:rgba(18,18,18,.68);text-transform:uppercase">Hosted by Calfornia</span>
+      </div>
+      <p class="about-bq">"We love hosting and meeting new people. The moment you walk in, you must feel at home and welcomed."</p>
+      <p class="about-prose">The unit is fully equipped with everything you need to feel right at home. Detailed decor is available on request for special occasions — birthdays, anniversaries, Valentine's Day and more. Contact us for a quote on festive arrangements.</p>
+      <p class="about-prose" style="margin-top:.875rem">Mpumalanga is a proud tourist province, blessed with proximity to Kruger National Park, Graskop, Medi Clinic, Rob Ferreira Hospital, Mbombela Stadium, and many more attractions. We are always willing and ready to help with anything you need.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;color:rgba(18,18,18,.62);letter-spacing:.14em;text-transform:uppercase;margin:1.25rem 0 0">Afrikaans · English · Portuguese · Xhosa · Zulu</p>
       <!-- Animated metrics strip -->
       <div class="about-metrics">
         <div class="am">
-          <div class="am-n" data-counter="5.0" data-decimal="1">5.0</div>
-          <div class="am-l">Airbnb Rating</div>
+          <div class="am-n" data-counter="9.8" data-decimal="1">9.8</div>
+          <div class="am-l">Guest Rating</div>
         </div>
         <div class="am-sep"></div>
         <div class="am">
@@ -666,18 +687,24 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
     <div id="apt-detail">
       <div class="etag etag-dk">The Apartment</div>
       <h2 class="stitle stitle-lt">A Luxury 2-Bedroom<br><em>Self-Catering Retreat</em></h2>
-      <p style="font-family:'Jost',sans-serif;font-size:.8rem;font-weight:300;color:rgba(250,248,245,.48);line-height:1.9">A spacious, beautifully furnished apartment offering everything for a memorable stay in Nelspruit. Perfect for couples, families, or business travellers seeking quality and comfort.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:.8rem;font-weight:400;color:rgba(250,248,245,.82);line-height:1.9">A spacious, beautifully furnished apartment offering everything for a memorable stay in Nelspruit. Perfect for couples, families, or business travellers seeking quality and comfort.</p>
       <div class="apt-tags">
         <span class="apt-tag">2 Bedrooms</span>
+        <span class="apt-tag">60 m²</span>
         <span class="apt-tag">Full Kitchen</span>
         <span class="apt-tag">Lounge &amp; Dining</span>
         <span class="apt-tag">Air Conditioning</span>
         <span class="apt-tag">DSTV &amp; Smart TV</span>
-        <span class="apt-tag">Fast Wi-Fi</span>
-        <span class="apt-tag">Bathroom</span>
-        <span class="apt-tag">Secure Parking</span>
-        <span class="apt-tag">Premium Linen</span>
-        <span class="apt-tag">Daily Housekeeping</span>
+        <span class="apt-tag">Free Wi-Fi</span>
+        <span class="apt-tag">Private Bathroom</span>
+        <span class="apt-tag">Free Parking</span>
+        <span class="apt-tag">BBQ Facilities</span>
+        <span class="apt-tag">Airport Shuttle</span>
+        <span class="apt-tag">Sun Terrace</span>
+        <span class="apt-tag">Fitness Centre</span>
+        <span class="apt-tag">Outdoor Fireplace</span>
+        <span class="apt-tag">Garden</span>
+        <span class="apt-tag">Non-Smoking</span>
       </div>
       <div class="apt-price-box">
         <div>
@@ -700,7 +727,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   <div class="gal-hdr">
     <div>
       <div class="etag etag-dk">Gallery</div>
-      <h2 class="stitle stitle-lt">Inside <em>Expresso</em></h2>
+      <h2 class="stitle stitle-lt">Inside <em>Express</em></h2>
     </div>
     <div class="gal-hint">Click any image to enlarge</div>
   </div>
@@ -760,69 +787,73 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   <div class="lb-counter" id="lb-counter">1 / 8</div>
 </div>
 
-<!-- ══════════════ EXPERIENCES ════════════════════════════════ -->
-<section id="experiences" class="sp">
-  <div class="exp-header">
+<!-- ══════════════ WHAT'S NEARBY ══════════════════════════════ -->
+<section id="nearby" class="sp">
+  <div class="nb-intro">
     <div>
-      <div class="etag">Experiences</div>
-      <h2 class="stitle" id="exp-title">Adventures at<br>your <em>doorstep</em></h2>
+      <div class="etag">What's Nearby</div>
+      <h2 class="stitle">Close to everything<br><em>that matters</em></h2>
     </div>
-    <p class="exp-sub-txt">Nelspruit is your launchpad to some of Africa's most breathtaking landscapes, wildlife, and iconic landmarks.</p>
+    <p class="nb-sub">Parks, restaurants, and airports — all within easy reach of 26 Van Rensburg St, Nelspruit.</p>
   </div>
-  <div class="exp-grid">
+  <div class="nb-grid">
 
-    <div class="ec">
-      <div class="ec-num">01</div>
-      <div>
-        <div class="ec-name">Kruger National Park</div>
-        <p class="ec-blurb">Africa's greatest game reserve. Encounter the Big Five in their natural habitat, just one hour from your door.</p>
+    <!-- Parks & Green Spaces -->
+    <div class="nb-cat">
+      <div class="nb-cat-hd">
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M3 7l9-5 9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/></svg>
+        Parks &amp; Green Spaces
       </div>
-      <div class="ec-dist">87 km · ±1 hr drive</div>
+      <div class="nb-item"><span class="nb-name">Trim Park</span><span class="nb-dist">1.5 km</span></div>
+      <div class="nb-item"><span class="nb-name">Matumi Golf Estate</span><span class="nb-dist">2.8 km</span></div>
+      <div class="nb-item"><span class="nb-name">Nelspruit Show Grounds</span><span class="nb-dist">3.3 km</span></div>
+      <div class="nb-item"><span class="nb-name">Nelspruit Nature Reserve</span><span class="nb-dist">3.4 km</span></div>
+      <div class="nb-item"><span class="nb-name">Nelspruit Nature Reserve</span><span class="nb-dist">4 km</span></div>
+      <div class="nb-item"><span class="nb-name">Collfin Park</span><span class="nb-dist">4.7 km</span></div>
+      <div class="nb-item"><span class="nb-name">Nelsville Park</span><span class="nb-dist">4.7 km</span></div>
+      <div class="nb-item"><span class="nb-name">Henkrin Park</span><span class="nb-dist">4.8 km</span></div>
+      <div class="nb-item"><span class="nb-name">Mbombela Nature Reserve</span><span class="nb-dist">5 km</span></div>
+      <div class="nb-item"><span class="nb-name">White River Park</span><span class="nb-dist">18 km</span></div>
     </div>
 
-    <div class="ec">
-      <div class="ec-num">02</div>
-      <div>
-        <div class="ec-name">Lowveld Botanical Garden</div>
-        <p class="ec-blurb">One of SA's most beautiful botanical gardens, set at the confluence of two rivers. Perfect for a tranquil morning walk.</p>
+    <!-- Restaurants & Cafes -->
+    <div class="nb-cat">
+      <div class="nb-cat-hd">
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        Restaurants &amp; Cafes
       </div>
-      <div class="ec-dist">3 km · ±5 min drive</div>
+      <div class="nb-item">
+        <div><span class="nb-name">Old Vic Pub &amp; Restaurant</span><span class="nb-type">Café / Bar</span></div>
+        <span class="nb-dist">700 m</span>
+      </div>
+      <div class="nb-item">
+        <div><span class="nb-name">Kus Chinese</span><span class="nb-type">Restaurant</span></div>
+        <span class="nb-dist">850 m</span>
+      </div>
+      <div class="nb-item">
+        <div><span class="nb-name">Romans Pizza</span><span class="nb-type">Restaurant</span></div>
+        <span class="nb-dist">900 m</span>
+      </div>
     </div>
 
-    <div class="ec">
-      <div class="ec-num">03</div>
-      <div>
-        <div class="ec-name">Sudwala Caves</div>
-        <p class="ec-blurb">Among the oldest caves on Earth. A dramatic underground world of ancient stalactites and dolomite formations.</p>
+    <!-- Airports -->
+    <div class="nb-cat">
+      <div class="nb-cat-hd">
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 21 4s-2 0-3.5 1.5L14 9 5.8 7.2C4.8 7 4 8 4.6 8.9L9.7 14l-4 5.4c-.3.4 0 1 .4.6l5.4-4 5.1 5.1c.9.6 1.9-.2 1.7-1.3z"/></svg>
+        Closest Airports
       </div>
-      <div class="ec-dist">38 km · ±30 min drive</div>
-    </div>
-
-    <div class="ec">
-      <div class="ec-num">04</div>
-      <div>
-        <div class="ec-name">Riverside &amp; Ilanga Mall</div>
-        <p class="ec-blurb">World-class shopping, restaurants, a cinema, and entertainment. Two major malls just minutes from the apartment.</p>
+      <div class="nb-item">
+        <span class="nb-name">Kruger Mpumalanga Int'l Airport</span>
+        <span class="nb-dist">23 km</span>
       </div>
-      <div class="ec-dist">2 km · ±5 min drive</div>
-    </div>
-
-    <div class="ec">
-      <div class="ec-num">05</div>
-      <div>
-        <div class="ec-name">Mbombela Stadium</div>
-        <p class="ec-blurb">Nelspruit's iconic giraffe-inspired FIFA World Cup venue, host to major football matches and large-scale events.</p>
+      <div class="nb-item">
+        <div><span class="nb-name">Londolozi Airport</span><span class="nb-type">Private / Charter</span></div>
+        <span class="nb-dist">91 km</span>
       </div>
-      <div class="ec-dist">4 km · ±8 min drive</div>
-    </div>
-
-    <div class="ec">
-      <div class="ec-num">06</div>
-      <div>
-        <div class="ec-name">Mpumalanga Scenic Routes</div>
-        <p class="ec-blurb">God's Window, Blyde River Canyon, Bourke's Luck Potholes. Day trips through some of the world's most spectacular scenery.</p>
+      <div class="nb-item">
+        <div><span class="nb-name">Mala Mala Airport</span><span class="nb-type">Private / Charter</span></div>
+        <span class="nb-dist">92 km</span>
       </div>
-      <div class="ec-dist">60 km · ±45 min drive</div>
     </div>
 
   </div>
@@ -1002,13 +1033,90 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   </div>
 </div>
 
+<!-- ══════════════ EXPERIENCES ════════════════════════════════ -->
+<section id="experiences" class="sp">
+  <div class="exp-header">
+    <div>
+      <div class="etag">Experiences</div>
+      <h2 class="stitle" id="exp-title">Adventures at<br>your <em>doorstep</em></h2>
+    </div>
+    <p class="exp-sub-txt">Nelspruit is your launchpad to some of Africa's most breathtaking landscapes, wildlife, and iconic landmarks.</p>
+  </div>
+  <div class="exp-grid">
+
+    <div class="ec">
+      <div class="ec-num">01</div>
+      <div>
+        <div class="ec-name">Kruger National Park</div>
+        <p class="ec-blurb">Africa's greatest game reserve. Encounter the Big Five in their natural habitat, just one hour from your door.</p>
+      </div>
+      <div class="ec-dist">87 km · ±1 hr drive</div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-num">02</div>
+      <div>
+        <div class="ec-name">Lowveld Botanical Garden</div>
+        <p class="ec-blurb">One of SA's most beautiful botanical gardens, set at the confluence of two rivers. Perfect for a tranquil morning walk.</p>
+      </div>
+      <div class="ec-dist">3 km · ±5 min drive</div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-num">03</div>
+      <div>
+        <div class="ec-name">Sudwala Caves</div>
+        <p class="ec-blurb">Among the oldest caves on Earth. A dramatic underground world of ancient stalactites and dolomite formations.</p>
+      </div>
+      <div class="ec-dist">38 km · ±30 min drive</div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-num">04</div>
+      <div>
+        <div class="ec-name">Riverside &amp; Ilanga Mall</div>
+        <p class="ec-blurb">World-class shopping, restaurants, a cinema, and entertainment. Two major malls just minutes from the apartment.</p>
+      </div>
+      <div class="ec-dist">2 km · ±5 min drive</div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-num">05</div>
+      <div>
+        <div class="ec-name">Mbombela Stadium</div>
+        <p class="ec-blurb">Nelspruit's iconic giraffe-inspired FIFA World Cup venue, host to major football matches and large-scale events.</p>
+      </div>
+      <div class="ec-dist">6 km · ±10 min drive</div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-num">06</div>
+      <div>
+        <div class="ec-name">Nelspruit Nature Reserve</div>
+        <p class="ec-blurb">A pristine urban nature reserve on Nelspruit's doorstep. Hiking trails, indigenous bush, and wildlife just minutes from the apartment.</p>
+      </div>
+      <div class="ec-dist">4.2 km · ±8 min drive</div>
+    </div>
+
+    <div class="ec">
+      <div class="ec-num">07</div>
+      <div>
+        <div class="ec-name">Mpumalanga Scenic Routes</div>
+        <p class="ec-blurb">God's Window, Blyde River Canyon, Bourke's Luck Potholes. Day trips through some of the world's most spectacular scenery.</p>
+      </div>
+      <div class="ec-dist">60 km · ±45 min drive</div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ══════════════ CONTACT ════════════════════════════════════ -->
 <section id="location" class="sp">
   <div class="loc-grid">
     <div>
       <div class="etag etag-dk">Find Us</div>
       <h2 class="loc-title">Gateway to<br><em>Africa's</em><br>Greatest Wild</h2>
-      <p class="loc-body">Situated in Nelspruit, Mpumalanga, minutes from the CBD and 87 km from Kruger's Numbi Gate. Panorama Route, Blyde River Canyon, and Sudwala Caves all within easy reach.</p>
+      <p class="loc-body">26 Van Rensburg St, 2nd Block, 2nd Floor, Nelspruit 1201. Minutes from the CBD, 24 km from Kruger Mpumalanga International Airport, and 87 km from Kruger's Numbi Gate. Rated 9.8 by guests.</p>
       <div class="ci">
         <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
         <div>
@@ -1027,7 +1135,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <div class="ci-ico"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div>
           <div class="ci-lbl">Location</div>
-          <span class="ci-val">Nelspruit, Mpumalanga, South Africa</span>
+          <span class="ci-val">26 Van Rensburg St, 2nd Block, 2nd Floor, Nelspruit 1201</span>
         </div>
       </div>
       <div style="margin-top:2.25rem">
@@ -1038,8 +1146,8 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
       <div class="loc-map-wrap">
         <div class="loc-map-inner">
           <iframe
-            src="https://maps.google.com/maps?q=Nelspruit+Mpumalanga+South+Africa&t=&z=14&ie=UTF8&iwloc=&output=embed"
-            title="Expresso Accommodation — Nelspruit, Mpumalanga"
+            src="https://maps.google.com/maps?q=26+Van+Rensburg+St+Nelspruit+South+Africa&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            title="Express at Urban Cove — 26 Van Rensburg St, Nelspruit"
             allowfullscreen
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
@@ -1073,9 +1181,9 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   <div class="ft-inner">
     <div class="ft-grid">
       <div>
-        <div class="ft-brand">Expresso</div>
-        <div class="ft-brand-sub">Accommodation · Nelspruit</div>
-        <p class="ft-desc">A luxury 2-bedroom self-catering apartment in the heart of Mpumalanga. Bold African character, genuine comfort, and hosts who care.</p>
+        <div class="ft-brand">Express</div>
+        <div class="ft-brand-sub">at Urban Cove · Nelspruit</div>
+        <p class="ft-desc">A luxury 2-bedroom self-catering apartment at 26 Van Rensburg St, Nelspruit. Rated 9.8 by guests. Hosted by Calfornia.</p>
         <div class="ft-social">
           <!-- WhatsApp -->
           <a class="ft-soc" href="https://wa.me/27723606294" target="_blank" rel="noopener" aria-label="WhatsApp">
@@ -1121,30 +1229,37 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <ul class="ft-links">
           <li><a href="https://wa.me/27723606294" target="_blank" rel="noopener">WhatsApp: 072 360 6294</a></li>
           <li><a href="mailto:expreso@airbnb.co.za">expreso@airbnb.co.za</a></li>
-          <li><span style="color:rgba(250,248,245,.38);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300">Nelspruit, Mpumalanga</span></li>
-          <li><span style="color:rgba(250,248,245,.38);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:300">South Africa</span></li>
+          <li><span style="color:rgba(250,248,245,.72);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400">26 Van Rensburg St, 2nd Block, 2nd Floor</span></li>
+          <li><span style="color:rgba(250,248,245,.72);font-family:'Jost',sans-serif;font-size:.75rem;font-weight:400">Nelspruit 1201, South Africa</span></li>
         </ul>
       </div>
     </div>
     <div class="ft-btm">
-      <div class="ft-copy">© 2026 Expresso Accommodation · Nelspruit, Mpumalanga · All rights reserved</div>
+      <div class="ft-copy">© 2026 Express at Urban Cove · Nelspruit, Mpumalanga · All rights reserved</div>
     </div>
   </div>
 </footer>
 
 <script>
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+ScrollTrigger.config({limitCallbacks:true, ignoreMobileResize:true});
 
 /* ── CURSOR ─────────────────────────────────────────────── */
 const cur = document.getElementById('cur');
 const curR = document.getElementById('cur-r');
 if (cur && window.matchMedia('(pointer:fine)').matches) {
   let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+  // quickTo avoids creating a new tween on every mousemove (prevents GC churn)
+  const curSetX = gsap.quickTo(cur,'x',{duration:.1,ease:'power2.out'});
+  const curSetY = gsap.quickTo(cur,'y',{duration:.1,ease:'power2.out'});
+  // quickSetter bypasses GSAP overhead inside the RAF loop
+  const rxSet = gsap.quickSetter(curR,'x','px');
+  const rySet = gsap.quickSetter(curR,'y','px');
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
-    gsap.to(cur, {x:mx, y:my, duration:.1, ease:'power2.out'});
+    curSetX(mx); curSetY(my);
   });
-  (function raf(){rx+=(mx-rx)*.09; ry+=(my-ry)*.09; gsap.set(curR,{x:rx,y:ry}); requestAnimationFrame(raf);})();
+  (function raf(){rx+=(mx-rx)*.09; ry+=(my-ry)*.09; rxSet(rx); rySet(ry); requestAnimationFrame(raf);})();
   document.querySelectorAll('a,button,.wc,.tc,.ec,.mi,.apt-img-main,.apt-img-sm').forEach(el=>{
     el.addEventListener('mouseenter',()=>{gsap.to(cur,{scale:3.5,opacity:.5,duration:.3}); gsap.to(curR,{scale:1.6,borderColor:'rgba(180,122,69,.6)',duration:.35});});
     el.addEventListener('mouseleave',()=>{gsap.to(cur,{scale:1,opacity:1,duration:.3}); gsap.to(curR,{scale:1,borderColor:'rgba(180,122,69,.35)',duration:.35});});
@@ -1199,10 +1314,11 @@ function startHero(){
   gsap.from('#hero-sub',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:.9});
   gsap.from('#hero-ctas',{y:16,opacity:0,duration:.9,ease:'power3.out',delay:1.0});
   gsap.from('#review-badge',{x:30,opacity:0,duration:1.0,ease:'power3.out',delay:1.15});
-  if(!window.matchMedia('(hover:none)').matches){
-    gsap.to('#hero-img',{yPercent:20,ease:'none',
-      scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:1}});
-  }
+  /* hero parallax removed — eliminated continuous scrub scroll listener */
+  /* Pause scroll-hint animation when hero leaves viewport */
+  new IntersectionObserver(entries=>{
+    document.getElementById('hero').classList.toggle('offscreen',!entries[0].isIntersecting);
+  },{threshold:0.05}).observe(document.getElementById('hero'));
   initScrollAnims();
   initActiveNav();
   initCounters();
@@ -1234,10 +1350,14 @@ function initCounters(){
 }
 
 /* ── NAV GLASSMORPHIC ───────────────────────────────────── */
-ScrollTrigger.create({
-  start:'top -80',end:99999,
-  onUpdate:s=>document.getElementById('nav').classList.toggle('scrolled',s.isActive)
-});
+(()=>{
+  const navEl=document.getElementById('nav');
+  ScrollTrigger.create({
+    start:'top -80',
+    onEnter:()=>navEl.classList.add('scrolled'),
+    onLeaveBack:()=>navEl.classList.remove('scrolled')
+  });
+})();
 
 /* ── ACTIVE NAV ─────────────────────────────────────────── */
 function initActiveNav(){
@@ -1262,16 +1382,7 @@ function initScrollAnims(){
     });
   }
 
-  /* About — parallax depth (desktop only to keep mobile smooth) */
-  const isTouch=window.matchMedia('(hover:none)').matches;
-  if(!isTouch){
-    gsap.to('#about-par',{yPercent:-15,ease:'none',
-      scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1.2}});
-    gsap.to('.about-wm',{yPercent:-25,ease:'none',
-      scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:1}});
-    gsap.to('#about-over',{yPercent:10,ease:'none',
-      scrollTrigger:{trigger:'#about',start:'top bottom',end:'bottom top',scrub:.8}});
-  }
+  /* about parallax removed — eliminated 3 continuous scrub scroll listeners */
 
   /* Why Choose Us — staggered card reveals */
   rv('.why-intro > *',{stagger:.1,trigger:'#why'});
@@ -1328,14 +1439,28 @@ function initScrollAnims(){
 }
 
 /* ── SMOOTH SCROLL ──────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(!t)return;
-    e.preventDefault();
-    gsap.to(window,{duration:1.3,scrollTo:{y:t,offsetY:80},ease:'power4.inOut'});
+(()=>{
+  const isTouch=window.matchMedia('(hover:none)').matches;
+  let scrollTween=null;
+  function killScrollTween(){if(scrollTween){scrollTween.kill();scrollTween=null;}}
+  document.addEventListener('wheel',killScrollTween,{passive:true});
+  document.addEventListener('touchstart',killScrollTween,{passive:true});
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(!t)return;
+      e.preventDefault();
+      killScrollTween();
+      if(isTouch){
+        const y=Math.max(0,t.getBoundingClientRect().top+window.scrollY-80);
+        window.scrollTo({top:y,behavior:'smooth'});
+      } else {
+        scrollTween=gsap.to(window,{duration:1.1,scrollTo:{y:t,offsetY:80},
+          ease:'power3.inOut',onComplete:()=>{scrollTween=null;}});
+      }
+    });
   });
-});
+})();
 
 /* ── LIGHTBOX ───────────────────────────────────────────── */
 const galleryData=[
@@ -1424,9 +1549,19 @@ function goSlide(n){
 document.getElementById('t-prev').addEventListener('click',()=>goSlide(tIdx-1));
 document.getElementById('t-next').addEventListener('click',()=>goSlide(tIdx+1));
 
-let tAuto=setInterval(()=>{const m=getMaxSlide();goSlide(tIdx>=m?0:tIdx+1);},5000);
+let tAuto=null;
+function startAuto(){
+  clearInterval(tAuto);
+  tAuto=setInterval(()=>{const m=getMaxSlide();goSlide(tIdx>=m?0:tIdx+1);},5000);
+}
+new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){goSlide(0);startAuto();}
+    else{clearInterval(tAuto);}
+  });
+},{threshold:0.25}).observe(document.getElementById('testimonials'));
 tTrack.addEventListener('mouseenter',()=>clearInterval(tAuto));
-tTrack.addEventListener('mouseleave',()=>{clearInterval(tAuto);tAuto=setInterval(()=>{const m=getMaxSlide();goSlide(tIdx>=m?0:tIdx+1);},5000);});
+tTrack.addEventListener('mouseleave',()=>startAuto());
 
 /* Touch swipe — testimonials */
 (function(){
@@ -1435,7 +1570,7 @@ tTrack.addEventListener('mouseleave',()=>{clearInterval(tAuto);tAuto=setInterval
   tTrack.addEventListener('touchend',e=>{
     const dx=e.changedTouches[0].clientX-tx;
     if(Math.abs(dx)>36)goSlide(dx<0?tIdx+1:tIdx-1);
-    tAuto=setInterval(()=>{const m=getMaxSlide();goSlide(tIdx>=m?0:tIdx+1);},5000);
+    startAuto();
   },{passive:true});
 })();
 
