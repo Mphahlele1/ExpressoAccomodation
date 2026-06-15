@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -159,12 +158,7 @@ body{background:var(--l);color:var(--d);font-family:'Jost',sans-serif;overflow-x
 /* ── APARTMENT ──────────────────────────────────────────── */
 #accommodation{background:var(--d);position:relative;overflow:hidden}
 #accommodation::before{content:'';position:absolute;top:-20%;right:-8%;width:50%;height:80%;background:radial-gradient(ellipse,rgba(180,122,69,.055) 0%,transparent 65%);pointer-events:none}
-.apt-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,6vw,5rem);align-items:start;position:relative;z-index:1}
-.apt-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:300px 200px;gap:.75rem}
-.apt-img-main{grid-column:1/-1;border-radius:1.125rem;overflow:hidden;cursor:pointer}
-.apt-img-main img,.apt-img-sm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease-lux)}
-.apt-img-main:hover img,.apt-img-sm:hover img{transform:scale(1.05)}
-.apt-img-sm{border-radius:.875rem;overflow:hidden;cursor:pointer}
+.apt-grid{max-width:780px;margin:0 auto;position:relative;z-index:1}
 .apt-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.75rem 0 2rem}
 .apt-tag{font-family:'Jost',sans-serif;font-size:.57rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,245,.80);border:1px solid rgba(255,255,255,.18);border-radius:9999px;padding:.35rem .9rem;transition:border-color .35s var(--ease-lux),color .35s}
 .apt-tag:hover{border-color:rgba(180,122,69,.32);color:rgba(250,248,245,.72)}
@@ -415,8 +409,6 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   .exp-sub-txt{max-width:100%}
   .mas-grid{grid-template-columns:1fr;grid-auto-rows:220px}
   .mi{grid-row:span 1!important}
-  .apt-imgs{grid-template-rows:240px 160px 160px}
-  .apt-img-main{grid-column:auto}
   .fl-row{grid-template-columns:1fr}
   .bk-form-wrap{padding:1.5rem}
   .bstrip-inner{flex-direction:column;align-items:flex-start;gap:2rem}
@@ -429,7 +421,6 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
   .sp{padding:clamp(3.5rem,8vh,5rem) clamp(1.25rem,5vw,1.75rem)}
   .tc{width:calc(88vw)}
   .bk-form-wrap{padding:1.25rem}
-  .apt-imgs{grid-template-rows:200px 130px 130px}
   .about-col{padding:2.5rem 1.25rem}
   .mas-grid{grid-auto-rows:180px}
   .mob-link{font-size:clamp(1.75rem,8vw,3rem)}
@@ -673,17 +664,6 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 <!-- ══════════════ APARTMENT ══════════════════════════════════ -->
 <section id="accommodation" class="sp">
   <div class="apt-grid">
-    <div class="apt-imgs" id="apt-imgs">
-      <div class="apt-img-main">
-        <img src="brand_assets/Picture%206.jpeg" alt="Open-plan living room" loading="lazy">
-      </div>
-      <div class="apt-img-sm">
-        <img src="brand_assets/ROOM%202.jpeg" alt="Master bedroom" style="object-position:center 30%" loading="lazy">
-      </div>
-      <div class="apt-img-sm">
-        <img src="brand_assets/Picture%205.jpeg" alt="Fully equipped kitchen" loading="lazy">
-      </div>
-    </div>
     <div id="apt-detail">
       <div class="etag etag-dk">The Apartment</div>
       <h2 class="stitle stitle-lt">A Luxury 2-Bedroom<br><em>Self-Catering Retreat</em></h2>
@@ -1241,8 +1221,7 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
 </footer>
 
 <script>
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-ScrollTrigger.config({limitCallbacks:true, ignoreMobileResize:true});
+gsap.registerPlugin(ScrollToPlugin);
 
 /* ── CURSOR ─────────────────────────────────────────────── */
 const cur = document.getElementById('cur');
@@ -1260,7 +1239,7 @@ if (cur && window.matchMedia('(pointer:fine)').matches) {
     curSetX(mx); curSetY(my);
   });
   (function raf(){rx+=(mx-rx)*.09; ry+=(my-ry)*.09; rxSet(rx); rySet(ry); requestAnimationFrame(raf);})();
-  document.querySelectorAll('a,button,.wc,.tc,.ec,.mi,.apt-img-main,.apt-img-sm').forEach(el=>{
+  document.querySelectorAll('a,button,.wc,.tc,.ec,.mi').forEach(el=>{
     el.addEventListener('mouseenter',()=>{gsap.to(cur,{scale:3.5,opacity:.5,duration:.3}); gsap.to(curR,{scale:1.6,borderColor:'rgba(180,122,69,.6)',duration:.35});});
     el.addEventListener('mouseleave',()=>{gsap.to(cur,{scale:1,opacity:1,duration:.3}); gsap.to(curR,{scale:1,borderColor:'rgba(180,122,69,.35)',duration:.35});});
   });
@@ -1352,11 +1331,12 @@ function initCounters(){
 /* ── NAV GLASSMORPHIC ───────────────────────────────────── */
 (()=>{
   const navEl=document.getElementById('nav');
-  ScrollTrigger.create({
-    start:'top -80',
-    onEnter:()=>navEl.classList.add('scrolled'),
-    onLeaveBack:()=>navEl.classList.remove('scrolled')
-  });
+  let ticking=false;
+  window.addEventListener('scroll',()=>{
+    if(ticking)return;
+    ticking=true;
+    requestAnimationFrame(()=>{navEl.classList.toggle('scrolled',window.scrollY>80);ticking=false;});
+  },{passive:true});
 })();
 
 /* ── ACTIVE NAV ─────────────────────────────────────────── */
@@ -1375,67 +1355,55 @@ function initActiveNav(){
 
 /* ── SCROLL ANIMATIONS ──────────────────────────────────── */
 function initScrollAnims(){
-  function rv(sel,opts={}){
-    gsap.from(sel,{
-      y:opts.y??50,opacity:0,duration:opts.dur??1.0,stagger:opts.stagger??0,ease:'power3.out',
-      scrollTrigger:{trigger:opts.trigger??sel,start:'top 88%',once:true}
+  /* One IntersectionObserver replaces 20+ ScrollTrigger instances.
+     IO callbacks are async — zero JS blocks scroll. Animations run on RAF. */
+  const io=new IntersectionObserver((entries,self)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting)return;
+      self.unobserve(e.target);
+      const d=parseFloat(e.target.dataset.ioD||0);
+      const t=e.target;
+      gsap.to(t,{opacity:1,y:0,x:0,duration:.85,delay:d,ease:'power3.out',overwrite:'auto',
+        onComplete:()=>gsap.set(t,{clearProps:'transform'})});
+    });
+  },{threshold:0.08,rootMargin:'-60px 0px -8% 0px'});
+
+  function prep(sel,opts={}){
+    const arr=Array.isArray(sel)
+      ?sel.flatMap(s=>[...document.querySelectorAll(s)])
+      :[...document.querySelectorAll(sel)];
+    if(!arr.length)return;
+    const xv=opts.x??0;
+    const yv=xv!==0?0:(opts.y??40);
+    arr.forEach((el,i)=>{
+      gsap.set(el,{opacity:0,y:yv,x:xv});
+      el.dataset.ioD=((opts.delay||0)+Math.min(i*(opts.stagger||0),.48)).toFixed(3);
+      io.observe(el);
     });
   }
 
-  /* about parallax removed — eliminated 3 continuous scrub scroll listeners */
-
-  /* Why Choose Us — staggered card reveals */
-  rv('.why-intro > *',{stagger:.1,trigger:'#why'});
-  gsap.from('.wc',{y:55,opacity:0,stagger:.12,duration:1.05,ease:'power3.out',
-    scrollTrigger:{trigger:'.why-grid',start:'top 84%',once:true}});
-
-  /* About — reveal animations */
-  gsap.from('#about-vis',{opacity:0,duration:1.2,ease:'power3.out',
-    scrollTrigger:{trigger:'#about',start:'top 88%',once:true}});
-  rv(['#about .etag','.about-h','.about-bq','.about-prose','.about-metrics'],
-    {stagger:.1,trigger:'.about-col'});
-  gsap.from('#about-over',{x:50,opacity:0,duration:1.1,delay:.5,ease:'power3.out',
-    scrollTrigger:{trigger:'#about',start:'top 85%',once:true}});
-  gsap.from('#about-card',{y:28,opacity:0,duration:.95,delay:.65,ease:'power3.out',
-    scrollTrigger:{trigger:'#about',start:'top 85%',once:true}});
-
-  /* Apartment */
-  rv('#apt-detail > *',{stagger:.1,trigger:'#accommodation'});
-  gsap.from('.apt-img-main,.apt-img-sm',{y:40,opacity:0,stagger:.13,duration:1.0,ease:'power3.out',
-    scrollTrigger:{trigger:'#apt-imgs',start:'top 85%',once:true}});
-
-  /* Gallery */
-  gsap.from('.gal-hdr > *',{y:30,opacity:0,stagger:.1,duration:.9,ease:'power3.out',
-    scrollTrigger:{trigger:'.gal-hdr',start:'top 88%',once:true}});
-  gsap.from('.mi',{y:45,opacity:0,stagger:.07,duration:.95,ease:'power3.out',
-    scrollTrigger:{trigger:'.mas-grid',start:'top 86%',once:true}});
-
-  /* Experiences */
-  rv('.exp-header > *',{stagger:.1,trigger:'#experiences'});
-  gsap.from('.ec',{opacity:0,x:-20,stagger:.08,duration:.9,ease:'power3.out',
-    scrollTrigger:{trigger:'.exp-grid',start:'top 88%',once:true}});
-
-  /* Testimonials */
-  gsap.from('.test-hdr > *',{y:30,opacity:0,stagger:.12,duration:.9,ease:'power3.out',
-    scrollTrigger:{trigger:'#testimonials',start:'top 86%',once:true}});
-
-  /* Booking */
-  rv('.bk-grid > *',{stagger:.15,trigger:'#booking'});
-  gsap.from('.bk-perk',{x:-20,opacity:0,stagger:.09,duration:.75,ease:'power3.out',
-    scrollTrigger:{trigger:'.bk-perks',start:'top 88%',once:true}});
-  rv('.bk-form-wrap',{y:45,dur:1.05,trigger:'.bk-form-wrap'});
-
-  /* Booking strip, location, footer */
-  gsap.from('#bstrip',{opacity:0,y:20,duration:.8,ease:'power3.out',
-    scrollTrigger:{trigger:'#bstrip',start:'top 90%',once:true}});
-  gsap.from('#location .loc-grid > *',{y:50,opacity:0,stagger:.18,duration:1.0,ease:'power3.out',
-    scrollTrigger:{trigger:'#location',start:'top 86%',once:true}});
-  gsap.from('.loc-map-wrap',{y:30,opacity:0,duration:.9,ease:'power3.out',
-    scrollTrigger:{trigger:'.loc-map-wrap',start:'top 88%',once:true}});
-  gsap.from('.loc-contact-form',{y:25,opacity:0,duration:.8,ease:'power3.out',
-    scrollTrigger:{trigger:'.loc-contact-form',start:'top 90%',once:true}});
-  gsap.from('footer',{opacity:0,y:20,duration:.7,ease:'power3.out',
-    scrollTrigger:{trigger:'footer',start:'top 90%',once:true}});
+  prep('.why-intro > *',{stagger:.1});
+  prep('.wc',{stagger:.1});
+  prep('#about-vis',{y:0});
+  prep(['#about .etag','.about-h','.about-bq','.about-prose','.about-metrics'],{stagger:.08});
+  prep('#about-over',{x:40,delay:.4});
+  prep('#about-card',{y:28,delay:.5});
+  prep('#apt-detail > *',{stagger:.08});
+  prep('.gal-hdr > *',{stagger:.1});
+  prep('.mi',{stagger:.06});
+  prep('.nb-cat',{stagger:.12});
+  prep('.nb-item',{stagger:.04});
+  prep('.test-hdr > *',{stagger:.1});
+  prep('.exp-header > *',{stagger:.1});
+  prep('.ec',{x:-20,stagger:.07});
+  prep('.bk-grid > *',{stagger:.12});
+  prep('.bk-perk',{x:-20,stagger:.08});
+  prep('.bk-form-wrap',{y:45});
+  prep('#bstrip',{y:20});
+  prep('#location .loc-grid > *',{stagger:.14});
+  prep('.loc-map-wrap',{y:30});
+  prep('.loc-contact-form',{y:25});
+  prep('footer',{y:20});
 }
 
 /* ── SMOOTH SCROLL ──────────────────────────────────────── */
