@@ -954,16 +954,16 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <div class="bk-form-sub">Your details go directly to our WhatsApp · Fast response guaranteed</div>
         <form id="bk-form" novalidate>
           <div class="fl-wrap">
-            <input type="text" id="bk-name" placeholder=" " required autocomplete="name">
+            <input type="text" id="bk-name" placeholder=" " required autocomplete="name" maxlength="100">
             <label class="fl-label" for="bk-name">Full Name</label>
           </div>
           <div class="fl-row">
             <div class="fl-wrap">
-              <input type="email" id="bk-email" placeholder=" " autocomplete="email">
+              <input type="email" id="bk-email" placeholder=" " autocomplete="email" maxlength="150">
               <label class="fl-label" for="bk-email">Email Address</label>
             </div>
             <div class="fl-wrap">
-              <input type="tel" id="bk-phone" placeholder=" " required autocomplete="tel">
+              <input type="tel" id="bk-phone" placeholder=" " required autocomplete="tel" maxlength="30">
               <label class="fl-label" for="bk-phone">Phone Number</label>
             </div>
           </div>
@@ -988,9 +988,10 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
             <label class="fl-label" for="bk-guests">Number of Guests</label>
           </div>
           <div class="fl-wrap">
-            <textarea id="bk-special" placeholder=" "></textarea>
+            <textarea id="bk-special" placeholder=" " maxlength="500"></textarea>
             <label class="fl-label" for="bk-special">Special Requests (optional)</label>
           </div>
+          <div id="bk-form-error" style="display:none;color:#c0392b;font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.02em;margin-bottom:1rem;line-height:1.5"></div>
           <button type="submit" class="bk-submit">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Send Booking Request on WhatsApp
@@ -1330,13 +1331,14 @@ footer{background:#080808;padding:0 0 2.25rem;position:relative;overflow:hidden}
         <div class="lcf-title">Send a Message</div>
         <form id="loc-contact-form" novalidate>
           <div class="lcf-field">
-            <input type="text" id="lcf-name" placeholder=" " required autocomplete="name">
+            <input type="text" id="lcf-name" placeholder=" " required autocomplete="name" maxlength="100">
             <label class="lcf-label" for="lcf-name">Your Name</label>
           </div>
           <div class="lcf-field">
-            <textarea id="lcf-msg" placeholder=" " required></textarea>
+            <textarea id="lcf-msg" placeholder=" " required maxlength="1000"></textarea>
             <label class="lcf-label" for="lcf-msg">Your Message</label>
           </div>
+          <div id="lcf-form-error" style="display:none;color:#c0392b;font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.02em;margin-bottom:1rem;line-height:1.5"></div>
           <button type="submit" class="lcf-submit" style="display:flex;align-items:center;justify-content:center;gap:.5rem">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Send via WhatsApp
@@ -1744,6 +1746,23 @@ tTrack.addEventListener('mouseleave',()=>startAuto());
   },{passive:true});
 })();
 
+/* ── INPUT SANITIZATION ─────────────────────────────────── */
+function sanitizeText(value,{allowNewlines=false,maxLen=200}={}){
+  let v=String(value||'');
+  v=v.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g,'');
+  v=allowNewlines?v.replace(/\r\n/g,'\n'):v.replace(/[\r\n\t]+/g,' ');
+  v=v.replace(/[ \t]{2,}/g,' ').trim();
+  if(v.length>maxLen)v=v.slice(0,maxLen);
+  return v;
+}
+function isValidEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+function isValidPhone(v){return /^[0-9+()\-\s]{7,30}$/.test(v);}
+function showFormError(el,msg){
+  if(!el)return;
+  el.textContent=msg;
+  el.style.display=msg?'block':'none';
+}
+
 /* ── BOOKING FORM ───────────────────────────────────────── */
 (function(){
   // Force float labels on date/select inputs
@@ -1762,15 +1781,23 @@ tTrack.addEventListener('mouseleave',()=>startAuto());
   const resetBtn=document.getElementById('bk-reset');
   if(!form)return;
 
+  const errorEl=document.getElementById('bk-form-error');
+
   form.addEventListener('submit',e=>{
     e.preventDefault();
-    const name=(document.getElementById('bk-name').value||'').trim();
-    const email=(document.getElementById('bk-email').value||'').trim();
-    const phone=(document.getElementById('bk-phone').value||'').trim();
-    const checkin=document.getElementById('bk-checkin').value;
-    const checkout=document.getElementById('bk-checkout').value;
-    const guests=document.getElementById('bk-guests').value;
-    const special=(document.getElementById('bk-special').value||'').trim();
+    const name=sanitizeText(document.getElementById('bk-name').value,{maxLen:100});
+    const email=sanitizeText(document.getElementById('bk-email').value,{maxLen:150});
+    const phone=sanitizeText(document.getElementById('bk-phone').value,{maxLen:30});
+    const checkin=/^\d{4}-\d{2}-\d{2}$/.test(document.getElementById('bk-checkin').value)?document.getElementById('bk-checkin').value:'';
+    const checkout=/^\d{4}-\d{2}-\d{2}$/.test(document.getElementById('bk-checkout').value)?document.getElementById('bk-checkout').value:'';
+    const guestsRaw=document.getElementById('bk-guests').value;
+    const guests=['1','2','3','4'].includes(guestsRaw)?guestsRaw:'';
+    const special=sanitizeText(document.getElementById('bk-special').value,{allowNewlines:true,maxLen:500});
+
+    if(!name){showFormError(errorEl,'Please enter your full name.');return;}
+    if(!phone||!isValidPhone(phone)){showFormError(errorEl,'Please enter a valid phone number.');return;}
+    if(email&&!isValidEmail(email)){showFormError(errorEl,'Please enter a valid email address.');return;}
+    showFormError(errorEl,'');
 
     let nightsLine='';
     if(checkin&&checkout){
@@ -1816,10 +1843,16 @@ tTrack.addEventListener('mouseleave',()=>startAuto());
 (function(){
   const lcf=document.getElementById('loc-contact-form');
   if(!lcf)return;
+  const errorEl=document.getElementById('lcf-form-error');
   lcf.addEventListener('submit',e=>{
     e.preventDefault();
-    const name=(document.getElementById('lcf-name').value||'').trim();
-    const msg=(document.getElementById('lcf-msg').value||'').trim();
+    const name=sanitizeText(document.getElementById('lcf-name').value,{maxLen:100});
+    const msg=sanitizeText(document.getElementById('lcf-msg').value,{allowNewlines:true,maxLen:1000});
+
+    if(!name){showFormError(errorEl,'Please enter your name.');return;}
+    if(!msg){showFormError(errorEl,'Please enter a message.');return;}
+    showFormError(errorEl,'');
+
     const text=`*Express at Urban Cove Enquiry*\n\n\u{1F464} Name: ${name}\n\u{1F4AC} Message: ${msg}`;
     window.open('https://wa.me/27813869988?text='+encodeURIComponent(text),'_blank');
   });
